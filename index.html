@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MY Calendar</title>
+  <meta name="description" content="Malaysia calendar with national and state public holidays, plus your own events.">
+  <meta name="theme-color" content="#0b3d91">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>MY Calendar</h1>
+    <label class="state">
+      <span>State</span>
+      <select id="state"></select>
+    </label>
+  </header>
+
+  <main>
+    <section class="cal" aria-label="Month view">
+      <div class="nav">
+        <button id="prev" aria-label="Previous month">‹</button>
+        <h2 id="title"></h2>
+        <button id="next" aria-label="Next month">›</button>
+        <button id="today" class="ghost">Today</button>
+      </div>
+      <div class="grid head" aria-hidden="true">
+        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+      </div>
+      <div id="days" class="grid days" role="grid"></div>
+      <p class="legend">
+        <span class="dot hol"></span> Public holiday
+        <span class="dot prov"></span> Provisional
+        <span class="dot evt"></span> My event
+      </p>
+    </section>
+
+    <aside class="side">
+      <section>
+        <h3 id="sel-title">Selected day</h3>
+        <ul id="sel-list" class="list"></ul>
+        <form id="evt-form" class="evt-form">
+          <input id="evt-text" type="text" placeholder="Add an event for this day" maxlength="120" required>
+          <button type="submit">Add</button>
+        </form>
+      </section>
+      <section>
+        <h3>Holidays this month</h3>
+        <ul id="month-list" class="list"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <footer>
+    Holiday data covers 2026 (gazetted) and 2027 (provisional). Islamic holidays depend on moon sighting.
+    Always confirm with the official gazette.
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
