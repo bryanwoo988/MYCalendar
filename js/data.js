@@ -94,3 +94,32 @@ export function holidaysFor(state) {
   }
   return map;
 }
+
+// ---------- School holidays (KPM) ----------
+// Group A = states with Fri–Sat weekend (Kedah, Kelantan, Terengganu); Group B = all others.
+// Source: third-party summaries of KPM Surat Siaran Bil. 3 Tahun 2025. Excludes KPM festive add-on days.
+export const SCHOOL_GROUP_A = ["KDH", "KTN", "TRG"];
+export const SCHOOL_HOLIDAYS = [
+  { start: "2026-01-01", end: "2026-01-10", name: "Year-end holiday 2025 (ends)", group: "A" },
+  { start: "2026-01-01", end: "2026-01-11", name: "Year-end holiday 2025 (ends)", group: "B" },
+  { start: "2026-03-20", end: "2026-03-28", name: "Term 1 break", group: "A" },
+  { start: "2026-03-21", end: "2026-03-29", name: "Term 1 break", group: "B" },
+  { start: "2026-05-22", end: "2026-06-06", name: "Mid-year holiday", group: "A" },
+  { start: "2026-05-23", end: "2026-06-07", name: "Mid-year holiday", group: "B" },
+  { start: "2026-08-28", end: "2026-09-05", name: "Term 2 break", group: "A" },
+  { start: "2026-08-29", end: "2026-09-06", name: "Term 2 break", group: "B" },
+  { start: "2026-12-04", end: "2026-12-31", name: "Year-end holiday", group: "A" },
+  { start: "2026-12-05", end: "2026-12-31", name: "Year-end holiday", group: "B" },
+];
+
+export function schoolGroup(state) {
+  return SCHOOL_GROUP_A.includes(state) ? "A" : "B";
+}
+
+// ---------- Civil servant pay dates (JANM) ----------
+// Source: third-party summaries of SPANM Bil. 5 Tahun 2025, with the Feb/Mar/Apr
+// dates brought forward per JANM's later notices.
+export const SALARY_DATES = [
+  "2026-01-22", "2026-02-12", "2026-03-13", "2026-04-16", "2026-05-21", "2026-06-25",
+  "2026-07-23", "2026-08-24", "2026-09-24", "2026-10-22", "2026-11-25", "2026-12-21",
+];

@@ -1,19 +1,25 @@
-# MY Calendar
+# MY Calendar · 马来西亚
 
-A Malaysia calendar web app: month view, national and state public holidays, and your own events (saved in the browser). No build step, no dependencies. Installable as a PWA and works offline.
+A Malaysia lunar calendar web app. No build step, no dependencies, installable as a PWA, works offline.
 
-## Features
-- Pick any of the 13 states or 3 Federal Territories; holidays and weekends adjust (Kedah, Kelantan and Terengganu use a Friday–Saturday weekend).
-- Public holidays highlighted, with replacement holidays.
-- Add or delete personal events per day (stored in `localStorage`).
-- Light/dark mode, mobile layout, keyboard ← / → to change month.
+## Screens
+- **Home**: year tabs (2025–2029), swipeable cards for Public Holiday / School Holiday / Salary Schedule, and a 3×4 grid of month tiles (current month outlined in green).
+- **Month page**: traditional printed-calendar layout (weekdays as rows: English / 中文 / Bahasa Melayu), with Chinese lunar date (农历) and Hijri date under each day. Holidays in red, school holidays underlined blue, civil servant pay day marked `$`. A memorandum list below.
+- **Day sheet**: tap any day for details and to add your own events (saved in the browser only).
+- **⋮ Settings**: pick your state; holidays, school-holiday group (A/B) and weekends follow it.
 
 ## Run
 ```bash
-python3 -m http.server 8000
-# open http://localhost:8000
+python3 -m http.server 8000   # open http://localhost:8000
 ```
-ES modules don't load from `file://`, so serve it over HTTP. Any static host (GitHub Pages, Netlify) works.
 
-## Holiday data
-Edit `js/holidays.js`. 2026 is filled from cross-checked listings of the federal and state gazettes; 2027 entries are marked `provisional` until gazetted. Islamic holidays depend on moon sighting and can shift. Some state holidays (e.g. Pahang, Perak, Kelantan, Johor royal birthdays) are not yet included because the sources disagreed. Confirm against the official gazette before relying on a date.
+## Data (`js/data.js`, `js/calendars.js`)
+| Data | Coverage | Source |
+|---|---|---|
+| Public holidays | 2026, 2027 (provisional) | Third-party summaries of federal/state gazettes |
+| School holidays | 2026, Group A & B | Summaries of KPM Surat Siaran Bil. 3/2025 (festive add-on days excluded) |
+| Pay dates | 2026 | Summaries of SPANM Bil. 5/2025 + JANM amendments |
+| Lunar dates | Any year | Browser `Intl` Chinese calendar |
+| Hijri dates | Any year | Browser `Intl` Islamic calendar, shifted 1 day; matched every 2026 Malaysian Islamic holiday, but approximate |
+
+Confirm dates against the official gazette, KPM or JANM before relying on them.
