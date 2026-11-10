@@ -5,6 +5,7 @@ export const LANGS = { zh: "中文", en: "English", ms: "BM" };
 
 const T = {
   en: {
+    "legend.fest": "Lunar festival", "tag.fest": "traditional",
     "lw.except": "All except {list}",
     "legend.part": "Some states only",
     "x.pickState": "Choose a state first: each state has its own holidays.", groupTagA: "Group A", groupTagB: "Group B", groupBoth: "Group A: Kedah, Kelantan, Terengganu · Group B: all other states & Federal Territories", nationalOnly: "National",
@@ -58,6 +59,7 @@ const T = {
     "x.howto": "On iPhone, open the file and tap \"Add All\". On Android, open it with Google Calendar or Samsung Calendar. A downloaded file does not update; re-download after the official list changes.",
   },
   ms: {
+    "legend.fest": "Perayaan tradisional", "tag.fest": "tradisional",
     "lw.except": "Semua kecuali {list}",
     "legend.part": "Sesetengah negeri sahaja",
     "x.pickState": "Pilih negeri dahulu: setiap negeri ada cuti tersendiri.", groupTagA: "Kumpulan A", groupTagB: "Kumpulan B", groupBoth: "Kumpulan A: Kedah, Kelantan, Terengganu · Kumpulan B: negeri lain & Wilayah Persekutuan", nationalOnly: "Kebangsaan",
@@ -111,6 +113,7 @@ const T = {
     "x.howto": "Di iPhone, buka fail dan tekan \"Add All\". Di Android, buka dengan Google Calendar atau Samsung Calendar. Fail yang dimuat turun tidak dikemas kini; muat turun semula selepas senarai rasmi berubah.",
   },
   zh: {
+    "legend.fest": "农历节日", "tag.fest": "传统节日",
     "lw.except": "除{list}外全部州属",
     "legend.part": "部分州属假期",
     "x.pickState": "请先选择州属：每个州的假期不同。", groupTagA: "A 组", groupTagB: "B 组", groupBoth: "A 组：吉打、吉兰丹、登嘉楼 · B 组：其他州属及联邦直辖区", nationalOnly: "全国",

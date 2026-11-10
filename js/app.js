@@ -4,6 +4,7 @@ import { lunar, hijri } from "./calendars.js";
 import { buildICS } from "./ics.js";
 import { longWeekends } from "./longweekend.js";
 import { COUNTRIES, COUNTRY_SOURCES, countryHolidays, countryYears } from "./countries.js";
+import { festivalsFor } from "./festivals.js";
 import { t, setLang, getLang, applyStatic, LANGS, MONTHS, MONTH_TILE, WEEKDAYS, LOCALE,
   holidayName, schoolName, stateName } from "./i18n.js";
 
@@ -63,6 +64,8 @@ function guessLang() {
 }
 
 // ---------- lookups ----------
+const festOn = (key) => festivalsFor(Number(key.slice(0, 4))).get(key) || [];
+const fName = (f) => f.names[getLang()] || f.names.en;
 const schoolOn = (dateIso) => (isMY() ? schoolHolidaysFor(st.region).find((s) => dateIso >= s.start && dateIso <= s.end) : null);
 const srcLink = (key, full = false) => `<a href="${SOURCES[key].url}" target="_blank" rel="noopener">${esc(full ? SOURCES[key].label : SOURCES[key].short)}</a>`;
 const SRC_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v4h4M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
@@ -110,10 +113,12 @@ function renderMonths() {
 
 // ---------- items ----------
 const holItem = (h) => ({ type: h.kind === "workday" ? "work" : "public", text: hName(h), kind: h.kind, unc: h.uncertain, star: h.subjectToChange,
-  scope: h.states && !isNational(h) ? statesSummary(h.states) : null });
+  scope: h.codes && !isNational(h) ? statesSummary(h.codes) : null });
 
 function itemsForDay(key) {
   const out = (hol.get(key) || []).map(holItem);
+  // Traditional festivals are listed only on days without a public holiday (avoids duplicates like 中秋节 twice).
+  if (!out.some((it) => it.type === "public")) for (const f of festOn(key)) out.push({ type: "fest", text: fName(f) });
   const s = schoolOn(key);
   if (s) out.push({ type: "school", text: schoolName(s.name), raw: s.name });
   (st.events[key] || []).forEach((e, i) => out.push({ type: "evt", text: e, idx: i }));
@@ -121,6 +126,7 @@ function itemsForDay(key) {
 }
 
 function tagFor(it) {
+  if (it.type === "fest") return `<span class="tag fest">${t("tag.fest")}</span>`;
   if (it.type === "work") return `<span class="tag repl">${t("tag.workday")}</span>`;
   if (it.type !== "public") return "";
   if (it.kind === "bridge") return `<span class="tag repl">${t("tag.bridge")}</span>`;
@@ -174,7 +180,9 @@ function renderMonthPage(y, m) {
       cells[Math.floor((offset + d - 1) / 7)] = `
         <button class="${cls.join(" ")}" data-date="${key}" aria-label="${esc(`${fmtShort(key)}${hs.length ? ", " + hs.map(hName).join(", ") : ""}`)}">
           <span class="g">${d}</span>
-          <span class="lu ${lu.day === 1 || lu.day === 15 ? "first" : ""}">${lu.label}</span>
+          ${festOn(key).length
+            ? `<span class="lu fest">${esc(festOn(key)[0].names.zh)}</span>`
+            : `<span class="lu ${lu.day === 1 || lu.day === 15 ? "first" : ""}">${lu.label}</span>`}
           <span class="hj">${hj.day === 1 ? hj.short : hj.day}</span>
           ${hs.length ? `<span class="hn">${esc(hName(hs[0]))}</span>` : ""}
           ${work ? `<span class="wk">${getLang() === "zh" ? "班" : "W"}</span>` : ""}
