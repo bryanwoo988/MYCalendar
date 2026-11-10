@@ -129,5 +129,26 @@ for (const [cc, d, dow] of SPOT) {
 }
 console.log(`6. Other countries: ${nC} entries checked, ${SPOT.length} spot checks against official weekdays`);
 
+// 7 ---------------------------------------------------------------
+import { festivalsFor } from "../js/festivals.js";
+// Expected dates taken from official calendars already in this app:
+// CN (端午, 中秋), HK (重阳), KASI (칠석, 동지), TW (除夕), and Qingming/Dongzhi 2020–2027.
+const FEST = [
+  ["2026-02-16", "chuxi"], ["2026-02-17", "chunjie"], ["2026-03-03", "yuanxiao"], ["2026-04-05", "qingming"], ["2026-06-19", "duanwu"],
+  ["2026-08-19", "qixi"], ["2026-09-25", "zhongqiu"], ["2026-10-18", "chongyang"], ["2026-12-22", "dongzhi"],
+  ["2027-02-05", "chuxi"], ["2027-02-06", "chunjie"], ["2027-04-05", "qingming"], ["2027-06-09", "duanwu"], ["2027-08-08", "qixi"],
+  ["2027-09-15", "zhongqiu"], ["2027-10-08", "chongyang"], ["2027-12-22", "dongzhi"],
+  ["2024-04-04", "qingming"], ["2025-04-04", "qingming"], ["2024-12-21", "dongzhi"], ["2025-12-21", "dongzhi"],
+];
+for (const [d, key] of FEST) {
+  if (!(festivalsFor(+d.slice(0, 4)).get(d) || []).some((f) => f.key === key)) fail(`festival ${key} expected on ${d}`);
+}
+for (const y of [2026, 2027, 2030]) {
+  const counts = {};
+  for (const fs of festivalsFor(y).values()) for (const f of fs) counts[f.key] = (counts[f.key] || 0) + 1;
+  for (const [k, n] of Object.entries(counts)) if (n > 1 && k !== "laba" && k !== "chuxi") fail(`${y}: festival ${k} appears ${n} times`);
+}
+console.log(`7. Lunar festivals: ${FEST.length} dates checked`);
+
 console.log(failures ? `${failures} failure(s)` : "All checks passed");
 process.exitCode = failures ? 1 : 0;
