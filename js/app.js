@@ -1,7 +1,8 @@
-import { STATES, holidaysFor, SCHOOL_HOLIDAYS, schoolGroup, SALARY_DATES } from "./data.js";
+import { STATES, holidaysFor, isGazetted, SCHOOL_HOLIDAYS, schoolGroup, SALARY_DATES } from "./data.js";
 import { lunar, hijri } from "./calendars.js";
 
-const YEARS = [2025, 2026, 2027, 2028, 2029];
+// Holidays are calculated for any year; offer last year through ten years ahead.
+const YEARS = Array.from({ length: 12 }, (_, i) => new Date().getFullYear() - 1 + i);
 const MONTH_LABEL = ["JAN", "FEB", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUG", "SEPT", "OCT", "NOV", "DEC"];
 const MONTH_FULL = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const MONTH_ZH = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
@@ -88,7 +89,7 @@ function renderHome() {
 // ---------- month page ----------
 function itemsForDay(key) {
   const out = [];
-  for (const h of hol.get(key) || []) out.push({ type: "public", text: h.name, prov: h.provisional });
+  for (const h of hol.get(key) || []) out.push({ type: "public", text: h.name, prov: h.provisional, unc: h.uncertain });
   const s = schoolOn(key);
   if (s) out.push({ type: "school", text: s.name });
   if (isPay(key)) out.push({ type: "salary", text: "Civil servant pay day" });
@@ -102,7 +103,7 @@ function renderMonthPage(y, m) {
   const h1 = hijri(new Date(y, m, 1)), h2 = hijri(new Date(y, m, days));
   $("m-title").innerHTML = `${MONTH_FULL[m]} ${y}<small>${MONTH_ZH[m]}</small>`;
   $("m-sub").textContent =
-    `${l1.yearName}${l1.zodiac}年 · 农历${l1.month === l2.month ? l1.month : `${l1.month} – ${l2.month}`} · ` +
+    `${l1.yearName}${l1.zodiac}年${l1.yearName === l2.yearName ? "" : ` – ${l2.yearName}${l2.zodiac}年`} · 农历${l1.month === l2.month ? l1.month : `${l1.month} – ${l2.month}`} · ` +
     `${h1.monthName}${h1.monthName === h2.monthName ? "" : ` – ${h2.monthName}`} ${h2.year}H`;
 
   const todayKey = iso(today);
@@ -148,7 +149,7 @@ function renderMonthPage(y, m) {
 
 function listItem(key, it, when = fmtShort(key)) {
   const tag = it.type === "evt" ? '<span class="tag evt">mine</span>'
-    : `<span class="tag ${it.prov ? "prov" : it.type}">${it.prov ? "provisional" : it.type === "public" ? "holiday" : it.type === "school" ? "school" : "pay"}</span>`;
+    : `<span class="tag ${it.prov ? "prov" : it.type}">${it.unc ? "±1 day" : it.prov ? "calculated" : it.type === "public" ? "holiday" : it.type === "school" ? "school" : "pay"}</span>`;
   return `<li data-date="${key}"><span class="when">${when}</span><span class="what">${esc(it.text)}</span>${tag}</li>`;
 }
 
@@ -157,13 +158,16 @@ function renderList(cat, y) {
   const rows = [];
   let note = "";
   if (cat === "public") {
-    note = `${STATES[st.region]} · change state in ⋮ settings.`;
-    const keys = [...hol.keys()].filter((k) => k.startsWith(`${y}-`)).sort();
+    note = `${STATES[st.region]} · change state in ⋮ settings. ` + (isGazetted(y)
+      ? "Gazetted list."
+      : "Calculated from the official rules (lunar, Hijri and Tamil calendars + replacement-day rules). Islamic dates follow moon sighting; \"±1 day\" marks borderline crescents. Confirm with the gazette when it is published.");
+    const yearMap = hol.year(y);
+    const keys = [...yearMap.keys()].sort();
     let lastM = -1;
     for (const k of keys) {
       const m = parse(k).getMonth();
       if (m !== lastM) { rows.push(`<li class="mhead">${MONTH_FULL[m]}</li>`); lastM = m; }
-      for (const h of hol.get(k)) rows.push(listItem(k, { type: "public", text: h.name, prov: h.provisional }));
+      for (const h of yearMap.get(k)) rows.push(listItem(k, { type: "public", text: h.name, prov: h.provisional, unc: h.uncertain }));
     }
   } else if (cat === "school") {
     const g = schoolGroup(st.region);
@@ -179,7 +183,10 @@ function renderList(cat, y) {
     }
   }
   $("l-note").textContent = note;
-  $("l-list").innerHTML = rows.join("") || `<li class="empty">No ${CATS[cat].toLowerCase()} data for ${y} yet.</li>`;
+  const notYet = cat === "school"
+    ? `KPM has not announced the ${y} school calendar yet (usually published in the second half of ${y - 1}).`
+    : `JANM has not announced the ${y} pay dates yet (usually published around September–October ${y - 1}).`;
+  $("l-list").innerHTML = rows.join("") || `<li class="empty">${notYet}</li>`;
 }
 
 // ---------- day sheet ----------

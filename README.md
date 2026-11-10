@@ -13,13 +13,19 @@ A Malaysia lunar calendar web app. No build step, no dependencies, installable a
 python3 -m http.server 8000   # open http://localhost:8000
 ```
 
-## Data (`js/data.js`, `js/calendars.js`)
-| Data | Coverage | Source |
+## Data
+| Data | Coverage | How |
 |---|---|---|
-| Public holidays | 2026, 2027 (provisional) | Third-party summaries of federal/state gazettes |
-| School holidays | 2026, Group A & B | Summaries of KPM Surat Siaran Bil. 3/2025 (festive add-on days excluded) |
-| Pay dates | 2026 | Summaries of SPANM Bil. 5/2025 + JANM amendments |
-| Lunar dates | Any year | Browser `Intl` Chinese calendar |
-| Hijri dates | Any year | Browser `Intl` Islamic calendar, shifted 1 day; matched every 2026 Malaysian Islamic holiday, but approximate |
+| Public holidays | 2026 | Gazetted list (`js/data.js`) |
+| Public holidays | Any other year | Calculated from the rules below, per state, with replacement days |
+| School holidays | 2026, 2027 (Group A & B) | KPM calendars, via secondary summaries; festive add-on days excluded |
+| Civil servant pay dates | 2026, 2027 | JANM SPANM circulars, via secondary summaries |
 
-Confirm dates against the official gazette, KPM or JANM before relying on them.
+How the calculated holidays work (`js/astro.js`, `js/calendars.js`):
+- **Chinese New Year, Wesak, lunar dates**: precise new-moon times (Meeus ch. 49) at UTC+8. Wesak is the 15th day of the 4th lunation.
+- **Islamic holidays, Hijri dates**: new crescent at sunset in Peninsular Malaysia under the MABIMS criteria (altitude ≥ 3°, elongation ≥ 6.4°). Crescents near the threshold are flagged "±1 day".
+- **Thaipusam**: day the Moon is in Pusam nakshatra nearest the full moon of Thai (sidereal, Lahiri).
+- **Deepavali**: the day before the Aippasi new moon whose sunrise falls in the 14th tithi or later.
+- **Replacement days**: Sunday holidays → next working day (Sat–Sun states); Saturday holidays → next working day (Kedah, Kelantan, Terengganu); Sarawak also replaces same-day clashes.
+
+`node tests/holidays.test.mjs` checks the rules against the 2026 gazette (all states) and against 87 past festival dates (2010–2035). Royal birthdays and one-off holidays declared by state governments can't be predicted; confirm future dates with the gazette, KPM or JANM.
