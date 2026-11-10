@@ -1,0 +1,1220 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MY Calendar//Malaysia Holidays//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Malaysia holidays · Negeri Sembilan
+X-WR-TIMEZONE:Asia/Kuala_Lumpur
+REFRESH-INTERVAL;VALUE=DURATION:P7D
+X-PUBLISHED-TTL:P7D
+BEGIN:VEVENT
+UID:ph-NSN-2026-01-01-new-year-s-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+SUMMARY:🇲🇾 New Year's Day
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-01-14-birthday-of-yang-di-pertuan-besar-negeri-sembilan@myc
+ alendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260114
+DTEND;VALUE=DATE:20260115
+SUMMARY:🇲🇾 Birthday of Yang di-Pertuan Besar Negeri Sembilan
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-01-17-israk-and-mikraj@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260117
+DTEND;VALUE=DATE:20260118
+SUMMARY:🇲🇾 Israk and Mikraj
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-02-01-thaipusam@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260201
+DTEND;VALUE=DATE:20260202
+SUMMARY:🇲🇾 Thaipusam
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-02-02-thaipusam-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260202
+DTEND;VALUE=DATE:20260203
+SUMMARY:🇲🇾 Thaipusam (replacement)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: Holidays Act 1951 (Ac
+ t 369)\, section 3 https://www.kabinet.gov.my/hari-kelepasan-am/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-02-17-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260217
+DTEND;VALUE=DATE:20260218
+SUMMARY:🇲🇾 Chinese New Year
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-02-18-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260218
+DTEND;VALUE=DATE:20260219
+SUMMARY:🇲🇾 Chinese New Year (2nd day)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-03-21-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260321
+DTEND;VALUE=DATE:20260322
+SUMMARY:🇲🇾 Hari Raya Aidilfitri
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-03-22-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260322
+DTEND;VALUE=DATE:20260323
+SUMMARY:🇲🇾 Hari Raya Aidilfitri (2nd day)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-03-23-hari-raya-aidilfitri-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260323
+DTEND;VALUE=DATE:20260324
+SUMMARY:🇲🇾 Hari Raya Aidilfitri (replacement)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: Holidays Act 1951 (Ac
+ t 369)\, section 3 https://www.kabinet.gov.my/hari-kelepasan-am/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+SUMMARY:🇲🇾 Labour Day
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-05-27-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260527
+DTEND;VALUE=DATE:20260528
+SUMMARY:🇲🇾 Hari Raya Haji
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-05-31-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260531
+DTEND;VALUE=DATE:20260601
+SUMMARY:🇲🇾 Wesak Day
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-06-01-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+SUMMARY:🇲🇾 Birthday of Yang di-Pertuan Agong
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-06-02-wesak-day-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260602
+DTEND;VALUE=DATE:20260603
+SUMMARY:🇲🇾 Wesak Day (replacement)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: Holidays Act 1951 (Ac
+ t 369)\, section 3 https://www.kabinet.gov.my/hari-kelepasan-am/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-06-17-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260617
+DTEND;VALUE=DATE:20260618
+SUMMARY:🇲🇾 Awal Muharram
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-08-25-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260825
+DTEND;VALUE=DATE:20260826
+SUMMARY:🇲🇾 Maulidur Rasul
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:🇲🇾 National Day (Hari Kebangsaan)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260916
+DTEND;VALUE=DATE:20260917
+SUMMARY:🇲🇾 Malaysia Day
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-11-08-deepavali@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261108
+DTEND;VALUE=DATE:20261109
+SUMMARY:🇲🇾 Deepavali
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-11-09-deepavali-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+SUMMARY:🇲🇾 Deepavali (replacement)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: Holidays Act 1951 (Ac
+ t 369)\, section 3 https://www.kabinet.gov.my/hari-kelepasan-am/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2026-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261225
+DTEND;VALUE=DATE:20261226
+SUMMARY:🇲🇾 Christmas Day
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/20
+ 25/08/HKA-2026.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-NSN-2026-01-01-2026-01-11-year-end-holiday-2025-2026-ends-@mycalenda
+ r
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260112
+SUMMARY:🏫 Year-end holiday 2025/2026 (ends)
+DESCRIPTION:School holiday (KPM)\, Negeri Sembilan. Source: KPM: Kalendar A
+ kademik Sesi 2025/2026 (Pindaan) https://www.kabinet.gov.my/storage/2025/0
+ 4/tp25-pindaan.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-NSN-2026-02-16-2026-02-16-kpm-festive-holiday-chinese-new-year-@myca
+ lendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260216
+DTEND;VALUE=DATE:20260217
+SUMMARY:🏫 KPM festive holiday (Chinese New Year)
+DESCRIPTION:School holiday (KPM)\, Negeri Sembilan. Source: KPM Surat Siara
+ n Bil. 3 Tahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/sto
+ rage/2025/10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-NSN-2026-02-19-2026-02-20-kpm-festive-holiday-chinese-new-year-@myca
+ lendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260219
+DTEND;VALUE=DATE:20260221
+SUMMARY:🏫 KPM festive holiday (Chinese New Year)
+DESCRIPTION:School holiday (KPM)\, Negeri Sembilan. Source: KPM Surat Siara
+ n Bil. 3 Tahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/sto
+ rage/2025/10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-NSN-2026-03-19-2026-03-20-kpm-festive-holiday-hari-raya-aidilfitri-@
+ mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260321
+SUMMARY:🏫 KPM festive holiday (Hari Raya Aidilfitri)
+DESCRIPTION:School holiday (KPM)\, Negeri Sembilan. Source: KPM Surat Siara
+ n Bil. 3 Tahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/sto
+ rage/2025/10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-NSN-2026-03-21-2026-03-29-term-1-break@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260321
+DTEND;VALUE=DATE:20260330
+SUMMARY:🏫 Term 1 break
+DESCRIPTION:School holiday (KPM)\, Negeri Sembilan. Source: KPM Surat Siara
+ n Bil. 3 Tahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/sto
+ rage/2025/10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-NSN-2026-05-23-2026-06-07-mid-year-holiday@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260523
+DTEND;VALUE=DATE:20260608
+SUMMARY:🏫 Mid-year holiday
+DESCRIPTION:School holiday (KPM)\, Negeri Sembilan. Source: KPM Surat Siara
+ n Bil. 3 Tahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/sto
+ rage/2025/10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-NSN-2026-08-29-2026-09-06-term-2-break@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260829
+DTEND;VALUE=DATE:20260907
+SUMMARY:🏫 Term 2 break
+DESCRIPTION:School holiday (KPM)\, Negeri Sembilan. Source: KPM Surat Siara
+ n Bil. 3 Tahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/sto
+ rage/2025/10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-NSN-2026-11-10-2026-11-10-kpm-festive-holiday-deepavali-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:🏫 KPM festive holiday (Deepavali)
+DESCRIPTION:School holiday (KPM)\, Negeri Sembilan. Source: KPM Surat Siara
+ n Bil. 3 Tahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/sto
+ rage/2025/10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-NSN-2026-12-05-2026-12-31-year-end-holiday@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20270101
+SUMMARY:🏫 Year-end holiday
+DESCRIPTION:School holiday (KPM)\, Negeri Sembilan. Source: KPM Surat Siara
+ n Bil. 3 Tahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/sto
+ rage/2025/10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-01-01-new-year-s-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+SUMMARY:🇲🇾 New Year's Day
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-01-06-israk-and-mikraj@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270106
+DTEND;VALUE=DATE:20270107
+SUMMARY:🇲🇾 Israk and Mikraj
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-01-14-birthday-of-yang-di-pertuan-besar-negeri-sembilan@myc
+ alendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270114
+DTEND;VALUE=DATE:20270115
+SUMMARY:🇲🇾 Birthday of Yang di-Pertuan Besar Negeri Sembilan
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-01-22-thaipusam@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270122
+DTEND;VALUE=DATE:20270123
+SUMMARY:🇲🇾 Thaipusam
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-02-06-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270206
+DTEND;VALUE=DATE:20270207
+SUMMARY:🇲🇾 Chinese New Year
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-02-07-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270207
+DTEND;VALUE=DATE:20270208
+SUMMARY:🇲🇾 Chinese New Year (2nd day)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-02-08-chinese-new-year-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270208
+DTEND;VALUE=DATE:20270209
+SUMMARY:🇲🇾 Chinese New Year (replacement)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: Holidays Act 1951 (Ac
+ t 369)\, section 3 https://www.kabinet.gov.my/hari-kelepasan-am/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-03-10-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270310
+DTEND;VALUE=DATE:20270311
+SUMMARY:🇲🇾 Hari Raya Aidilfitri (subject to change)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-03-11-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270311
+DTEND;VALUE=DATE:20270312
+SUMMARY:🇲🇾 Hari Raya Aidilfitri (2nd day) (subject to change)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270501
+DTEND;VALUE=DATE:20270502
+SUMMARY:🇲🇾 Labour Day
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-05-17-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270517
+DTEND;VALUE=DATE:20270518
+SUMMARY:🇲🇾 Hari Raya Haji (subject to change)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-05-20-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270520
+DTEND;VALUE=DATE:20270521
+SUMMARY:🇲🇾 Wesak Day
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-06-06-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270606
+DTEND;VALUE=DATE:20270607
+SUMMARY:🇲🇾 Awal Muharram
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-06-07-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270607
+DTEND;VALUE=DATE:20270608
+SUMMARY:🇲🇾 Birthday of Yang di-Pertuan Agong
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-06-08-awal-muharram-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270608
+DTEND;VALUE=DATE:20270609
+SUMMARY:🇲🇾 Awal Muharram (replacement)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: Holidays Act 1951 (Ac
+ t 369)\, section 3 https://www.kabinet.gov.my/hari-kelepasan-am/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-08-15-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270815
+DTEND;VALUE=DATE:20270816
+SUMMARY:🇲🇾 Maulidur Rasul
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-08-16-maulidur-rasul-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270816
+DTEND;VALUE=DATE:20270817
+SUMMARY:🇲🇾 Maulidur Rasul (replacement)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: Holidays Act 1951 (Ac
+ t 369)\, section 3 https://www.kabinet.gov.my/hari-kelepasan-am/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270831
+DTEND;VALUE=DATE:20270901
+SUMMARY:🇲🇾 National Day (Hari Kebangsaan)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270916
+DTEND;VALUE=DATE:20270917
+SUMMARY:🇲🇾 Malaysia Day
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-10-28-deepavali@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20271028
+DTEND;VALUE=DATE:20271029
+SUMMARY:🇲🇾 Deepavali (subject to change)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20271225
+DTEND;VALUE=DATE:20271226
+SUMMARY:🇲🇾 Christmas Day
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-12-26-israk-and-mikraj@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20271226
+DTEND;VALUE=DATE:20271227
+SUMMARY:🇲🇾 Israk and Mikraj
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: JPM (BKPP): Hari Kele
+ pasan Am Persekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/20
+ 26/08/HKA_2027.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2027-12-27-israk-and-mikraj-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20271227
+DTEND;VALUE=DATE:20271228
+SUMMARY:🇲🇾 Israk and Mikraj (replacement)
+DESCRIPTION:Public holiday\, Negeri Sembilan. Source: Holidays Act 1951 (Ac
+ t 369)\, section 3 https://www.kabinet.gov.my/hari-kelepasan-am/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-01-01-new-year-s-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280101
+DTEND;VALUE=DATE:20280102
+SUMMARY:🇲🇾 New Year's Day (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-01-14-birthday-of-yang-di-pertuan-besar-negeri-sembilan@myc
+ alendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280114
+DTEND;VALUE=DATE:20280115
+SUMMARY:🇲🇾 Birthday of Yang di-Pertuan Besar Negeri Sembilan (estimat
+ ed)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-01-26-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280126
+DTEND;VALUE=DATE:20280127
+SUMMARY:🇲🇾 Chinese New Year (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-01-27-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280127
+DTEND;VALUE=DATE:20280128
+SUMMARY:🇲🇾 Chinese New Year (2nd day) (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-02-09-thaipusam@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280209
+DTEND;VALUE=DATE:20280210
+SUMMARY:🇲🇾 Thaipusam (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-02-27-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280227
+DTEND;VALUE=DATE:20280228
+SUMMARY:🇲🇾 Hari Raya Aidilfitri (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-02-28-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280228
+DTEND;VALUE=DATE:20280229
+SUMMARY:🇲🇾 Hari Raya Aidilfitri (2nd day) (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-02-29-hari-raya-aidilfitri-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280229
+DTEND;VALUE=DATE:20280301
+SUMMARY:🇲🇾 Hari Raya Aidilfitri (replacement)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280501
+DTEND;VALUE=DATE:20280502
+SUMMARY:🇲🇾 Labour Day (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-05-05-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280505
+DTEND;VALUE=DATE:20280506
+SUMMARY:🇲🇾 Hari Raya Haji (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-05-09-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280509
+DTEND;VALUE=DATE:20280510
+SUMMARY:🇲🇾 Wesak Day (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-05-26-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280526
+DTEND;VALUE=DATE:20280527
+SUMMARY:🇲🇾 Awal Muharram (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-06-05-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280605
+DTEND;VALUE=DATE:20280606
+SUMMARY:🇲🇾 Birthday of Yang di-Pertuan Agong (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-08-04-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280804
+DTEND;VALUE=DATE:20280805
+SUMMARY:🇲🇾 Maulidur Rasul (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280831
+DTEND;VALUE=DATE:20280901
+SUMMARY:🇲🇾 National Day (Hari Kebangsaan) (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280916
+DTEND;VALUE=DATE:20280917
+SUMMARY:🇲🇾 Malaysia Day (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-10-17-deepavali@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20281017
+DTEND;VALUE=DATE:20281018
+SUMMARY:🇲🇾 Deepavali (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-12-14-israk-and-mikraj@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20281214
+DTEND;VALUE=DATE:20281215
+SUMMARY:🇲🇾 Israk and Mikraj (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2028-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20281225
+DTEND;VALUE=DATE:20281226
+SUMMARY:🇲🇾 Christmas Day (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-01-01-new-year-s-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290101
+DTEND;VALUE=DATE:20290102
+SUMMARY:🇲🇾 New Year's Day (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-01-14-birthday-of-yang-di-pertuan-besar-negeri-sembilan@myc
+ alendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290114
+DTEND;VALUE=DATE:20290115
+SUMMARY:🇲🇾 Birthday of Yang di-Pertuan Besar Negeri Sembilan (estimat
+ ed)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-01-15-birthday-of-yang-di-pertuan-besar-negeri-sembilan-rep
+ lacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290115
+DTEND;VALUE=DATE:20290116
+SUMMARY:🇲🇾 Birthday of Yang di-Pertuan Besar Negeri Sembilan (replace
+ ment)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-01-30-thaipusam@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290130
+DTEND;VALUE=DATE:20290131
+SUMMARY:🇲🇾 Thaipusam (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-02-13-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290213
+DTEND;VALUE=DATE:20290214
+SUMMARY:🇲🇾 Chinese New Year (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-02-14-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290214
+DTEND;VALUE=DATE:20290215
+SUMMARY:🇲🇾 Chinese New Year (2nd day) (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-02-15-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290215
+DTEND;VALUE=DATE:20290216
+SUMMARY:🇲🇾 Hari Raya Aidilfitri (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-02-16-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290216
+DTEND;VALUE=DATE:20290217
+SUMMARY:🇲🇾 Hari Raya Aidilfitri (2nd day) (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-04-25-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290425
+DTEND;VALUE=DATE:20290426
+SUMMARY:🇲🇾 Hari Raya Haji (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290501
+DTEND;VALUE=DATE:20290502
+SUMMARY:🇲🇾 Labour Day (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-05-15-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290515
+DTEND;VALUE=DATE:20290516
+SUMMARY:🇲🇾 Awal Muharram (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-05-27-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290527
+DTEND;VALUE=DATE:20290528
+SUMMARY:🇲🇾 Wesak Day (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-05-28-wesak-day-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290528
+DTEND;VALUE=DATE:20290529
+SUMMARY:🇲🇾 Wesak Day (replacement)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-06-04-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290604
+DTEND;VALUE=DATE:20290605
+SUMMARY:🇲🇾 Birthday of Yang di-Pertuan Agong (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-07-24-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290724
+DTEND;VALUE=DATE:20290725
+SUMMARY:🇲🇾 Maulidur Rasul (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290831
+DTEND;VALUE=DATE:20290901
+SUMMARY:🇲🇾 National Day (Hari Kebangsaan) (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290916
+DTEND;VALUE=DATE:20290917
+SUMMARY:🇲🇾 Malaysia Day (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-09-17-malaysia-day-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290917
+DTEND;VALUE=DATE:20290918
+SUMMARY:🇲🇾 Malaysia Day (replacement)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-11-05-deepavali@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20291105
+DTEND;VALUE=DATE:20291106
+SUMMARY:🇲🇾 Deepavali (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-12-04-israk-and-mikraj@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20291204
+DTEND;VALUE=DATE:20291205
+SUMMARY:🇲🇾 Israk and Mikraj (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2029-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20291225
+DTEND;VALUE=DATE:20291226
+SUMMARY:🇲🇾 Christmas Day (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-01-01-new-year-s-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300101
+DTEND;VALUE=DATE:20300102
+SUMMARY:🇲🇾 New Year's Day (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-01-14-birthday-of-yang-di-pertuan-besar-negeri-sembilan@myc
+ alendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300114
+DTEND;VALUE=DATE:20300115
+SUMMARY:🇲🇾 Birthday of Yang di-Pertuan Besar Negeri Sembilan (estimat
+ ed)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-01-20-thaipusam@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300120
+DTEND;VALUE=DATE:20300121
+SUMMARY:🇲🇾 Thaipusam (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-01-21-thaipusam-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300121
+DTEND;VALUE=DATE:20300122
+SUMMARY:🇲🇾 Thaipusam (replacement)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-02-03-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300203
+DTEND;VALUE=DATE:20300204
+SUMMARY:🇲🇾 Chinese New Year (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-02-04-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300204
+DTEND;VALUE=DATE:20300205
+SUMMARY:🇲🇾 Chinese New Year (2nd day) (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-02-04-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300204
+DTEND;VALUE=DATE:20300205
+SUMMARY:🇲🇾 Hari Raya Aidilfitri (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-02-05-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300205
+DTEND;VALUE=DATE:20300206
+SUMMARY:🇲🇾 Hari Raya Aidilfitri (2nd day) (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-02-06-chinese-new-year-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300206
+DTEND;VALUE=DATE:20300207
+SUMMARY:🇲🇾 Chinese New Year (replacement)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-04-14-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300414
+DTEND;VALUE=DATE:20300415
+SUMMARY:🇲🇾 Hari Raya Haji (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-04-15-hari-raya-haji-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300415
+DTEND;VALUE=DATE:20300416
+SUMMARY:🇲🇾 Hari Raya Haji (replacement)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300501
+DTEND;VALUE=DATE:20300502
+SUMMARY:🇲🇾 Labour Day (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-05-04-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300504
+DTEND;VALUE=DATE:20300505
+SUMMARY:🇲🇾 Awal Muharram (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-05-16-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300516
+DTEND;VALUE=DATE:20300517
+SUMMARY:🇲🇾 Wesak Day (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-06-03-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300603
+DTEND;VALUE=DATE:20300604
+SUMMARY:🇲🇾 Birthday of Yang di-Pertuan Agong (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-07-13-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300713
+DTEND;VALUE=DATE:20300714
+SUMMARY:🇲🇾 Maulidur Rasul (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300831
+DTEND;VALUE=DATE:20300901
+SUMMARY:🇲🇾 National Day (Hari Kebangsaan) (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300916
+DTEND;VALUE=DATE:20300917
+SUMMARY:🇲🇾 Malaysia Day (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-10-26-deepavali@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20301026
+DTEND;VALUE=DATE:20301027
+SUMMARY:🇲🇾 Deepavali (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-11-23-israk-and-mikraj@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20301123
+DTEND;VALUE=DATE:20301124
+SUMMARY:🇲🇾 Israk and Mikraj (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-NSN-2030-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20301225
+DTEND;VALUE=DATE:20301226
+SUMMARY:🇲🇾 Christmas Day (estimated)
+DESCRIPTION:Estimated public holiday for Negeri Sembilan — not yet gazett
+ ed. Confirm with the official list when published.
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

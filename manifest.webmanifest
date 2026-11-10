@@ -1,0 +1,10 @@
+{
+  "name": "MY Calendar",
+  "short_name": "MY Calendar",
+  "description": "Malaysia calendar with national and state public holidays.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f7fb",
+  "theme_color": "#0b3d91",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
