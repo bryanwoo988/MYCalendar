@@ -365,3 +365,19 @@ svg { display: block; }
 .sources .src-group ul { margin: 0; padding-left: 18px; }
 .sources .src-group li { margin: 4px 0; }
 .sources .src-group .note { margin: 6px 0 0; }
+
+/* Button feedback */
+.x-btn, .evt-form button { transition: background .2s, color .2s, border-color .2s; }
+.x-btn.done, .evt-form button.done { background: var(--salary); border-color: var(--salary); color: #fff; }
+.x-btn.busy { opacity: .75; }
+.x-btn.busy::before { content: ""; width: 14px; height: 14px; margin-right: 8px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.x-btn:active { transform: scale(.97); }
+.toast.show { animation: toast-in .2s ease-out; }
+@keyframes toast-in { from { opacity: 0; transform: translate(-50%, 8px); } }
+
+/* Share: URL on one line, three equal buttons */
+.url-row code { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.share-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.share-actions .x-btn { padding: 0 8px; white-space: nowrap; }
+.share-actions:has(#sh-native[hidden]) { grid-template-columns: repeat(2, 1fr); }

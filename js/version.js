@@ -3,6 +3,15 @@
 // the middle one), date and time in Malaysia time (YYYY-MM-DD HH:MM), notes in zh / en / ms.
 export const RELEASES = [
   {
+    v: "1.14.2",
+    date: "2026-11-10 22:23",
+    notes: {
+      zh: ["按钮按下后会显示结果：复制链接显示\"✓ 已复制链接\"，检查更新显示\"检查中…\"再显示结果，下载日历、添加事件也有提示", "分享区的网址不再断行，三个按钮排成一行"],
+      en: ["Buttons now confirm what happened: \"✓ Link copied\", \"Checking…\" then the result for updates, and confirmations for downloads and new events", "Share: the link stays on one line and the three buttons sit in one row"],
+      ms: ["Butang kini mengesahkan tindakan: \"✓ Pautan disalin\", \"Menyemak…\" kemudian keputusan kemas kini, serta pengesahan muat turun dan acara baharu", "Kongsi: pautan kekal satu baris dan tiga butang dalam satu barisan"]
+    }
+  },
+  {
     v: "1.14.1",
     date: "2026-11-10 18:29",
     notes: {
