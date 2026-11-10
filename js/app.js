@@ -43,6 +43,9 @@ const st = {
   lwLeave: store.get("lwLeave", 1),
   lang: store.get("lang", "en"),
   showZodiac: store.get("showZodiac", true),
+  showLunar: store.get("showLunar", true),
+  showHijri: store.get("showHijri", true),
+  showFest: store.get("showFest", true),
   apMode: store.get("apMode", "system"),
   apLight: store.get("apLight", "classic"),
   apDark: store.get("apDark", "midnight"),
@@ -117,7 +120,7 @@ const holItem = (h) => ({ type: h.kind === "workday" ? "work" : "public", text: 
 function itemsForDay(key) {
   const out = (hol.get(key) || []).map(holItem);
   // Traditional festivals are listed only on days without a public holiday (avoids duplicates like 中秋节 twice).
-  if (!out.some((it) => it.type === "public")) for (const f of festOn(key)) out.push({ type: "fest", text: fName(f) });
+  if (st.showFest && !out.some((it) => it.type === "public")) for (const f of festOn(key)) out.push({ type: "fest", text: fName(f) });
   const s = schoolOn(key);
   if (s) out.push({ type: "school", text: schoolName(s.name), raw: s.name });
   (st.events[key] || []).forEach((e, i) => out.push({ type: "evt", text: e, idx: i }));
@@ -150,12 +153,16 @@ function renderMonthPage(y, m) {
   const { days, offset, weeks } = monthInfo(y, m);
   const l1 = lunar(new Date(y, m, 1)), l2 = lunar(new Date(y, m, days));
   const h1 = hijri(new Date(y, m, 1)), h2 = hijri(new Date(y, m, days));
+  // The second-language month name never splits across lines (it used to wrap as "十 / 一月").
   $("m-title").innerHTML = getLang() === "zh"
-    ? `${y}年${monthName(m)}<small>${MONTHS.en[m]}</small>`
-    : `${monthName(m)} ${y}<small>${MONTHS.zh[m]}</small>`;
-  $("m-sub").textContent =
-    `${l1.yearName}${l1.zodiac}年${l1.yearName === l2.yearName ? "" : ` – ${l2.yearName}${l2.zodiac}年`} · 农历${l1.month === l2.month ? l1.month : `${l1.month} – ${l2.month}`} · ` +
-    `${h1.monthName}${h1.monthName === h2.monthName ? "" : ` – ${h2.monthName}`} ${h2.year}H`;
+    ? `<span class="nw">${y}年${monthName(m)}</span> <small>${MONTHS.en[m]}</small>`
+    : `<span class="nw">${monthName(m)} ${y}</span> <small>${MONTHS.zh[m]}</small>`;
+  // One labelled line per calendar; each can be turned off in Settings → Calendar display.
+  const lines = [];
+  if (st.showLunar) lines.push(`<div class="cal-line"><b>${t("lbl.lunar")}</b><span>${l1.yearName}${l1.zodiac}年${l1.yearName === l2.yearName ? "" : ` – ${l2.yearName}${l2.zodiac}年`} · ${l1.month === l2.month ? l1.month : `${l1.month} – ${l2.month}`}</span></div>`);
+  if (st.showHijri) lines.push(`<div class="cal-line"><b>${t("lbl.hijri")}</b><span>${h1.monthName}${h1.monthName === h2.monthName ? "" : ` – ${h2.monthName}`} ${h2.year}H</span></div>`);
+  $("m-sub").innerHTML = lines.join("");
+  $("m-sub").hidden = !lines.length;
 
   const todayKey = iso(today);
   const rows = WEEKDAYS.en.map((_, dow) => {
@@ -179,10 +186,10 @@ function renderMonthPage(y, m) {
       cells[Math.floor((offset + d - 1) / 7)] = `
         <button class="${cls.join(" ")}" data-date="${key}" aria-label="${esc(`${fmtShort(key)}${hs.length ? ", " + hs.map(hName).join(", ") : ""}`)}">
           <span class="g">${d}</span>
-          ${festOn(key).length
+          ${st.showFest && festOn(key).length
             ? `<span class="lu fest">${esc(festOn(key)[0].names.zh)}</span>`
-            : `<span class="lu ${lu.day === 1 || lu.day === 15 ? "first" : ""}">${lu.label}</span>`}
-          <span class="hj">${hj.day === 1 ? hj.short : hj.day}</span>
+            : st.showLunar ? `<span class="lu ${lu.day === 1 || lu.day === 15 ? "first" : ""}">${lu.label}</span>` : ""}
+          ${st.showHijri ? `<span class="hj">${hj.day === 1 ? hj.short : hj.day}</span>` : ""}
           ${hs.length ? `<span class="hn">${esc(hName(hs[0]))}</span>` : ""}
           ${work ? `<span class="wk">${getLang() === "zh" ? "班" : "W"}</span>` : ""}
           ${st.events[key]?.length ? '<span class="ev"></span>' : ""}
@@ -195,6 +202,7 @@ function renderMonthPage(y, m) {
   $("m-grid").innerHTML = rows.join("");
   renderZodiacStrip(y, m);
   $("legend-part").hidden = !isAll();
+  $("legend-fest").hidden = !st.showFest;
 
   const memo = [];
   for (let d = 1; d <= days; d++) {
@@ -464,7 +472,10 @@ function openDay(key) {
   const date = parse(key);
   const lu = lunar(date), hj = hijri(date);
   $("d-title").textContent = date.toLocaleDateString(loc(), { weekday: "long", day: "numeric", month: "long", year: "numeric" });
-  $("d-sub").textContent = `${getLang() === "zh" ? "农历" : "Lunar"} ${lu.month}${lu.day === 1 ? "初一" : lu.label} · ${hj.day} ${hj.monthName} ${hj.year}H`;
+  $("d-sub").textContent = [
+    st.showLunar && `${t("lbl.lunar")} ${lu.month}${lu.day === 1 ? "初一" : lu.label}`,
+    st.showHijri && `${hj.day} ${hj.monthName} ${hj.year}H`,
+  ].filter(Boolean).join(" · ");
   $("d-list").innerHTML = itemsForDay(key).map((it) => listItem(key, it, "")).join("") || `<li class="empty">${t("nothingDay")}</li>`;
   if (!$("day").open) $("day").showModal();
 }
@@ -523,6 +534,22 @@ $("country-sel").addEventListener("change", (e) => {
 });
 $("country-chip").addEventListener("click", () => $("menu-btn").click());
 
+// Settings → Calendar display: which calendars and extras the month page shows.
+const DISPLAY = [["showLunar", "disp.lunar"], ["showHijri", "disp.hijri"], ["showFest", "disp.fest"], ["showZodiac", "disp.zodiac"]];
+function renderDisplaySwitches() {
+  $("display-switches").innerHTML = DISPLAY.map(([k, label]) =>
+    `<button class="switch-row" role="switch" aria-checked="${st[k]}" data-display="${k}"><span>${t(label)}</span><span class="knob" aria-hidden="true"></span></button>`).join("");
+}
+$("display-switches").addEventListener("click", (e) => {
+  const b = e.target.closest("[data-display]");
+  if (!b) return;
+  const k = b.dataset.display;
+  st[k] = !st[k];
+  store.set(k, st[k]);
+  renderDisplaySwitches();
+  rerender();
+});
+
 function renderLangSeg() {
   $("lang-seg").innerHTML = Object.entries(LANGS).map(([k, label]) =>
     `<button data-lang="${k}" aria-pressed="${st.lang === k}">${label}</button>`).join("");
@@ -532,6 +559,7 @@ function applyLanguage() {
   setLang(st.lang);
   applyStatic();
   renderStateOptions();
+  renderDisplaySwitches();
   renderCountrySelect();
   renderLangSeg();
   renderAppearance();
@@ -622,6 +650,7 @@ function toast(msg) {
 
 $("menu-btn").addEventListener("click", () => {
   renderAbout();
+  renderDisplaySwitches();
   renderCountrySelect();
   renderLangSeg();
   renderAppearance();

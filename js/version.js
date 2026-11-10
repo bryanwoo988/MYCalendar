@@ -3,6 +3,15 @@
 // the middle one), date and time in Malaysia time (YYYY-MM-DD HH:MM), notes in zh / en / ms.
 export const RELEASES = [
   {
+    v: "1.14.0",
+    date: "2026-11-10 18:21",
+    notes: {
+      zh: ["新增：设置 → 日历显示，可以分别关掉农历、伊斯兰历、传统节日和生肖（公共假期照常显示）", "月历标题下的农历和回历改成分行显示，标题的中文月份不再被拆成两行"],
+      en: ["New: Settings → Calendar display, to turn the Chinese lunar calendar, Islamic calendar, Chinese festivals and zodiac on or off (public holidays always show)", "Lunar and Hijri dates under the month title now sit on separate labelled lines; the month name no longer wraps"],
+      ms: ["Baharu: Tetapan → Paparan kalendar, untuk hidup/matikan kalendar lunar Cina, kalendar Islam, perayaan Cina dan shio (cuti umum sentiasa dipaparkan)", "Tarikh lunar dan Hijrah di bawah tajuk bulan kini pada baris berasingan berlabel; nama bulan tidak lagi terpotong"]
+    }
+  },
+  {
     v: "1.13.0",
     date: "2026-11-10 18:12",
     notes: {
