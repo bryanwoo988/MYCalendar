@@ -151,17 +151,35 @@ for (const y of [2026, 2027, 2030]) {
 console.log(`7. Lunar festivals: ${FEST.length} dates checked`);
 
 // 8 ---------------------------------------------------------------
-import { VERSION, CHANGELOG } from "../js/version.js";
+import { VERSION, RELEASES } from "../js/version.js";
 import { readFileSync, existsSync } from "node:fs";
+const vnum = (v) => v.split(".").map(Number);
+const newer = (a, b) => { const x = vnum(a), y = vnum(b); for (let i = 0; i < 3; i++) if (x[i] !== y[i]) return x[i] > y[i]; return false; };
+if (VERSION !== RELEASES[0].v) fail("VERSION is not RELEASES[0].v");
+RELEASES.forEach((r, i) => {
+  if (!/^\d+\.\d+\.\d+$/.test(r.v)) fail(`release ${r.v}: bad version`);
+  if (!/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/.test(r.date)) fail(`release ${r.v}: date must be YYYY-MM-DD HH:MM (Malaysia time)`);
+  for (const l of ["zh", "en", "ms"]) if (!r.notes?.[l]?.length) fail(`release ${r.v}: no ${l} notes`);
+  if (i > 0 && (!newer(RELEASES[i - 1].v, r.v) || RELEASES[i - 1].date < r.date)) fail(`release ${r.v}: not newest-first`);
+});
+// Every file the service worker pre-caches must exist (a missing one would abort the install).
 const swSrc = readFileSync(new URL("../sw.js", import.meta.url), "utf8");
-const swVersion = swSrc.match(/const VERSION = "([^"]+)"/)?.[1];
-if (swVersion !== VERSION) fail(`sw.js VERSION ${swVersion} ≠ js/version.js ${VERSION}`);
-for (const c of CHANGELOG) if (!/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/.test(c.at) || !c.zh?.length || !c.en?.length || !c.ms?.length) fail(`changelog ${c.v} incomplete`);
-for (let i = 1; i < CHANGELOG.length; i++) if (CHANGELOG[i - 1].at < CHANGELOG[i].at) fail(`changelog not newest-first at ${CHANGELOG[i].v}`);
-// Every file the service worker pre-caches must exist.
-const shell = JSON.parse(swSrc.match(/const SHELL = (\[[\s\S]*?\]);/)[1].replace(/,\s*\]/, "]"));
-for (const f of shell) if (f !== "./" && !existsSync(new URL(`../${f}`, import.meta.url))) fail(`sw.js caches missing file ${f}`);
-console.log(`8. Version ${VERSION}: sw.js matches, ${CHANGELOG.length} changelog entries, ${shell.length} cached files exist`);
+const shell = [...swSrc.match(/const SHELL_FILES = \[([\s\S]*?)\];/)[1].matchAll(/"([^"]+)"/g)].map((m) => m[1]);
+for (const f of shell) if (f !== "./" && !existsSync(new URL(`../${f.replace(/^\.\//, "")}`, import.meta.url))) fail(`sw.js caches missing file ${f}`);
+if (/caches\.delete/.test(swSrc) && !/startsWith\("mycalendar-"\)/.test(swSrc)) fail("sw.js must only delete its own (mycalendar-) caches");
+console.log(`8. Release v${VERSION}: ${RELEASES.length} releases well-formed; ${shell.length} cached files exist`);
+
+// 9 ---------------------------------------------------------------
+import { chineseNewYear, signOfDate, SIGNS, yearsOfSign } from "../js/zodiac.js";
+const CNY = { 1930: "01-30", 1940: "02-08", 1950: "02-17", 1954: "02-03", 1960: "01-28", 1966: "01-21", 1970: "02-06", 1976: "01-31", 1980: "02-16",
+  1985: "02-20", 1990: "01-27", 1995: "01-31", 2000: "02-05", 2010: "02-14", 2020: "01-25", 2026: "02-17", 2027: "02-06", 2033: "01-31", 2040: "02-12", 2050: "01-23" };
+for (const [y, md] of Object.entries(CNY)) if (iso(chineseNewYear(+y)) !== `${y}-${md}`) fail(`CNY ${y}: ${iso(chineseNewYear(+y))} ≠ ${y}-${md}`);
+if (SIGNS[signOfDate("1990-01-20")].en !== "Snake" || SIGNS[signOfDate("1990-02-01")].en !== "Horse") fail("zodiac boundary at CNY wrong");
+for (let i = 0; i < 12; i++) {
+  const ys = yearsOfSign(i);
+  for (let k = 1; k < ys.length; k++) if (ys[k].year - ys[k - 1].year !== 12) fail(`sign ${i}: years not 12 apart`);
+}
+console.log(`9. Zodiac: ${Object.keys(CNY).length} Chinese New Year dates 1930–2050, sign boundaries checked`);
 
 console.log(failures ? `${failures} failure(s)` : "All checks passed");
 process.exitCode = failures ? 1 : 0;

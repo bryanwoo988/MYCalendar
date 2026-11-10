@@ -5,7 +5,8 @@ import { buildICS } from "./ics.js";
 import { longWeekends } from "./longweekend.js";
 import { COUNTRIES, COUNTRY_SOURCES, countryHolidays, countryYears } from "./countries.js";
 import { festivalsFor } from "./festivals.js";
-import { VERSION, UPDATED_AT, CHANGELOG } from "./version.js";
+import { VERSION, RELEASES } from "./version.js";
+import { SIGNS, signOfYear, ganzhi, yearsOfSign, chineseNewYear } from "./zodiac.js";
 import { t, setLang, getLang, applyStatic, LANGS, MONTHS, MONTH_TILE, WEEKDAYS, LOCALE,
   holidayName, schoolName, stateName } from "./i18n.js";
 
@@ -195,6 +196,7 @@ function renderMonthPage(y, m) {
       <div class="wdl"><b>${getLang() === "zh" ? WEEKDAYS.en[dow] : wd(dow)}</b><span>${sub}</span></div>${cells.join("")}</div>`;
   });
   $("m-grid").innerHTML = rows.join("");
+  renderZodiacStrip(y, m);
   $("legend-part").hidden = !isAll();
 
   const memo = [];
@@ -207,6 +209,52 @@ function renderMonthPage(y, m) {
   }
   $("m-list").innerHTML = memo.join("") || `<li class="empty">${t("nothingMonth")}</li>`;
 }
+
+// ---------- zodiac ----------
+const zName = (i) => SIGNS[i][getLang()] || SIGNS[i].en;
+function renderZodiacStrip(y, m) {
+  // the sign of the lunar year that covers the middle of this month
+  const mid = Date.UTC(y, m, 15);
+  const ly = mid >= chineseNewYear(y) ? y : y - 1;
+  const cur = signOfYear(ly);
+  $("m-zodiac").innerHTML = SIGNS.map((sgn, i) => {
+    const years = [];
+    for (let yy = ly - ((cur - i + 12) % 12); years.length < 4; yy -= 12) years.push(yy);
+    const recent = years;
+    return `<button class="zchip ${i === cur ? "cur" : ""}" data-sign="${i}" role="listitem" aria-label="${esc(zName(i))}">
+      <span class="ze">${sgn.emoji}</span><span class="zn">${esc(zName(i))}</span>
+      <span class="zy">${recent.join(" ")}</span></button>`;
+  }).join("");
+  centerZodiac();
+}
+
+// Scroll the current sign to the middle of the strip (only works once the page is visible).
+function centerZodiac() {
+  const strip = $("m-zodiac"), cur = strip.querySelector(".cur");
+  if (cur) strip.scrollLeft = cur.offsetLeft - strip.offsetLeft - (strip.clientWidth - cur.clientWidth) / 2;
+}
+
+function openZodiac(i) {
+  const lang = getLang();
+  const thisYear = today.getFullYear();
+  $("z-emoji").textContent = SIGNS[i].emoji;
+  $("z-title").textContent = lang === "zh" ? `属${SIGNS[i].zh}` : zName(i);
+  $("z-sub").textContent = lang === "zh" ? `${SIGNS[i].en} · ${SIGNS[i].ms}` : `${SIGNS[i].zh} · ${lang === "en" ? SIGNS[i].ms : SIGNS[i].en}`;
+  const fmt = (iso) => parse(iso).toLocaleDateString(loc(), { year: "numeric", month: "short", day: "numeric" });
+  $("z-list").innerHTML = yearsOfSign(i).reverse().map((r) => {
+    const age = thisYear - r.year;
+    const ageTxt = age >= 0 ? `<span class="tag repl">${t("z.age", { n: age })}</span>` : "";
+    return `<li class="item ${r.year <= thisYear && thisYear - r.year < 12 ? "t-public" : ""}">
+      <span class="body"><span class="what">${r.year} · ${r.ganzhi}${lang === "zh" ? "年" : ""}</span>
+      <span class="when">${fmt(r.start)} – ${fmt(r.end)}</span></span>${ageTxt}</li>`;
+  }).join("");
+  $("zodiac").showModal();
+  $("z-list").querySelector(".t-public")?.scrollIntoView({ block: "center" });
+}
+$("m-zodiac").addEventListener("click", (e) => {
+  const b = e.target.closest("[data-sign]");
+  if (b) openZodiac(Number(b.dataset.sign));
+});
 
 // ---------- category lists ----------
 function statesSummary(codes) {
@@ -437,6 +485,7 @@ function route() {
   $("country-chip").hidden = isMY();
   $("country-chip").textContent = cLabel(st.country);
   $("back").hidden = show === "home";
+  if (show === "month") centerZodiac();
   window.scrollTo(0, 0);
 }
 
@@ -695,7 +744,7 @@ $("d-list").addEventListener("click", (e) => {
   store.set("events", st.events);
   rerender();
 });
-for (const id of ["day", "menu", "export"]) {
+for (const id of ["day", "menu", "export", "zodiac"]) {
   $(id).addEventListener("click", (e) => { if (e.target === $(id)) $(id).close(); });
 }
 document.addEventListener("keydown", (e) => {
@@ -705,56 +754,37 @@ document.addEventListener("keydown", (e) => {
 });
 
 window.addEventListener("hashchange", route);
-// ---------- about, update history ----------
+// ---------- about, updates (Woo Brothers app standard: whatsnew.js) ----------
+const WN = window.WhatsNew;
 function renderAbout() {
-  $("about-version").textContent = VERSION;
-  $("about-updated").textContent = `${UPDATED_AT} (MYT)`;
-  const lang = getLang();
-  $("changelog").innerHTML = CHANGELOG.map((c) => `<li>
-    <div class="cl-head"><b>v${c.v}</b><span>${c.at}</span></div>
-    <ul>${(c[lang] || c.en).map((x) => `<li>${esc(x)}</li>`).join("")}</ul></li>`).join("");
+  $("about-label").textContent = WN ? WN.label(RELEASES) : `v${VERSION}`;
 }
+$("open-history").addEventListener("click", () => { $("menu").close(); WN?.history(); });
 
-// ---------- service worker: install in background, update when the user taps ----------
-let swReg = null, waitingWorker = null;
-function showUpdate(worker) {
-  waitingWorker = worker;
-  $("update-bar").hidden = false;
-}
-$("update-btn").addEventListener("click", () => {
-  $("update-bar").hidden = true;
-  waitingWorker?.postMessage("SKIP_WAITING");
-});
-if ("serviceWorker" in navigator && location.protocol !== "file:") {
-  let reloading = false;
-  navigator.serviceWorker.addEventListener("controllerchange", () => {
-    if (reloading) return;
-    reloading = true;
-    location.reload();
-  });
-  navigator.serviceWorker.register("sw.js").then((reg) => {
-    swReg = reg;
-    if (reg.waiting && navigator.serviceWorker.controller) showUpdate(reg.waiting);
-    reg.addEventListener("updatefound", () => {
-      const w = reg.installing;
-      w?.addEventListener("statechange", () => {
-        if (w.state === "installed" && navigator.serviceWorker.controller) showUpdate(w);
-      });
-    });
-    // Check for a new version when the app comes back to the foreground, and hourly.
-    document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") reg.update().catch(() => {}); });
-    setInterval(() => reg.update().catch(() => {}), 60 * 60 * 1000);
-  }).catch(() => {});
-}
-$("check-update").addEventListener("click", async () => {
-  if (!navigator.onLine) return toast(t("about.offline"));
-  if (!swReg) return toast(t("about.latest"));
+// Is the index.html on the server newer than the one running? (same check as WhatsNew.watch)
+async function checkForUpdate(byUser) {
+  if (!navigator.onLine) { if (byUser) toast(t("about.offline")); return; }
   try {
-    await swReg.update();
-    if (swReg.waiting || swReg.installing) { toast(t("about.found")); if (swReg.waiting) showUpdate(swReg.waiting); }
-    else toast(t("about.latest"));
-  } catch { toast(t("about.offline")); }
-});
+    const r = await fetch("./", { method: "HEAD", cache: "no-store" });
+    const live = Date.parse(r.ok ? r.headers.get("Last-Modified") : "");
+    const running = Date.parse(document.lastModified);
+    if (isFinite(live) && isFinite(running) && live - running >= 1000) { $("menu").close(); WN?.offerUpdate(); }
+    else if (byUser) toast(t("about.latest"));
+  } catch { if (byUser) toast(t("about.offline")); }
+}
+$("check-update").addEventListener("click", () => checkForUpdate(true));
+
+if ("serviceWorker" in navigator && location.protocol !== "file:") {
+  navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).catch(() => {});
+}
+// First-ever launch: nothing to catch up on, so no "what's new" sheet.
+const firstLaunch = store.get("mycalendar.installed", null) === null
+  && ["region", "lang", "events", "apMode", "country"].every((k) => store.get(k, null) === null);
+store.set("mycalendar.installed", true);
+WN?.init({ version: VERSION, releases: RELEASES, key: "mycalendar.seenVersion", lang: () => getLang(), isNewUser: () => firstLaunch });
+// On open, on return to the screen and every 15 minutes: offer a newer build if there is one.
+WN?.watch();
+
 applyTheme();
 applyLanguage();
 route();

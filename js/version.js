@@ -1,43 +1,249 @@
-// App version and update history. When releasing:
-//  1. add an entry at the top of CHANGELOG (date/time in Malaysia time, UTC+8)
-//  2. set the same version in sw.js (tests/holidays.test.mjs checks they match)
-export const CHANGELOG = [
-  { v: "1.11.0", at: "2026-11-10 17:43",
-    zh: ["新增启动画面", "设置里显示版本、最后更新时间和更新记录", "有新版本时显示\"更新\"提示，点一下即可更新；离线时继续使用已缓存的版本", "新增 Android 和 iPhone 主屏幕图标"],
-    en: ["Splash screen", "Version, last-updated time and update history in Settings", "\"Update available\" prompt: tap to update; cached version keeps working offline", "Home-screen icons for Android and iPhone"],
-    ms: ["Skrin pembuka", "Versi, masa kemas kini terakhir dan sejarah kemas kini dalam Tetapan", "Gesaan \"Kemas kini tersedia\": ketik untuk kemas kini; versi cache terus berfungsi di luar talian", "Ikon skrin utama untuk Android dan iPhone"] },
-  { v: "1.10.0", at: "2026-11-10 17:38",
-    zh: ["新增农历节日：除夕、春节、天公诞、元宵、清明、端午、七夕、中元、中秋、重阳、冬至、腊八", "修复：只选一个州属时，有假期的月份打不开"],
-    en: ["Lunar festivals: CNY Eve, CNY, Pai Ti Kong, Chap Goh Mei, Qingming, Dragon Boat, Qixi, Hungry Ghost, Mid-Autumn, Double Ninth, Dongzhi, Laba", "Fix: month page failed to open in single-state mode"],
-    ms: ["Perayaan kalendar Cina: Malam & Tahun Baharu Cina, Pai Ti Kong, Chap Goh Mei, Cheng Beng, Perahu Naga, Qixi, Hantu Lapar, Kuih Bulan, Chung Yeung, Dongzhi, Laba", "Pembaikan: halaman bulan gagal dibuka bagi satu negeri"] },
-  { v: "1.9.0", at: "2026-11-10 17:33",
-    zh: ["马来西亚州属选择新增\"全部州属\""], en: ["\"All states\" option for Malaysia"], ms: ["Pilihan \"Semua negeri\" untuk Malaysia"] },
-  { v: "1.8.1", at: "2026-11-10 16:02",
-    zh: ["新增日本（内阁府官方资料）"], en: ["Japan (Cabinet Office official list)"], ms: ["Jepun (senarai rasmi Pejabat Kabinet)"] },
-  { v: "1.8.0", at: "2026-11-10 16:00",
-    zh: ["新增国家：新加坡、台湾、香港、中国、印尼、韩国、泰国、越南（官方资料）", "新增\"对照\"：你的长假 vs 目的地假期"],
-    en: ["Countries: Singapore, Taiwan, Hong Kong, China, Indonesia, South Korea, Thailand, Vietnam (official lists)", "Compare: your long weekends vs the destination's holidays"],
-    ms: ["Negara: Singapura, Taiwan, Hong Kong, China, Indonesia, Korea Selatan, Thailand, Vietnam (senarai rasmi)", "Bandingkan: cuti panjang anda vs cuti di destinasi"] },
-  { v: "1.7.0", at: "2026-11-10 15:38",
-    zh: ["移除发薪日"], en: ["Removed pay dates"], ms: ["Tarikh gaji dibuang"] },
-  { v: "1.6.0", at: "2026-11-10 15:37",
-    zh: ["语言切换（中文 / English / BM）", "外观：跟随系统 / 浅色 / 深色，8 个主题", "分享：QR 码、WhatsApp、复制链接"],
-    en: ["Language switch (中文 / English / BM)", "Appearance: system / light / dark, 8 themes", "Share: QR code, WhatsApp, copy link"],
-    ms: ["Tukar bahasa (中文 / English / BM)", "Paparan: sistem / cerah / gelap, 8 tema", "Kongsi: kod QR, WhatsApp, salin pautan"] },
-  { v: "1.5.0", at: "2026-11-10 10:05",
-    zh: ["界面整理：更紧凑、更整齐"], en: ["Cleaner, more compact interface"], ms: ["Antara muka lebih kemas"] },
-  { v: "1.4.0", at: "2026-11-10 10:01",
-    zh: ["新增长周末（含请假建议）"], en: ["Long Weekend view with leave suggestions"], ms: ["Paparan Cuti Panjang dengan cadangan cuti"] },
-  { v: "1.3.0", at: "2026-11-10 09:58",
-    zh: ["公共假期改用首相署官方清单，学校假期改用教育部通令", "按州属筛选", "加入手机日历（下载 / 订阅）"],
-    en: ["Public holidays from the official JPM lists, school holidays from KPM circulars", "Filter by state", "Add to phone calendar (download / subscribe)"],
-    ms: ["Cuti umum daripada senarai rasmi JPM, cuti sekolah daripada surat siaran KPM", "Tapis mengikut negeri", "Tambah ke kalendar telefon (muat turun / langgan)"] },
-  { v: "1.2.0", at: "2026-11-10 09:46",
-    zh: ["任何年份都能推算假期（农历、回历、淡米尔历）"], en: ["Holidays for any year (lunar, Hijri and Tamil calendar rules)"], ms: ["Cuti bagi mana-mana tahun (kalendar Cina, Hijrah, Tamil)"] },
-  { v: "1.1.0", at: "2026-11-09 17:53",
-    zh: ["农历月历设计：年份、分类卡片、月份格子、传统月历页"], en: ["Lunar calendar design: years, category cards, month tiles, traditional month page"], ms: ["Reka bentuk kalendar lunar"] },
-  { v: "1.0.0", at: "2026-11-09 17:26",
-    zh: ["首版：马来西亚公共假期、月历、个人事件"], en: ["First version: Malaysian public holidays, month view, personal events"], ms: ["Versi pertama: cuti umum Malaysia, paparan bulan, acara peribadi"] },
+// Update history, newest first (Woo Brothers app standard, shared/whatsnew.js format).
+// Every release adds an entry at the top: version (fixes bump the last digit, new features
+// the middle one), date and time in Malaysia time (YYYY-MM-DD HH:MM), notes in zh / en / ms.
+export const RELEASES = [
+  {
+    v: "1.12.0",
+    date: "2026-11-10 18:00",
+    notes: {
+      zh: [
+        "新增：十二生肖（月历页上方），点一下可看该生肖所有出生年份和准确的起止日期（以农历新年为界）及今年岁数",
+        "更新方式改成和其他 Woo Brothers App 一样：打开时自动检查新版本，提示\"立即更新 / 稍后\"",
+        "更新后第一次打开会显示\"更新了什么\""
+      ],
+      en: [
+        "New: the 12 zodiac signs (top of the month page); tap one for every birth year with exact start–end dates (from Chinese New Year) and this year’s age",
+        "Updates now work like the other Woo Brothers apps: the app checks for a new version and offers \"Update now / Later\"",
+        "After an update, the first launch shows what changed"
+      ],
+      ms: [
+        "Baharu: 12 shio (atas halaman bulan); ketik untuk semua tahun lahir dengan tarikh mula–tamat tepat (dari Tahun Baharu Cina) dan umur tahun ini",
+        "Kemas kini kini sama seperti aplikasi Woo Brothers lain: aplikasi menyemak versi baharu dan menawarkan \"Kemas kini / Nanti\"",
+        "Selepas kemas kini, pembukaan pertama menunjukkan apa yang berubah"
+      ]
+    }
+  },
+  {
+    v: "1.11.0",
+    date: "2026-11-10 17:43",
+    notes: {
+      zh: [
+        "新增启动画面",
+        "设置里显示版本、最后更新时间和更新记录",
+        "有新版本时显示\"更新\"提示，点一下即可更新；离线时继续使用已缓存的版本",
+        "新增 Android 和 iPhone 主屏幕图标"
+      ],
+      en: [
+        "Splash screen",
+        "Version, last-updated time and update history in Settings",
+        "\"Update available\" prompt: tap to update; cached version keeps working offline",
+        "Home-screen icons for Android and iPhone"
+      ],
+      ms: [
+        "Skrin pembuka",
+        "Versi, masa kemas kini terakhir dan sejarah kemas kini dalam Tetapan",
+        "Gesaan \"Kemas kini tersedia\": ketik untuk kemas kini; versi cache terus berfungsi di luar talian",
+        "Ikon skrin utama untuk Android dan iPhone"
+      ]
+    }
+  },
+  {
+    v: "1.10.0",
+    date: "2026-11-10 17:38",
+    notes: {
+      zh: [
+        "新增农历节日：除夕、春节、天公诞、元宵、清明、端午、七夕、中元、中秋、重阳、冬至、腊八",
+        "修复：只选一个州属时，有假期的月份打不开"
+      ],
+      en: [
+        "Lunar festivals: CNY Eve, CNY, Pai Ti Kong, Chap Goh Mei, Qingming, Dragon Boat, Qixi, Hungry Ghost, Mid-Autumn, Double Ninth, Dongzhi, Laba",
+        "Fix: month page failed to open in single-state mode"
+      ],
+      ms: [
+        "Perayaan kalendar Cina: Malam & Tahun Baharu Cina, Pai Ti Kong, Chap Goh Mei, Cheng Beng, Perahu Naga, Qixi, Hantu Lapar, Kuih Bulan, Chung Yeung, Dongzhi, Laba",
+        "Pembaikan: halaman bulan gagal dibuka bagi satu negeri"
+      ]
+    }
+  },
+  {
+    v: "1.9.0",
+    date: "2026-11-10 17:33",
+    notes: {
+      zh: [
+        "马来西亚州属选择新增\"全部州属\""
+      ],
+      en: [
+        "\"All states\" option for Malaysia"
+      ],
+      ms: [
+        "Pilihan \"Semua negeri\" untuk Malaysia"
+      ]
+    }
+  },
+  {
+    v: "1.8.1",
+    date: "2026-11-10 16:02",
+    notes: {
+      zh: [
+        "新增日本（内阁府官方资料）"
+      ],
+      en: [
+        "Japan (Cabinet Office official list)"
+      ],
+      ms: [
+        "Jepun (senarai rasmi Pejabat Kabinet)"
+      ]
+    }
+  },
+  {
+    v: "1.8.0",
+    date: "2026-11-10 16:00",
+    notes: {
+      zh: [
+        "新增国家：新加坡、台湾、香港、中国、印尼、韩国、泰国、越南（官方资料）",
+        "新增\"对照\"：你的长假 vs 目的地假期"
+      ],
+      en: [
+        "Countries: Singapore, Taiwan, Hong Kong, China, Indonesia, South Korea, Thailand, Vietnam (official lists)",
+        "Compare: your long weekends vs the destination's holidays"
+      ],
+      ms: [
+        "Negara: Singapura, Taiwan, Hong Kong, China, Indonesia, Korea Selatan, Thailand, Vietnam (senarai rasmi)",
+        "Bandingkan: cuti panjang anda vs cuti di destinasi"
+      ]
+    }
+  },
+  {
+    v: "1.7.0",
+    date: "2026-11-10 15:38",
+    notes: {
+      zh: [
+        "移除发薪日"
+      ],
+      en: [
+        "Removed pay dates"
+      ],
+      ms: [
+        "Tarikh gaji dibuang"
+      ]
+    }
+  },
+  {
+    v: "1.6.0",
+    date: "2026-11-10 15:37",
+    notes: {
+      zh: [
+        "语言切换（中文 / English / BM）",
+        "外观：跟随系统 / 浅色 / 深色，8 个主题",
+        "分享：QR 码、WhatsApp、复制链接"
+      ],
+      en: [
+        "Language switch (中文 / English / BM)",
+        "Appearance: system / light / dark, 8 themes",
+        "Share: QR code, WhatsApp, copy link"
+      ],
+      ms: [
+        "Tukar bahasa (中文 / English / BM)",
+        "Paparan: sistem / cerah / gelap, 8 tema",
+        "Kongsi: kod QR, WhatsApp, salin pautan"
+      ]
+    }
+  },
+  {
+    v: "1.5.0",
+    date: "2026-11-10 10:05",
+    notes: {
+      zh: [
+        "界面整理：更紧凑、更整齐"
+      ],
+      en: [
+        "Cleaner, more compact interface"
+      ],
+      ms: [
+        "Antara muka lebih kemas"
+      ]
+    }
+  },
+  {
+    v: "1.4.0",
+    date: "2026-11-10 10:01",
+    notes: {
+      zh: [
+        "新增长周末（含请假建议）"
+      ],
+      en: [
+        "Long Weekend view with leave suggestions"
+      ],
+      ms: [
+        "Paparan Cuti Panjang dengan cadangan cuti"
+      ]
+    }
+  },
+  {
+    v: "1.3.0",
+    date: "2026-11-10 09:58",
+    notes: {
+      zh: [
+        "公共假期改用首相署官方清单，学校假期改用教育部通令",
+        "按州属筛选",
+        "加入手机日历（下载 / 订阅）"
+      ],
+      en: [
+        "Public holidays from the official JPM lists, school holidays from KPM circulars",
+        "Filter by state",
+        "Add to phone calendar (download / subscribe)"
+      ],
+      ms: [
+        "Cuti umum daripada senarai rasmi JPM, cuti sekolah daripada surat siaran KPM",
+        "Tapis mengikut negeri",
+        "Tambah ke kalendar telefon (muat turun / langgan)"
+      ]
+    }
+  },
+  {
+    v: "1.2.0",
+    date: "2026-11-10 09:46",
+    notes: {
+      zh: [
+        "任何年份都能推算假期（农历、回历、淡米尔历）"
+      ],
+      en: [
+        "Holidays for any year (lunar, Hijri and Tamil calendar rules)"
+      ],
+      ms: [
+        "Cuti bagi mana-mana tahun (kalendar Cina, Hijrah, Tamil)"
+      ]
+    }
+  },
+  {
+    v: "1.1.0",
+    date: "2026-11-09 17:53",
+    notes: {
+      zh: [
+        "农历月历设计：年份、分类卡片、月份格子、传统月历页"
+      ],
+      en: [
+        "Lunar calendar design: years, category cards, month tiles, traditional month page"
+      ],
+      ms: [
+        "Reka bentuk kalendar lunar"
+      ]
+    }
+  },
+  {
+    v: "1.0.0",
+    date: "2026-11-09 17:26",
+    notes: {
+      zh: [
+        "首版：马来西亚公共假期、月历、个人事件"
+      ],
+      en: [
+        "First version: Malaysian public holidays, month view, personal events"
+      ],
+      ms: [
+        "Versi pertama: cuti umum Malaysia, paparan bulan, acara peribadi"
+      ]
+    }
+  }
 ];
-export const VERSION = CHANGELOG[0].v;
-export const UPDATED_AT = CHANGELOG[0].at; // Malaysia time (UTC+8)
+export const VERSION = RELEASES[0].v;
