@@ -838,7 +838,23 @@ const WN = window.WhatsNew;
 function renderAbout() {
   $("about-label").textContent = WN ? WN.label(RELEASES) : `v${VERSION}`;
 }
-$("open-history").addEventListener("click", () => { $("menu").close(); WN?.history(); });
+// The history sheet (whatsnew.js) is drawn on the page, below the settings sheet, so the
+// settings sheet steps aside while it is open and comes back, at the same scroll
+// position, once it is closed.
+$("open-history").addEventListener("click", () => {
+  const menu = $("menu"), y = menu.scrollTop;
+  menu.close();
+  WN?.history();
+  const scrim = document.querySelector(".wn-scrim");
+  if (!scrim) { menu.showModal(); menu.scrollTop = y; return; }
+  const obs = new MutationObserver(() => {
+    if (document.body.contains(scrim)) return;
+    obs.disconnect();
+    menu.showModal();
+    menu.scrollTop = y;
+  });
+  obs.observe(document.body, { childList: true });
+});
 
 // Is the index.html on the server newer than the one running? (same check as WhatsNew.watch)
 async function checkForUpdate(btn) {

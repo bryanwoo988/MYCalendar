@@ -3,6 +3,15 @@
 // the middle one), date and time in Malaysia time (YYYY-MM-DD HH:MM), notes in zh / en / ms.
 export const RELEASES = [
   {
+    v: "1.14.3",
+    date: "2026-11-10 22:43",
+    notes: {
+      zh: ["修好：看完\"更新记录\"按\"知道了\"后会回到设置，停在原来的位置，不再跳回首页", "修好：设置等弹出页面有时无法滑回顶部"],
+      en: ["Fixed: closing the update history now returns to Settings at the same place instead of the home page", "Fixed: Settings and other sheets sometimes couldn't be scrolled back to the top"],
+      ms: ["Dibaiki: menutup sejarah kemas kini kini kembali ke Tetapan di tempat yang sama, bukan ke halaman utama", "Dibaiki: Tetapan dan helaian lain kadangkala tidak boleh ditatal kembali ke atas"]
+    }
+  },
+  {
     v: "1.14.2",
     date: "2026-11-10 22:23",
     notes: {
