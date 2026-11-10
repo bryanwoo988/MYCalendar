@@ -3,29 +3,29 @@
 A Malaysia lunar calendar web app. No build step, no dependencies, installable as a PWA, works offline.
 
 ## Screens
-- **Home**: year tabs (2025–2029), swipeable cards for Public Holiday / School Holiday / Salary Schedule, and a 3×4 grid of month tiles (current month outlined in green).
-- **Month page**: traditional printed-calendar layout (weekdays as rows: English / 中文 / Bahasa Melayu), with Chinese lunar date (农历) and Hijri date under each day. Holidays in red, school holidays underlined blue, civil servant pay day marked `$`. A memorandum list below.
-- **Day sheet**: tap any day for details and to add your own events (saved in the browser only).
-- **⋮ Settings**: pick your state; holidays, school-holiday group (A/B) and weekends follow it.
+- **State filter** (top bar, every screen): all 13 states and 3 Federal Territories. Public holidays, replacement days, school-holiday group (A/B) and KPM festive days follow the state.
+- **Home**: year tabs, Public Holiday / School Holiday / Salary Schedule cards, 3×4 month tiles.
+- **Month page**: traditional layout with Chinese lunar and Hijri dates under each day.
+- **Phone calendar**: subscribe (auto-updating feed per state) or download an `.ics` file.
 
 ## Run
 ```bash
 python3 -m http.server 8000   # open http://localhost:8000
+node tests/holidays.test.mjs  # data checks
+node scripts/build-ics.mjs    # rebuild ics/<STATE>.ics after editing data
 ```
+Subscription links (`webcal://…/ics/<STATE>.ics`) only work once the site is hosted online, e.g. GitHub Pages.
 
-## Data
-| Data | Coverage | How |
+## Data and sources
+| Data | Years | Source |
 |---|---|---|
-| Public holidays | 2026 | Gazetted list (`js/data.js`) |
-| Public holidays | Any other year | Calculated from the rules below, per state, with replacement days |
-| School holidays | 2026, 2027 (Group A & B) | KPM calendars, via secondary summaries; festive add-on days excluded |
-| Civil servant pay dates | 2026, 2027 | JANM SPANM circulars, via secondary summaries |
+| Public holidays, all 16 states | 2026, 2027 | Prime Minister's Department (BKPP) official lists: [HKA 2026](https://www.kabinet.gov.my/storage/2025/08/HKA-2026.pdf), [HKA 2027](https://www.kabinet.gov.my/storage/2026/08/HKA_2027.pdf) |
+| Replacement days | all | Holidays Act 1951 s.3 (Sunday rest-day states only); Sarawak by gazette ([Swk. L.N. 202/2026](https://lawnet.sarawak.gov.my/lawnet_file/Subsidiary/SUB_Issue%20No.%2044_L.N.%20202%20PUBLICHOLIDAY.pdf)). Kedah, Kelantan, Terengganu and Sabah announce their own; not added automatically |
+| Public holidays | 2028+ | **Estimated**: same rules as the official lists + astronomy (see below). Labelled "estimated" |
+| School holidays incl. KPM festive days | 2026 | [KPM Surat Siaran Bil. 3/2025](https://www.kabinet.gov.my/storage/2025/10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf), [2025/2026 (pindaan)](https://www.kabinet.gov.my/storage/2025/04/tp25-pindaan.pdf) |
+| School holidays | 2027 | Not included: the official KPM document could not be retrieved (moe.gov.my blocks automated access) |
+| Civil servant pay dates | 2026, 2027 | Secondary summaries of JANM circulars (not verified against the circular) |
 
-How the calculated holidays work (`js/astro.js`, `js/calendars.js`):
-- **Chinese New Year, Wesak, lunar dates**: precise new-moon times (Meeus ch. 49) at UTC+8. Wesak is the 15th day of the 4th lunation.
-- **Islamic holidays, Hijri dates**: new crescent at sunset in Peninsular Malaysia under the MABIMS criteria (altitude ≥ 3°, elongation ≥ 6.4°). Crescents near the threshold are flagged "±1 day".
-- **Thaipusam**: day the Moon is in Pusam nakshatra nearest the full moon of Thai (sidereal, Lahiri).
-- **Deepavali**: the day before the Aippasi new moon whose sunrise falls in the 14th tithi or later.
-- **Replacement days**: Sunday holidays → next working day (Sat–Sun states); Saturday holidays → next working day (Kedah, Kelantan, Terengganu); Sarawak also replaces same-day clashes.
+Estimation rules (`js/astro.js`, `js/calendars.js`): precise new moons (Meeus ch. 49) for the Chinese calendar; MABIMS crescent visibility for Hijri dates; Tamil-calendar rules for Thaipusam and Deepavali. `tests/holidays.test.mjs` checks that the rules reproduce the official 2026 and 2027 lists for every state (one known exception: the Sultan of Pahang's birthday moved from 31 to 30 July) and 94 past festival dates.
 
-`node tests/holidays.test.mjs` checks the rules against the 2026 gazette (all states) and against 87 past festival dates (2010–2035). Royal birthdays and one-off holidays declared by state governments can't be predicted; confirm future dates with the gazette, KPM or JANM.
+Royal birthdays and one-off holidays can change; always confirm future dates with the official list.

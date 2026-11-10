@@ -11,11 +11,26 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="top">
   <header class="bar">
     <button id="back" class="icon-btn" aria-label="Back" hidden>‹</button>
     <h1 id="bar-title">MY Calendar · 马来西亚</h1>
     <button id="menu-btn" class="icon-btn" aria-label="Settings">⋮</button>
   </header>
+
+  <!-- State filter + phone calendar, visible on every screen -->
+  <div class="statebar">
+    <label class="state-pick">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg>
+      <select id="state" aria-label="State / Negeri"></select>
+    </label>
+    <button id="cal-btn" class="cal-btn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Phone calendar
+    </button>
+  </div>
+
+  </div>
 
   <!-- Home: year tabs, category cards, month grid -->
   <main id="home" class="view">
@@ -93,16 +108,43 @@
   <dialog id="menu" class="sheet">
     <form method="dialog" class="sheet-close"><button aria-label="Close">✕</button></form>
     <h3>Settings</h3>
-    <label class="field">
-      <span>My state</span>
-      <select id="state"></select>
-    </label>
+    <h4>Data sources</h4>
+    <ul id="sources" class="sources"></ul>
     <p class="note">
-      Public holidays: 2026 from the gazette; other years calculated from the official rules
-      (lunar, Hijri and Tamil calendars), checked against past years. School holidays and pay dates:
-      2026–2027 as announced. Islamic dates follow moon sighting and may shift a day.
-      Confirm with the gazette, KPM or JANM before relying on a date.
+      Public holidays for 2026 and 2027 are copied from the Prime Minister's Department (BKPP) lists.
+      Later years are estimates calculated from the same rules (lunar, Hijri and Tamil calendars) and are
+      labelled "estimated". Replacement days follow section 3 of the Holidays Act 1951 where it applies
+      automatically; Kedah, Kelantan, Terengganu, Sabah and Sarawak announce theirs separately.
+      School holidays are from the KPM circulars. Pay dates are from secondary summaries of JANM circulars.
     </p>
+  </dialog>
+
+  <!-- Phone calendar sheet -->
+  <dialog id="export" class="sheet">
+    <form method="dialog" class="sheet-close"><button aria-label="Close">✕</button></form>
+    <h3>Add to phone calendar</h3>
+    <p id="x-state" class="m-sub"></p>
+
+    <h4>Subscribe (updates automatically)</h4>
+    <p class="note">Works with iPhone Calendar, Google Calendar and Outlook. New official lists are picked up without doing anything.</p>
+    <div class="x-actions">
+      <a id="x-webcal" class="x-btn primary" href="#">iPhone / Mac: Subscribe</a>
+      <a id="x-google" class="x-btn" href="#" target="_blank" rel="noopener">Android: Google Calendar</a>
+    </div>
+    <p id="x-feed-note" class="note"></p>
+
+    <h4>Or download a file</h4>
+    <div class="x-opts">
+      <label><input type="checkbox" id="x-public" checked> Public holidays</label>
+      <label><input type="checkbox" id="x-school" checked> School holidays</label>
+      <label><input type="checkbox" id="x-mine"> My events</label>
+    </div>
+    <div id="x-years" class="x-opts"></div>
+    <div class="x-actions">
+      <button id="x-download" class="x-btn primary">Download .ics</button>
+    </div>
+    <p class="note">On iPhone, open the file and tap "Add All". On Android, open it with Google Calendar or Samsung Calendar.
+      A downloaded file does not update; re-download after the official list changes.</p>
   </dialog>
 
   <script type="module" src="js/app.js"></script>

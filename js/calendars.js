@@ -1,7 +1,7 @@
 import { nextNewMoon, hijriMonthStart, newMoonsBetween, mytDay } from "./astro.js";
 
 const DAY = 864e5;
-// Chinese lunar and Hijri dates via the browser's built-in Intl calendars.
+// Chinese lunar and Hijri dates.
 
 const lunarFmt = new Intl.DateTimeFormat("zh-CN-u-ca-chinese", { year: "numeric", month: "long", day: "numeric" });
 const DAY_NAMES = ["", "初一", "初二", "初三", "初四", "初五", "初六", "初七", "初八", "初九", "初十",
@@ -80,11 +80,13 @@ export function hijri(date) {
 }
 
 // Gregorian date (UTC-midnight label) of a Hijri day falling in Gregorian year gYear, or null.
-export function fromHijri(gYear, month, day) {
+// `occurrence` picks the 2nd match when a Hijri date occurs twice in one Gregorian year.
+export function fromHijri(gYear, month, day, occurrence = 0) {
+  const hits = [];
   for (const m of hijriMonths(gYear)) {
     if (m.month !== month) continue;
     const t = m.start + (day - 1) * DAY;
-    if (new Date(t).getUTCFullYear() === gYear) return { t, uncertain: m.uncertain };
+    if (new Date(t).getUTCFullYear() === gYear) hits.push({ t, uncertain: m.uncertain });
   }
-  return null;
+  return hits[occurrence] || null;
 }

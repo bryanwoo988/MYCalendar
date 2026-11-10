@@ -1,5 +1,7 @@
-import { STATES, holidaysFor, isGazetted, SCHOOL_HOLIDAYS, schoolGroup, SALARY_DATES } from "./data.js";
+import { STATES, holidaysFor, isOfficial, OFFICIAL_YEARS, replacementNote, SOURCES, SCHOOL_YEARS,
+  schoolHolidaysFor, schoolGroup, SALARY_DATES } from "./data.js";
 import { lunar, hijri } from "./calendars.js";
+import { buildICS } from "./ics.js";
 
 // Holidays are calculated for any year; offer last year through ten years ahead.
 const YEARS = Array.from({ length: 12 }, (_, i) => new Date().getFullYear() - 1 + i);
@@ -38,9 +40,9 @@ let hol = holidaysFor(st.region);
 
 // ---------- lookups ----------
 function schoolOn(dateIso) {
-  const g = schoolGroup(st.region);
-  return SCHOOL_HOLIDAYS.find((s) => s.group === g && dateIso >= s.start && dateIso <= s.end);
+  return schoolHolidaysFor(st.region).find((s) => dateIso >= s.start && dateIso <= s.end);
 }
+const srcLink = (key) => `<a href="${SOURCES[key].url}" target="_blank" rel="noopener">${esc(SOURCES[key].label)}</a>`;
 const isPay = (dateIso) => SALARY_DATES.includes(dateIso);
 
 function monthInfo(y, m) {
@@ -89,7 +91,7 @@ function renderHome() {
 // ---------- month page ----------
 function itemsForDay(key) {
   const out = [];
-  for (const h of hol.get(key) || []) out.push({ type: "public", text: h.name, prov: h.provisional, unc: h.uncertain });
+  for (const h of hol.get(key) || []) out.push(holItem(h));
   const s = schoolOn(key);
   if (s) out.push({ type: "school", text: s.name });
   if (isPay(key)) out.push({ type: "salary", text: "Civil servant pay day" });
@@ -147,9 +149,19 @@ function renderMonthPage(y, m) {
   $("m-list").innerHTML = memo.join("") || '<li class="empty">Nothing this month.</li>';
 }
 
+const holItem = (h) => ({ type: "public", text: h.name, kind: h.kind, unc: h.uncertain, star: h.subjectToChange });
+
+function tagFor(it) {
+  if (it.type === "evt") return '<span class="tag evt">mine</span>';
+  if (it.type === "school") return '<span class="tag school">school</span>';
+  if (it.type === "salary") return '<span class="tag salary">pay</span>';
+  if (it.kind === "estimated") return `<span class="tag prov">${it.unc ? "estimated ±1 day" : "estimated"}</span>`;
+  if (it.kind === "replacement") return '<span class="tag repl">replacement</span>';
+  return `<span class="tag public">${it.star ? "official*" : "official"}</span>`;
+}
+
 function listItem(key, it, when = fmtShort(key)) {
-  const tag = it.type === "evt" ? '<span class="tag evt">mine</span>'
-    : `<span class="tag ${it.prov ? "prov" : it.type}">${it.unc ? "±1 day" : it.prov ? "calculated" : it.type === "public" ? "holiday" : it.type === "school" ? "school" : "pay"}</span>`;
+  const tag = tagFor(it);
   return `<li data-date="${key}"><span class="when">${when}</span><span class="what">${esc(it.text)}</span>${tag}</li>`;
 }
 
@@ -158,33 +170,44 @@ function renderList(cat, y) {
   const rows = [];
   let note = "";
   if (cat === "public") {
-    note = `${STATES[st.region]} · change state in ⋮ settings. ` + (isGazetted(y)
-      ? "Gazetted list."
-      : "Calculated from the official rules (lunar, Hijri and Tamil calendars + replacement-day rules). Islamic dates follow moon sighting; \"±1 day\" marks borderline crescents. Confirm with the gazette when it is published.");
+    const parts = [];
+    if (isOfficial(y)) {
+      parts.push(`Official list · Source: ${srcLink(`hka${y}`)}.`);
+      if (hol.list(y).some((h) => h.subjectToChange)) parts.push("* Subject to change (moon sighting).");
+    } else {
+      parts.push(`<span class="notice">Not yet gazetted. These dates are estimated from the rules used in the official ${OFFICIAL_YEARS.join("/")} lists. Use them for planning only.</span>`);
+    }
+    if (hol.list(y).some((h) => h.kind === "replacement")) parts.push(`Replacement days: ${srcLink("act369")}${y === 2026 && st.region === "SWK" ? `, ${srcLink("swk202")}` : ""}.`);
+    const rn = replacementNote(st.region);
+    if (rn) parts.push(`<span class="notice">${esc(rn)}</span>`);
+    note = parts.join(" ");
     const yearMap = hol.year(y);
     const keys = [...yearMap.keys()].sort();
     let lastM = -1;
     for (const k of keys) {
       const m = parse(k).getMonth();
       if (m !== lastM) { rows.push(`<li class="mhead">${MONTH_FULL[m]}</li>`); lastM = m; }
-      for (const h of yearMap.get(k)) rows.push(listItem(k, { type: "public", text: h.name, prov: h.provisional, unc: h.uncertain }));
+      for (const h of yearMap.get(k)) rows.push(listItem(k, holItem(h)));
     }
   } else if (cat === "school") {
     const g = schoolGroup(st.region);
-    note = `Group ${g} (${g === "A" ? "Kedah, Kelantan, Terengganu" : "all other states"}) · KPM festive add-on days not included.`;
-    for (const s of SCHOOL_HOLIDAYS.filter((s) => s.group === g && s.start.startsWith(`${y}-`))) {
+    const items = schoolHolidaysFor(st.region).filter((s) => s.start.startsWith(`${y}-`));
+    note = `Group ${g} (${g === "A" ? "Kedah, Kelantan, Terengganu" : "all other states and Federal Territories"}).`;
+    if (SCHOOL_YEARS[y]) note += ` Source: ${srcLink(SCHOOL_YEARS[y])}${items.some((s) => s.source === "kpm2025") ? `, ${srcLink("kpm2025")}` : ""}.`;
+    for (const s of items) {
       const days = Math.round((parse(s.end) - parse(s.start)) / 864e5) + 1;
-      rows.push(listItem(s.start, { type: "school", text: `${s.name} · ${days} days` }, `${fmtShort(s.start)} – ${fmtShort(s.end)}`));
+      const when = s.start === s.end ? fmtShort(s.start) : `${fmtShort(s.start)} – ${fmtShort(s.end)}`;
+      rows.push(listItem(s.start, { type: "school", text: `${s.name}${days > 1 ? ` · ${days} days` : ""}` }, when));
     }
   } else {
-    note = "Federal civil servants (JANM). Private-sector pay dates depend on your employer.";
+    note = "Federal civil servants (JANM). Taken from secondary summaries of JANM circulars, not the circular itself. Private-sector pay dates depend on your employer.";
     for (const d of SALARY_DATES.filter((d) => d.startsWith(`${y}-`))) {
       rows.push(listItem(d, { type: "salary", text: `${MONTH_FULL[parse(d).getMonth()]} salary` }));
     }
   }
-  $("l-note").textContent = note;
+  $("l-note").innerHTML = note;
   const notYet = cat === "school"
-    ? `KPM has not announced the ${y} school calendar yet (usually published in the second half of ${y - 1}).`
+    ? `No official KPM school calendar for ${y} in this app yet. Check ${srcLink("moe")}.`
     : `JANM has not announced the ${y} pay dates yet (usually published around September–October ${y - 1}).`;
   $("l-list").innerHTML = rows.join("") || `<li class="empty">${notYet}</li>`;
 }
@@ -280,6 +303,48 @@ $("back").addEventListener("click", () => {
 });
 
 $("menu-btn").addEventListener("click", () => $("menu").showModal());
+$("sources").innerHTML = Object.keys(SOURCES).filter((k) => k !== "moe").map((k) => `<li>${srcLink(k)}</li>`).join("");
+
+// ---------- phone calendar ----------
+const EXPORT_YEARS = [...new Set([...OFFICIAL_YEARS, today.getFullYear(), today.getFullYear() + 1, today.getFullYear() + 2])].sort();
+$("x-years").innerHTML = EXPORT_YEARS.map((y) =>
+  `<label><input type="checkbox" value="${y}" ${y >= today.getFullYear() && y <= today.getFullYear() + 1 ? "checked" : ""}> ${y}${isOfficial(y) ? "" : " (estimated)"}</label>`).join("");
+
+function feedUrl() {
+  const online = /^https?:$/.test(location.protocol) && !/^(localhost|127\.|\[::1\])/.test(location.hostname);
+  if (!online) return null;
+  const base = location.pathname.replace(/[^/]*$/, "");
+  return `${location.host}${base}ics/${st.region}.ics`;
+}
+
+function openExport() {
+  $("x-state").textContent = `${STATES[st.region]} · public holidays + school holidays`;
+  const feed = feedUrl();
+  $("x-webcal").href = feed ? `webcal://${feed}` : "#";
+  $("x-google").href = feed ? `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(`webcal://${feed}`)}` : "#";
+  for (const id of ["x-webcal", "x-google"]) $(id).setAttribute("aria-disabled", String(!feed));
+  $("x-feed-note").textContent = feed
+    ? "Change state first if you want another state's feed."
+    : "Subscription links work once the app is published online (for example on GitHub Pages). Download a file for now.";
+  $("export").showModal();
+}
+$("cal-btn").addEventListener("click", openExport);
+
+$("x-download").addEventListener("click", () => {
+  const years = [...$("x-years").querySelectorAll("input:checked")].map((i) => Number(i.value));
+  if (!years.length) return;
+  const ics = buildICS({
+    state: st.region, years,
+    publicHolidays: $("x-public").checked, schoolHolidays: $("x-school").checked,
+    events: $("x-mine").checked ? st.events : null,
+  });
+  const url = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
+  const a = Object.assign(document.createElement("a"), { href: url, download: `malaysia-holidays-${st.region}-${years.join("-")}.ics` });
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+});
 $("state").innerHTML = Object.entries(STATES).map(([c, n]) => `<option value="${c}">${n}</option>`).join("");
 $("state").value = st.region;
 $("state").addEventListener("change", (e) => {
@@ -306,7 +371,7 @@ $("d-list").addEventListener("click", (e) => {
   store.set("events", st.events);
   rerender();
 });
-for (const id of ["day", "menu"]) {
+for (const id of ["day", "menu", "export"]) {
   $(id).addEventListener("click", (e) => { if (e.target === $(id)) $(id).close(); });
 }
 document.addEventListener("keydown", (e) => {
