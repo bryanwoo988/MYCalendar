@@ -92,5 +92,19 @@ for (const [state, y, leave, start, len, lv] of LW) {
 if (longWeekends(2026, ["KUL"], 0).some((w) => w.leave)) fail("leave used when maxLeave = 0");
 console.log(`4. Long-weekend cases checked (${LW.length + 1})`);
 
+// 5 ---------------------------------------------------------------
+import { setLang, holidayName, schoolName } from "../js/i18n.js";
+import { SCHOOL_HOLIDAYS } from "../js/data.js";
+const names = new Set();
+for (const y of [2026, 2027, 2028, 2029, 2030]) for (const st of Object.keys(STATES)) for (const h of holidaysFor(st).list(y)) names.add(h.name);
+let missing = 0;
+for (const lang of ["ms", "zh"]) {
+  setLang(lang);
+  for (const n of names) if (holidayName(n) === n.replace(/ \((2nd day|3rd day|replacement)\)$/, "") && !["Pesta Kaamatan", "Hari Arafah", "Awal Ramadan", "Good Friday", "Christmas Eve"].includes(n.replace(/ \(.*\)$/, ""))) { missing++; fail(`${lang}: no translation for "${n}"`); }
+  for (const s of SCHOOL_HOLIDAYS) if (schoolName(s.name) === s.name) { missing++; fail(`${lang}: no translation for school "${s.name}"`); }
+}
+setLang("en");
+console.log(`5. Translations checked: ${names.size} holiday names, ${SCHOOL_HOLIDAYS.length} school entries × 2 languages`);
+
 console.log(failures ? `${failures} failure(s)` : "All checks passed");
 process.exitCode = failures ? 1 : 0;

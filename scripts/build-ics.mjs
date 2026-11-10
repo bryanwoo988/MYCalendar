@@ -3,12 +3,20 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { STATES, OFFICIAL_YEARS } from "../js/data.js";
 import { buildICS } from "../js/ics.js";
+import { setLang } from "../js/i18n.js";
 
 const first = Math.min(...OFFICIAL_YEARS);
 const years = Array.from({ length: 5 }, (_, i) => first + i); // official years + estimates after them
-mkdirSync(new URL("../ics/", import.meta.url), { recursive: true });
-for (const state of Object.keys(STATES)) {
-  const ics = buildICS({ state, years, now: new Date(Date.UTC(first, 0, 1)) }); // fixed stamp: stable output
-  writeFileSync(new URL(`../ics/${state}.ics`, import.meta.url), ics);
+// English feeds stay at ics/<STATE>.ics (existing subscriptions); others in ics/<lang>/.
+let n = 0;
+for (const lang of ["en", "ms", "zh"]) {
+  setLang(lang);
+  const dir = lang === "en" ? "../ics/" : `../ics/${lang}/`;
+  mkdirSync(new URL(dir, import.meta.url), { recursive: true });
+  for (const state of Object.keys(STATES)) {
+    const ics = buildICS({ state, years, now: new Date(Date.UTC(first, 0, 1)) }); // fixed stamp: stable output
+    writeFileSync(new URL(`${dir}${state}.ics`, import.meta.url), ics);
+    n++;
+  }
 }
-console.log(`Wrote ${Object.keys(STATES).length} feeds for ${years.join(", ")}`);
+console.log(`Wrote ${n} feeds (en, ms, zh) for ${years.join(", ")}`);

@@ -1,0 +1,1131 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MY Calendar//Malaysia Holidays//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cuti Malaysia · Sarawak
+X-WR-TIMEZONE:Asia/Kuala_Lumpur
+REFRESH-INTERVAL;VALUE=DURATION:P7D
+X-PUBLISHED-TTL:P7D
+BEGIN:VEVENT
+UID:ph-SWK-2026-01-01-new-year-s-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+SUMMARY:🇲🇾 Tahun Baharu
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-02-17-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260217
+DTEND;VALUE=DATE:20260218
+SUMMARY:🇲🇾 Tahun Baharu Cina
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-02-18-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260218
+DTEND;VALUE=DATE:20260219
+SUMMARY:🇲🇾 Tahun Baharu Cina (Hari Kedua)
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-03-21-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260321
+DTEND;VALUE=DATE:20260322
+SUMMARY:🇲🇾 Hari Raya Puasa
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-03-22-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260322
+DTEND;VALUE=DATE:20260323
+SUMMARY:🇲🇾 Hari Raya Puasa (Hari Kedua)
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-04-03-good-friday@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260403
+DTEND;VALUE=DATE:20260404
+SUMMARY:🇲🇾 Good Friday
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+SUMMARY:🇲🇾 Hari Pekerja
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-05-27-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260527
+DTEND;VALUE=DATE:20260528
+SUMMARY:🇲🇾 Hari Raya Qurban
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-05-31-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260531
+DTEND;VALUE=DATE:20260601
+SUMMARY:🇲🇾 Hari Wesak
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-06-01-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+SUMMARY:🇲🇾 Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan 
+ Agong
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-06-01-hari-gawai-dayak@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+SUMMARY:🇲🇾 Perayaan Hari Gawai Dayak
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-06-02-hari-gawai-dayak-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260602
+DTEND;VALUE=DATE:20260603
+SUMMARY:🇲🇾 Perayaan Hari Gawai Dayak (Hari Kedua)
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-06-03-wesak-day-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260603
+DTEND;VALUE=DATE:20260604
+SUMMARY:🇲🇾 Hari Wesak (Cuti Ganti)
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: Sarawak Government Gazette\, Swk. 
+ L.N. 202 (2026) https://lawnet.sarawak.gov.my/lawnet_file/Subsidiary/SUB_I
+ ssue%20No.%2044_L.N.%20202%20PUBLICHOLIDAY.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-06-04-hari-gawai-dayak-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260604
+DTEND;VALUE=DATE:20260605
+SUMMARY:🇲🇾 Perayaan Hari Gawai Dayak (Cuti Ganti)
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: Sarawak Government Gazette\, Swk. 
+ L.N. 202 (2026) https://lawnet.sarawak.gov.my/lawnet_file/Subsidiary/SUB_I
+ ssue%20No.%2044_L.N.%20202%20PUBLICHOLIDAY.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-06-17-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260617
+DTEND;VALUE=DATE:20260618
+SUMMARY:🇲🇾 Awal Muharam (Maal Hijrah)
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-07-22-sarawak-independence-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260722
+DTEND;VALUE=DATE:20260723
+SUMMARY:🇲🇾 Hari Kemerdekaan Sarawak
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-08-25-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260825
+DTEND;VALUE=DATE:20260826
+SUMMARY:🇲🇾 Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:🇲🇾 Hari Kebangsaan
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260916
+DTEND;VALUE=DATE:20260917
+SUMMARY:🇲🇾 Hari Malaysia
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-10-10-birthday-of-yang-di-pertua-negeri-sarawak@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261010
+DTEND;VALUE=DATE:20261011
+SUMMARY:🇲🇾 Hari Jadi Yang di-Pertua Negeri Sarawak
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2026-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261225
+DTEND;VALUE=DATE:20261226
+SUMMARY:🇲🇾 Hari Krismas
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-202
+ 6.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SWK-2026-01-01-2026-01-11-year-end-holiday-2025-2026-ends-@mycalenda
+ r
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260112
+SUMMARY:🏫 Cuti Akhir Persekolahan 2025/2026 (tamat)
+DESCRIPTION:Cuti sekolah (KPM)\, Sarawak. Sumber: KPM: Kalendar Akademik Se
+ si 2025/2026 (Pindaan) https://www.kabinet.gov.my/storage/2025/04/tp25-pin
+ daan.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SWK-2026-02-16-2026-02-16-kpm-festive-holiday-chinese-new-year-@myca
+ lendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260216
+DTEND;VALUE=DATE:20260217
+SUMMARY:🏫 Cuti Perayaan Tambahan KPM (Tahun Baharu Cina)
+DESCRIPTION:Cuti sekolah (KPM)\, Sarawak. Sumber: KPM Surat Siaran Bil. 3 T
+ ahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025/
+ 10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SWK-2026-02-19-2026-02-20-kpm-festive-holiday-chinese-new-year-@myca
+ lendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260219
+DTEND;VALUE=DATE:20260221
+SUMMARY:🏫 Cuti Perayaan Tambahan KPM (Tahun Baharu Cina)
+DESCRIPTION:Cuti sekolah (KPM)\, Sarawak. Sumber: KPM Surat Siaran Bil. 3 T
+ ahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025/
+ 10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SWK-2026-03-19-2026-03-20-kpm-festive-holiday-hari-raya-aidilfitri-@
+ mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260321
+SUMMARY:🏫 Cuti Perayaan Tambahan KPM (Hari Raya Aidilfitri)
+DESCRIPTION:Cuti sekolah (KPM)\, Sarawak. Sumber: KPM Surat Siaran Bil. 3 T
+ ahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025/
+ 10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SWK-2026-03-21-2026-03-29-term-1-break@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260321
+DTEND;VALUE=DATE:20260330
+SUMMARY:🏫 Cuti Penggal 1
+DESCRIPTION:Cuti sekolah (KPM)\, Sarawak. Sumber: KPM Surat Siaran Bil. 3 T
+ ahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025/
+ 10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SWK-2026-05-23-2026-06-07-mid-year-holiday@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260523
+DTEND;VALUE=DATE:20260608
+SUMMARY:🏫 Cuti Pertengahan Tahun
+DESCRIPTION:Cuti sekolah (KPM)\, Sarawak. Sumber: KPM Surat Siaran Bil. 3 T
+ ahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025/
+ 10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SWK-2026-08-29-2026-09-06-term-2-break@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260829
+DTEND;VALUE=DATE:20260907
+SUMMARY:🏫 Cuti Penggal 2
+DESCRIPTION:Cuti sekolah (KPM)\, Sarawak. Sumber: KPM Surat Siaran Bil. 3 T
+ ahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025/
+ 10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SWK-2026-11-09-2026-11-09-kpm-holiday-deepavali-sarawak-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+SUMMARY:🏫 Cuti Peruntukan KPM (Deepavali\, Sarawak)
+DESCRIPTION:Cuti sekolah (KPM)\, Sarawak. Sumber: KPM Surat Siaran Bil. 3 T
+ ahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025/
+ 10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SWK-2026-12-05-2026-12-31-year-end-holiday@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20270101
+SUMMARY:🏫 Cuti Akhir Persekolahan
+DESCRIPTION:Cuti sekolah (KPM)\, Sarawak. Sumber: KPM Surat Siaran Bil. 3 T
+ ahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025/
+ 10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-01-01-new-year-s-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+SUMMARY:🇲🇾 Tahun Baharu
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-02-06-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270206
+DTEND;VALUE=DATE:20270207
+SUMMARY:🇲🇾 Tahun Baharu Cina
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-02-07-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270207
+DTEND;VALUE=DATE:20270208
+SUMMARY:🇲🇾 Tahun Baharu Cina (Hari Kedua)
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-03-10-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270310
+DTEND;VALUE=DATE:20270311
+SUMMARY:🇲🇾 Hari Raya Puasa (tertakluk perubahan)
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-03-11-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270311
+DTEND;VALUE=DATE:20270312
+SUMMARY:🇲🇾 Hari Raya Puasa (Hari Kedua) (tertakluk perubahan)
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-03-26-good-friday@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270326
+DTEND;VALUE=DATE:20270327
+SUMMARY:🇲🇾 Good Friday
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270501
+DTEND;VALUE=DATE:20270502
+SUMMARY:🇲🇾 Hari Pekerja
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-05-17-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270517
+DTEND;VALUE=DATE:20270518
+SUMMARY:🇲🇾 Hari Raya Qurban (tertakluk perubahan)
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-05-20-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270520
+DTEND;VALUE=DATE:20270521
+SUMMARY:🇲🇾 Hari Wesak
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-06-01-hari-gawai-dayak@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270601
+DTEND;VALUE=DATE:20270602
+SUMMARY:🇲🇾 Perayaan Hari Gawai Dayak
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-06-02-hari-gawai-dayak-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270602
+DTEND;VALUE=DATE:20270603
+SUMMARY:🇲🇾 Perayaan Hari Gawai Dayak (Hari Kedua)
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-06-06-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270606
+DTEND;VALUE=DATE:20270607
+SUMMARY:🇲🇾 Awal Muharam (Maal Hijrah)
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-06-07-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270607
+DTEND;VALUE=DATE:20270608
+SUMMARY:🇲🇾 Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan 
+ Agong
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-07-22-sarawak-independence-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270722
+DTEND;VALUE=DATE:20270723
+SUMMARY:🇲🇾 Hari Kemerdekaan Sarawak
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-08-15-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270815
+DTEND;VALUE=DATE:20270816
+SUMMARY:🇲🇾 Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270831
+DTEND;VALUE=DATE:20270901
+SUMMARY:🇲🇾 Hari Kebangsaan
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270916
+DTEND;VALUE=DATE:20270917
+SUMMARY:🇲🇾 Hari Malaysia
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-10-09-birthday-of-yang-di-pertua-negeri-sarawak@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20271009
+DTEND;VALUE=DATE:20271010
+SUMMARY:🇲🇾 Hari Jadi Yang di-Pertua Negeri Sarawak
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2027-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20271225
+DTEND;VALUE=DATE:20271226
+SUMMARY:🇲🇾 Hari Krismas
+DESCRIPTION:Cuti umum\, Sarawak. Sumber: JPM (BKPP): Hari Kelepasan Am Pers
+ ekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_202
+ 7.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-01-01-new-year-s-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280101
+DTEND;VALUE=DATE:20280102
+SUMMARY:🇲🇾 Tahun Baharu (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-01-26-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280126
+DTEND;VALUE=DATE:20280127
+SUMMARY:🇲🇾 Tahun Baharu Cina (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-01-27-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280127
+DTEND;VALUE=DATE:20280128
+SUMMARY:🇲🇾 Tahun Baharu Cina (Hari Kedua) (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-02-27-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280227
+DTEND;VALUE=DATE:20280228
+SUMMARY:🇲🇾 Hari Raya Puasa (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-02-28-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280228
+DTEND;VALUE=DATE:20280229
+SUMMARY:🇲🇾 Hari Raya Puasa (Hari Kedua) (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-04-14-good-friday@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280414
+DTEND;VALUE=DATE:20280415
+SUMMARY:🇲🇾 Good Friday (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280501
+DTEND;VALUE=DATE:20280502
+SUMMARY:🇲🇾 Hari Pekerja (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-05-05-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280505
+DTEND;VALUE=DATE:20280506
+SUMMARY:🇲🇾 Hari Raya Qurban (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-05-09-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280509
+DTEND;VALUE=DATE:20280510
+SUMMARY:🇲🇾 Hari Wesak (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-05-26-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280526
+DTEND;VALUE=DATE:20280527
+SUMMARY:🇲🇾 Awal Muharam (Maal Hijrah) (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-06-01-hari-gawai-dayak@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280601
+DTEND;VALUE=DATE:20280602
+SUMMARY:🇲🇾 Perayaan Hari Gawai Dayak (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-06-02-hari-gawai-dayak-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280602
+DTEND;VALUE=DATE:20280603
+SUMMARY:🇲🇾 Perayaan Hari Gawai Dayak (Hari Kedua) (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-06-05-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280605
+DTEND;VALUE=DATE:20280606
+SUMMARY:🇲🇾 Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan 
+ Agong (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-07-22-sarawak-independence-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280722
+DTEND;VALUE=DATE:20280723
+SUMMARY:🇲🇾 Hari Kemerdekaan Sarawak (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-08-04-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280804
+DTEND;VALUE=DATE:20280805
+SUMMARY:🇲🇾 Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul) (ang
+ garan)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280831
+DTEND;VALUE=DATE:20280901
+SUMMARY:🇲🇾 Hari Kebangsaan (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280916
+DTEND;VALUE=DATE:20280917
+SUMMARY:🇲🇾 Hari Malaysia (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-10-14-birthday-of-yang-di-pertua-negeri-sarawak@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20281014
+DTEND;VALUE=DATE:20281015
+SUMMARY:🇲🇾 Hari Jadi Yang di-Pertua Negeri Sarawak (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2028-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20281225
+DTEND;VALUE=DATE:20281226
+SUMMARY:🇲🇾 Hari Krismas (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-01-01-new-year-s-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290101
+DTEND;VALUE=DATE:20290102
+SUMMARY:🇲🇾 Tahun Baharu (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-02-13-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290213
+DTEND;VALUE=DATE:20290214
+SUMMARY:🇲🇾 Tahun Baharu Cina (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-02-14-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290214
+DTEND;VALUE=DATE:20290215
+SUMMARY:🇲🇾 Tahun Baharu Cina (Hari Kedua) (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-02-15-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290215
+DTEND;VALUE=DATE:20290216
+SUMMARY:🇲🇾 Hari Raya Puasa (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-02-16-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290216
+DTEND;VALUE=DATE:20290217
+SUMMARY:🇲🇾 Hari Raya Puasa (Hari Kedua) (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-03-30-good-friday@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290330
+DTEND;VALUE=DATE:20290331
+SUMMARY:🇲🇾 Good Friday (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-04-25-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290425
+DTEND;VALUE=DATE:20290426
+SUMMARY:🇲🇾 Hari Raya Qurban (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290501
+DTEND;VALUE=DATE:20290502
+SUMMARY:🇲🇾 Hari Pekerja (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-05-15-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290515
+DTEND;VALUE=DATE:20290516
+SUMMARY:🇲🇾 Awal Muharam (Maal Hijrah) (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-05-27-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290527
+DTEND;VALUE=DATE:20290528
+SUMMARY:🇲🇾 Hari Wesak (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-06-01-hari-gawai-dayak@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290601
+DTEND;VALUE=DATE:20290602
+SUMMARY:🇲🇾 Perayaan Hari Gawai Dayak (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-06-02-hari-gawai-dayak-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290602
+DTEND;VALUE=DATE:20290603
+SUMMARY:🇲🇾 Perayaan Hari Gawai Dayak (Hari Kedua) (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-06-04-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290604
+DTEND;VALUE=DATE:20290605
+SUMMARY:🇲🇾 Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan 
+ Agong (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-07-22-sarawak-independence-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290722
+DTEND;VALUE=DATE:20290723
+SUMMARY:🇲🇾 Hari Kemerdekaan Sarawak (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-07-24-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290724
+DTEND;VALUE=DATE:20290725
+SUMMARY:🇲🇾 Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul) (ang
+ garan)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290831
+DTEND;VALUE=DATE:20290901
+SUMMARY:🇲🇾 Hari Kebangsaan (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290916
+DTEND;VALUE=DATE:20290917
+SUMMARY:🇲🇾 Hari Malaysia (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-10-13-birthday-of-yang-di-pertua-negeri-sarawak@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20291013
+DTEND;VALUE=DATE:20291014
+SUMMARY:🇲🇾 Hari Jadi Yang di-Pertua Negeri Sarawak (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2029-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20291225
+DTEND;VALUE=DATE:20291226
+SUMMARY:🇲🇾 Hari Krismas (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-01-01-new-year-s-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300101
+DTEND;VALUE=DATE:20300102
+SUMMARY:🇲🇾 Tahun Baharu (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-02-03-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300203
+DTEND;VALUE=DATE:20300204
+SUMMARY:🇲🇾 Tahun Baharu Cina (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-02-04-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300204
+DTEND;VALUE=DATE:20300205
+SUMMARY:🇲🇾 Tahun Baharu Cina (Hari Kedua) (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-02-04-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300204
+DTEND;VALUE=DATE:20300205
+SUMMARY:🇲🇾 Hari Raya Puasa (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-02-05-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300205
+DTEND;VALUE=DATE:20300206
+SUMMARY:🇲🇾 Hari Raya Puasa (Hari Kedua) (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-04-14-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300414
+DTEND;VALUE=DATE:20300415
+SUMMARY:🇲🇾 Hari Raya Qurban (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-04-19-good-friday@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300419
+DTEND;VALUE=DATE:20300420
+SUMMARY:🇲🇾 Good Friday (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300501
+DTEND;VALUE=DATE:20300502
+SUMMARY:🇲🇾 Hari Pekerja (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-05-04-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300504
+DTEND;VALUE=DATE:20300505
+SUMMARY:🇲🇾 Awal Muharam (Maal Hijrah) (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-05-16-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300516
+DTEND;VALUE=DATE:20300517
+SUMMARY:🇲🇾 Hari Wesak (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-06-01-hari-gawai-dayak@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300601
+DTEND;VALUE=DATE:20300602
+SUMMARY:🇲🇾 Perayaan Hari Gawai Dayak (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-06-02-hari-gawai-dayak-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300602
+DTEND;VALUE=DATE:20300603
+SUMMARY:🇲🇾 Perayaan Hari Gawai Dayak (Hari Kedua) (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-06-03-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300603
+DTEND;VALUE=DATE:20300604
+SUMMARY:🇲🇾 Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan 
+ Agong (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-07-13-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300713
+DTEND;VALUE=DATE:20300714
+SUMMARY:🇲🇾 Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul) (ang
+ garan)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-07-22-sarawak-independence-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300722
+DTEND;VALUE=DATE:20300723
+SUMMARY:🇲🇾 Hari Kemerdekaan Sarawak (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300831
+DTEND;VALUE=DATE:20300901
+SUMMARY:🇲🇾 Hari Kebangsaan (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300916
+DTEND;VALUE=DATE:20300917
+SUMMARY:🇲🇾 Hari Malaysia (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-10-12-birthday-of-yang-di-pertua-negeri-sarawak@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20301012
+DTEND;VALUE=DATE:20301013
+SUMMARY:🇲🇾 Hari Jadi Yang di-Pertua Negeri Sarawak (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SWK-2030-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20301225
+DTEND;VALUE=DATE:20301226
+SUMMARY:🇲🇾 Hari Krismas (anggaran)
+DESCRIPTION:Sarawak: Cuti umum anggaran — belum diwartakan. Sahkan dengan
+  senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
