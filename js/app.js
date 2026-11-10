@@ -5,6 +5,7 @@ import { buildICS } from "./ics.js";
 import { longWeekends } from "./longweekend.js";
 import { COUNTRIES, COUNTRY_SOURCES, countryHolidays, countryYears } from "./countries.js";
 import { festivalsFor } from "./festivals.js";
+import { VERSION, UPDATED_AT, CHANGELOG } from "./version.js";
 import { t, setLang, getLang, applyStatic, LANGS, MONTHS, MONTH_TILE, WEEKDAYS, LOCALE,
   holidayName, schoolName, stateName } from "./i18n.js";
 
@@ -561,6 +562,7 @@ function toast(msg) {
 }
 
 $("menu-btn").addEventListener("click", () => {
+  renderAbout();
   renderCountrySelect();
   renderLangSeg();
   renderAppearance();
@@ -703,9 +705,61 @@ document.addEventListener("keydown", (e) => {
 });
 
 window.addEventListener("hashchange", route);
-if ("serviceWorker" in navigator && location.protocol !== "file:") {
-  navigator.serviceWorker.register("sw.js").catch(() => {});
+// ---------- about, update history ----------
+function renderAbout() {
+  $("about-version").textContent = VERSION;
+  $("about-updated").textContent = `${UPDATED_AT} (MYT)`;
+  const lang = getLang();
+  $("changelog").innerHTML = CHANGELOG.map((c) => `<li>
+    <div class="cl-head"><b>v${c.v}</b><span>${c.at}</span></div>
+    <ul>${(c[lang] || c.en).map((x) => `<li>${esc(x)}</li>`).join("")}</ul></li>`).join("");
 }
+
+// ---------- service worker: install in background, update when the user taps ----------
+let swReg = null, waitingWorker = null;
+function showUpdate(worker) {
+  waitingWorker = worker;
+  $("update-bar").hidden = false;
+}
+$("update-btn").addEventListener("click", () => {
+  $("update-bar").hidden = true;
+  waitingWorker?.postMessage("SKIP_WAITING");
+});
+if ("serviceWorker" in navigator && location.protocol !== "file:") {
+  let reloading = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (reloading) return;
+    reloading = true;
+    location.reload();
+  });
+  navigator.serviceWorker.register("sw.js").then((reg) => {
+    swReg = reg;
+    if (reg.waiting && navigator.serviceWorker.controller) showUpdate(reg.waiting);
+    reg.addEventListener("updatefound", () => {
+      const w = reg.installing;
+      w?.addEventListener("statechange", () => {
+        if (w.state === "installed" && navigator.serviceWorker.controller) showUpdate(w);
+      });
+    });
+    // Check for a new version when the app comes back to the foreground, and hourly.
+    document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") reg.update().catch(() => {}); });
+    setInterval(() => reg.update().catch(() => {}), 60 * 60 * 1000);
+  }).catch(() => {});
+}
+$("check-update").addEventListener("click", async () => {
+  if (!navigator.onLine) return toast(t("about.offline"));
+  if (!swReg) return toast(t("about.latest"));
+  try {
+    await swReg.update();
+    if (swReg.waiting || swReg.installing) { toast(t("about.found")); if (swReg.waiting) showUpdate(swReg.waiting); }
+    else toast(t("about.latest"));
+  } catch { toast(t("about.offline")); }
+});
 applyTheme();
 applyLanguage();
 route();
+const SPLASH_MIN = 600;
+setTimeout(() => {
+  $("splash").classList.add("hide");
+  setTimeout(() => $("splash").remove(), 400);
+}, Math.max(0, SPLASH_MIN - performance.now()));
