@@ -6,6 +6,7 @@ A Malaysia lunar calendar web app. No build step, no dependencies, installable a
 - **State filter** (top bar, every screen): all 13 states and 3 Federal Territories. Public holidays, replacement days, school-holiday group (A/B) and KPM festive days follow the state.
 - **Home**: year tabs, Public Holiday / School Holiday / Salary Schedule cards, 3×4 month tiles.
 - **Month page**: traditional layout with Chinese lunar and Hijri dates under each day.
+- **Long Weekend**: every break of 3+ days around a public holiday, for your state or all states, with optional annual-leave days (0–2) to bridge gaps. Chips show weekend / public holiday / annual leave. Uses each state's own weekend (Fri–Sat in Kedah, Kelantan, Terengganu).
 - **Phone calendar**: subscribe (auto-updating feed per state) or download an `.ics` file.
 
 ## Run

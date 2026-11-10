@@ -76,5 +76,21 @@ for (const [state, date] of [["KDH", "2026-06-22"], ["TRG", "2026-04-27"], ["SBH
 }
 console.log(`3. Replacement-day cases checked (${REPL.length + 3})`);
 
+// 4 ---------------------------------------------------------------
+import { longWeekends } from "../js/longweekend.js";
+const LW = [
+  // [state, year, maxLeave, first day, days off, leave days]
+  ["KUL", 2026, 1, "2026-02-14", 5, 1],  // Sat–Wed: CNY Tue–Wed + leave Mon
+  ["KUL", 2026, 0, "2026-05-30", 4, 0],  // Sat–Tue: Wesak (Sun) + Agong + replacement
+  ["KTN", 2026, 0, "2026-05-26", 7, 0],  // Tue–Mon: Arafah, Haji ×2, Fri–Sat weekend, Wesak, Agong
+  ["JHR", 2026, 0, "2026-03-21", 4, 0],  // Sat–Tue: Raya, Sultan's birthday, Raya replacement
+];
+for (const [state, y, leave, start, len, lv] of LW) {
+  const w = longWeekends(y, [state], leave).find((x) => x.days[0].date === start);
+  if (!w || w.days.length !== len || w.leave !== lv) fail(`long weekend ${state} ${start}: got ${w ? `${w.days.length} days, ${w.leave} leave` : "none"}`);
+}
+if (longWeekends(2026, ["KUL"], 0).some((w) => w.leave)) fail("leave used when maxLeave = 0");
+console.log(`4. Long-weekend cases checked (${LW.length + 1})`);
+
 console.log(failures ? `${failures} failure(s)` : "All checks passed");
 process.exitCode = failures ? 1 : 0;

@@ -2,6 +2,7 @@ import { STATES, holidaysFor, isOfficial, OFFICIAL_YEARS, replacementNote, SOURC
   schoolHolidaysFor, schoolGroup, SALARY_DATES } from "./data.js";
 import { lunar, hijri } from "./calendars.js";
 import { buildICS } from "./ics.js";
+import { longWeekends, statesSummary } from "./longweekend.js";
 
 // Holidays are calculated for any year; offer last year through ten years ahead.
 const YEARS = Array.from({ length: 12 }, (_, i) => new Date().getFullYear() - 1 + i);
@@ -15,7 +16,9 @@ const CATS = {
   public: "Public Holiday",
   school: "School Holiday",
   salary: "Salary Schedule",
+  long: "Long Weekend",
 };
+const WD_SHORT = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 const $ = (id) => document.getElementById(id);
 const pad = (n) => String(n).padStart(2, "0");
@@ -34,6 +37,8 @@ const st = {
   region: store.get("region", "KUL"),
   year: YEARS.includes(today.getFullYear()) ? today.getFullYear() : 2026,
   events: store.get("events", {}),
+  lwScope: store.get("lwScope", "mine"),
+  lwLeave: store.get("lwLeave", 1),
   day: null,
 };
 let hol = holidaysFor(st.region);
@@ -166,7 +171,61 @@ function listItem(key, it, when = fmtShort(key)) {
 }
 
 // ---------- category list ----------
+function renderLong(y) {
+  const c = $("l-controls");
+  c.hidden = false;
+  c.innerHTML = `
+    <div class="seg" role="group" aria-label="States">
+      <button data-lw-scope="mine" aria-pressed="${st.lwScope === "mine"}">${esc(STATES[st.region])}</button>
+      <button data-lw-scope="all" aria-pressed="${st.lwScope === "all"}">All states</button>
+    </div>
+    <div class="seg" role="group" aria-label="Annual leave days">
+      ${[0, 1, 2].map((n) => `<button data-lw-leave="${n}" aria-pressed="${st.lwLeave === n}">${n === 0 ? "No leave" : `+${n} leave`}</button>`).join("")}
+    </div>
+    <div class="lw-legend"><span class="chip weekend">Weekend</span><span class="chip holiday">Public Holiday</span><span class="chip leave">Annual Leave</span></div>`;
+
+  const all = st.lwScope === "all";
+  const list = longWeekends(y, all ? Object.keys(STATES) : [st.region], st.lwLeave);
+  const notes = [all
+    ? "Showing every state's long weekends. Pick your state to see only yours."
+    : `Long weekends for ${esc(STATES[st.region])}.`];
+  if (!isOfficial(y)) notes.push('<span class="notice">Based on estimated holidays — not yet gazetted.</span>');
+  const rn = all ? "" : replacementNote(st.region);
+  if (rn) notes.push(`<span class="notice">${esc(rn)}</span>`);
+  $("l-note").innerHTML = notes.join(" ");
+
+  const rows = [];
+  let lastM = -1;
+  for (const w of list) {
+    const m = parse(w.holidays[0].date).getMonth();
+    if (m !== lastM) { rows.push(`<li class="lw-month">${MONTH_LABEL[m]}</li>`); lastM = m; }
+    const title = [...new Set(w.holidays.map((h) => h.name.replace(/ \((replacement|2nd day|3rd day)\)$/, "")))].join(" / ");
+    const chips = w.days.map((d, i) => {
+      const dt = parse(d.date);
+      const label = `${WD_SHORT[dt.getDay()]} ${dt.getDate()}${i > 0 && dt.getDate() === 1 ? ` ${MONTH_FULL[dt.getMonth()].slice(0, 3)}` : ""}`;
+      return `<span class="chip ${d.type}">${label}</span>`;
+    }).join("");
+    const cards = w.holidays.map((h) => {
+      const dt = parse(h.date);
+      return `<button class="hcard" data-date="${h.date}">
+        <span class="dbox"><small>${WD_SHORT[dt.getDay()]}</small><b>${dt.getDate()}</b></span>
+        <span><span class="hname">${esc(h.name)}</span>${all ? `<br><span class="hstates">${esc(statesSummary(h.states))}</span>` : ""}</span>
+      </button>`;
+    }).join("");
+    rows.push(`<li class="lw">
+      <h3>${esc(title)}</h3>
+      <div class="meta"><b>${w.days.length} days off</b>${w.leave ? `<span>· ${w.leave} annual leave day${w.leave > 1 ? "s" : ""}</span>` : "<span>· no leave needed</span>"}
+        ${all ? `<span>· ${esc(statesSummary(w.states))}</span>` : ""}${w.estimated ? '<span class="tag prov">estimated</span>' : ""}</div>
+      <div class="chips">${chips}</div>
+      ${cards}
+    </li>`);
+  }
+  $("l-list").innerHTML = rows.join("") || '<li class="empty">No long weekends found.</li>';
+}
+
 function renderList(cat, y) {
+  $("l-controls").hidden = true;
+  if (cat === "long") return renderLong(y);
   const rows = [];
   let note = "";
   if (cat === "public") {
@@ -292,6 +351,14 @@ $("m-grid").addEventListener("click", (e) => {
   const c = e.target.closest("[data-date]");
   if (c) openDay(c.dataset.date);
 });
+$("l-controls").addEventListener("click", (e) => {
+  const scope = e.target.closest("[data-lw-scope]");
+  const leave = e.target.closest("[data-lw-leave]");
+  if (scope) { st.lwScope = scope.dataset.lwScope; store.set("lwScope", st.lwScope); }
+  else if (leave) { st.lwLeave = Number(leave.dataset.lwLeave); store.set("lwLeave", st.lwLeave); }
+  else return;
+  route();
+});
 for (const id of ["m-list", "l-list"]) {
   $(id).addEventListener("click", (e) => {
     const li = e.target.closest("[data-date]");
@@ -350,6 +417,8 @@ $("state").value = st.region;
 $("state").addEventListener("change", (e) => {
   st.region = e.target.value;
   store.set("region", st.region);
+  st.lwScope = "mine";
+  store.set("lwScope", st.lwScope);
   rerender();
 });
 
