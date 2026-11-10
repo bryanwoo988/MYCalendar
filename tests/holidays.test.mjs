@@ -150,5 +150,18 @@ for (const y of [2026, 2027, 2030]) {
 }
 console.log(`7. Lunar festivals: ${FEST.length} dates checked`);
 
+// 8 ---------------------------------------------------------------
+import { VERSION, CHANGELOG } from "../js/version.js";
+import { readFileSync, existsSync } from "node:fs";
+const swSrc = readFileSync(new URL("../sw.js", import.meta.url), "utf8");
+const swVersion = swSrc.match(/const VERSION = "([^"]+)"/)?.[1];
+if (swVersion !== VERSION) fail(`sw.js VERSION ${swVersion} ≠ js/version.js ${VERSION}`);
+for (const c of CHANGELOG) if (!/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/.test(c.at) || !c.zh?.length || !c.en?.length || !c.ms?.length) fail(`changelog ${c.v} incomplete`);
+for (let i = 1; i < CHANGELOG.length; i++) if (CHANGELOG[i - 1].at < CHANGELOG[i].at) fail(`changelog not newest-first at ${CHANGELOG[i].v}`);
+// Every file the service worker pre-caches must exist.
+const shell = JSON.parse(swSrc.match(/const SHELL = (\[[\s\S]*?\]);/)[1].replace(/,\s*\]/, "]"));
+for (const f of shell) if (f !== "./" && !existsSync(new URL(`../${f}`, import.meta.url))) fail(`sw.js caches missing file ${f}`);
+console.log(`8. Version ${VERSION}: sw.js matches, ${CHANGELOG.length} changelog entries, ${shell.length} cached files exist`);
+
 console.log(failures ? `${failures} failure(s)` : "All checks passed");
 process.exitCode = failures ? 1 : 0;

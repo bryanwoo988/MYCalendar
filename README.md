@@ -44,3 +44,13 @@ Royal birthdays and one-off holidays can change; always confirm future dates wit
 | Thailand | Bank of Thailand financial-institution holidays |
 | Japan | Cabinet Office (内閣府) syukujitsu.csv |
 | Vietnam | Government Office 9859/VPCP-KGVX and 10065/VPCP-KGVX with Ministry of Home Affairs notices |
+
+## Releasing an update
+1. Edit the data or code, then run `node tests/holidays.test.mjs` (and `node tests/ui-smoke.mjs` with a local server).
+2. Add an entry at the top of `CHANGELOG` in `js/version.js` (version, date and time in Malaysia time, notes in 中文 / English / BM).
+3. Set the same version in `sw.js` (`const VERSION`); the tests fail if they differ.
+4. Merge to `main`; GitHub Pages deploys in about a minute.
+
+Installed apps pick up the new `sw.js` when opened (and hourly). The new version installs in the background and the app shows an "update" bar; tapping it activates the new version and reloads. Until then the cached version keeps working, including offline. The version, last-updated time and full update history are under ⋮ → About.
+
+Icons and iPhone launch images are generated from `icon.svg` by `node scripts/build-icons.mjs`.
