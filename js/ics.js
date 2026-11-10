@@ -50,9 +50,10 @@ function event({ uid, start, end, summary, description, stamp }) {
  * @param {boolean} [o.schoolHolidays=true]
  * @param {Object<string,string[]>} [o.events]  personal events by date
  */
-export function buildICS({ state, years, publicHolidays = true, schoolHolidays = true, events = null, now = new Date() }) {
+export function buildICS({ state, years, publicHolidays = true, schoolHolidays = true, events = null, now = new Date(), provider = null, placeName = null }) {
   const L = FLAG[getLang()] || FLAG.en;
-  const sn = stateName(state, STATES[state]);
+  const sn = placeName || stateName(state, STATES[state]);
+  const label = (h) => (h.names ? h.names[getLang()] || h.names.en : holidayName(h.name));
   const stamp = now.toISOString().replace(/[-:]/g, "").replace(/\.\d+Z$/, "Z");
   const lines = [
     "BEGIN:VCALENDAR",
@@ -65,17 +66,18 @@ export function buildICS({ state, years, publicHolidays = true, schoolHolidays =
     "REFRESH-INTERVAL;VALUE=DURATION:P7D",
     "X-PUBLISHED-TTL:P7D",
   ];
-  const hol = holidaysFor(state);
+  const hol = provider || holidaysFor(state);
+  if (provider) schoolHolidays = false;
   for (const y of years) {
     if (publicHolidays) {
-      for (const h of hol.list(y)) {
+      for (const h of hol.list(y).filter((x) => x.kind !== "workday")) {
         const flags = [h.kind === "estimated" && L.est, h.uncertain && L.unc, h.subjectToChange && L.chg].filter(Boolean);
         const src = h.source ? SOURCES[h.source] : null;
         lines.push(...event({
           uid: `ph-${state}-${h.date}-${h.name.replace(/[^A-Za-z0-9]+/g, "-").toLowerCase()}@mycalendar`,
           start: h.date, end: h.date, stamp,
-          summary: `🇲🇾 ${holidayName(h.name)}${flags.length ? ` (${flags.join(", ")})` : ""}`,
-          description: isOfficial(y)
+          summary: `${provider ? "" : "🇲🇾 "}${label(h)}${flags.length ? ` (${flags.join(", ")})` : ""}`,
+          description: provider ? `${L.ph}, ${sn}.` : isOfficial(y)
             ? `${L.ph}, ${sn}. ${L.src}: ${src ? `${src.label} ${src.url}` : "JPM"}`
             : `${sn}: ${L.estDesc}`,
         }));

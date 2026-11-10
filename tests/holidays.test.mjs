@@ -106,5 +106,28 @@ for (const lang of ["ms", "zh"]) {
 setLang("en");
 console.log(`5. Translations checked: ${names.size} holiday names, ${SCHOOL_HOLIDAYS.length} school entries × 2 languages`);
 
+// 6 ---------------------------------------------------------------
+import { COUNTRIES, countryHolidays, countryYears } from "../js/countries.js";
+const dowOf = (d) => new Date(d + "T00:00Z").getUTCDay();
+let nC = 0;
+for (const cc of Object.keys(COUNTRIES).filter((c) => c !== "MY")) {
+  const p = countryHolidays(cc);
+  if (countryYears(cc).join() !== "2026,2027") fail(`${cc}: expected 2026 and 2027 data, got ${countryYears(cc)}`);
+  for (const y of countryYears(cc)) for (const h of p.list(y)) {
+    nC++;
+    if (Number.isNaN(Date.parse(h.date)) || !h.date.startsWith(`${y}-`)) fail(`${cc} bad date ${h.date}`);
+    if (!h.names.en || !h.names.zh) fail(`${cc} ${h.date} missing name`);
+    if (h.kind === "workday" && ![0, 6].includes(dowOf(h.date))) fail(`${cc} make-up workday ${h.date} is not on a weekend`);
+  }
+}
+// Spot checks against the weekday printed in the official documents
+const SPOT = [["CN", "2027-02-05", 5], ["CN", "2027-01-31", 0], ["CN", "2026-02-14", 6], ["SG", "2026-06-01", 1], ["ID", "2027-03-15", 1],
+  ["ID", "2026-03-24", 2], ["KR", "2027-07-19", 1], ["TH", "2027-12-06", 1], ["TW", "2027-12-31", 5], ["HK", "2027-12-27", 1], ["VN", "2026-04-27", 1]];
+for (const [cc, d, dow] of SPOT) {
+  if (!countryHolidays(cc).get(d)) fail(`${cc} ${d} missing`);
+  else if (dowOf(d) !== dow) fail(`${cc} ${d} weekday ${dowOf(d)} ≠ ${dow}`);
+}
+console.log(`6. Other countries: ${nC} entries checked, ${SPOT.length} spot checks against official weekdays`);
+
 console.log(failures ? `${failures} failure(s)` : "All checks passed");
 process.exitCode = failures ? 1 : 0;

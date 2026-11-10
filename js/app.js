@@ -3,12 +3,13 @@ import { STATES, holidaysFor, isOfficial, OFFICIAL_YEARS, replacementNote, SOURC
 import { lunar, hijri } from "./calendars.js";
 import { buildICS } from "./ics.js";
 import { longWeekends } from "./longweekend.js";
+import { COUNTRIES, COUNTRY_SOURCES, countryHolidays, countryYears } from "./countries.js";
 import { t, setLang, getLang, applyStatic, LANGS, MONTHS, MONTH_TILE, WEEKDAYS, LOCALE,
   holidayName, schoolName, stateName } from "./i18n.js";
 
 // Holidays are calculated for any year; offer last year through ten years ahead.
 const YEARS = Array.from({ length: 12 }, (_, i) => new Date().getFullYear() - 1 + i);
-const CATS = ["public", "school", "long"];
+const CATS = ["public", "school", "long", "compare"];
 const WD_ZH = ["日", "一", "二", "三", "四", "五", "六"];
 const WD_MS = ["Ahad", "Isnin", "Selasa", "Rabu", "Khamis", "Jumaat", "Sabtu"];
 const LIGHT_THEMES = ["classic", "paper", "mint", "lavender"];
@@ -41,10 +42,19 @@ const st = {
   apMode: store.get("apMode", "system"),
   apLight: store.get("apLight", "classic"),
   apDark: store.get("apDark", "midnight"),
+  country: store.get("country", "MY"),
+  cmp: store.get("cmp", null),
   day: null,
 };
 setLang(st.lang);
-let hol = holidaysFor(st.region);
+const isMY = () => st.country === "MY";
+const providerFor = (cc, state = st.region) => (cc === "MY" ? holidaysFor(state) : countryHolidays(cc));
+let hol = providerFor(st.country);
+const cName = (cc) => COUNTRIES[cc][getLang()] || COUNTRIES[cc].en;
+const cLabel = (cc) => `${COUNTRIES[cc].flag} ${cName(cc)}`;
+// Display name of a holiday entry (Malaysian entries are translated; others carry their own names).
+const hName = (h) => (h.names ? h.names[getLang()] || h.names.en : holidayName(h.name));
+const placeLabel = () => (isMY() ? sName(st.region) : cName(st.country));
 
 function guessLang() {
   const l = (navigator.language || "").toLowerCase();
@@ -52,9 +62,10 @@ function guessLang() {
 }
 
 // ---------- lookups ----------
-const schoolOn = (dateIso) => schoolHolidaysFor(st.region).find((s) => dateIso >= s.start && dateIso <= s.end);
+const schoolOn = (dateIso) => (isMY() ? schoolHolidaysFor(st.region).find((s) => dateIso >= s.start && dateIso <= s.end) : null);
 const srcLink = (key, full = false) => `<a href="${SOURCES[key].url}" target="_blank" rel="noopener">${esc(full ? SOURCES[key].label : SOURCES[key].short)}</a>`;
 const SRC_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v4h4M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+const srcRowList = (list) => `<div class="src">${SRC_ICON}<span>${t("source")}: ${list.map((x) => `<a href="${x.url}" target="_blank" rel="noopener">${esc(x.short)}</a>`).join(" · ")}</span></div>`;
 const srcRow = (keys) => `<div class="src">${SRC_ICON}<span>${t("source")}: ${keys.map((k) => srcLink(k)).join(" · ")}</span></div>`;
 
 function monthInfo(y, m) {
@@ -96,7 +107,7 @@ function renderMonths() {
 }
 
 // ---------- items ----------
-const holItem = (h) => ({ type: "public", text: holidayName(h.name), kind: h.kind, unc: h.uncertain, star: h.subjectToChange });
+const holItem = (h) => ({ type: h.kind === "workday" ? "work" : "public", text: hName(h), kind: h.kind, unc: h.uncertain, star: h.subjectToChange });
 
 function itemsForDay(key) {
   const out = (hol.get(key) || []).map(holItem);
@@ -107,7 +118,11 @@ function itemsForDay(key) {
 }
 
 function tagFor(it) {
+  if (it.type === "work") return `<span class="tag repl">${t("tag.workday")}</span>`;
   if (it.type !== "public") return "";
+  if (it.kind === "bridge") return `<span class="tag repl">${t("tag.bridge")}</span>`;
+  if (it.kind === "regional") return `<span class="tag est">${t("tag.regional")}</span>`;
+  if (it.kind === "unconfirmed") return `<span class="tag est">${t("tag.unconfirmed")}</span>`;
   if (it.kind === "estimated") return `<span class="tag est">${t(it.unc ? "tag.estUnc" : "tag.est")}</span>`;
   if (it.kind === "replacement") return `<span class="tag repl">${t("tag.repl")}</span>`;
   if (it.star) return `<span class="tag est">${t("tag.change")}</span>`;
@@ -142,18 +157,22 @@ function renderMonthPage(y, m) {
       const date = new Date(y, m, d);
       const key = iso(date);
       const lu = lunar(date), hj = hijri(date);
-      const hs = hol.get(key) || [];
+      const all = hol.get(key) || [];
+      const hs = all.filter((h) => h.kind !== "workday");
+      const work = all.length > hs.length;
       const cls = ["cell"];
-      if (dow === 0 || hs.length) cls.push("red");
+      if ((dow === 0 && !work) || hs.length) cls.push("red");
       if (hs.length) cls.push("hol");
+      if (work) cls.push("work");
       if (schoolOn(key)) cls.push("school");
       if (key === todayKey) cls.push("today");
       cells[Math.floor((offset + d - 1) / 7)] = `
-        <button class="${cls.join(" ")}" data-date="${key}" aria-label="${esc(`${fmtShort(key)}${hs.length ? ", " + hs.map((h) => holidayName(h.name)).join(", ") : ""}`)}">
+        <button class="${cls.join(" ")}" data-date="${key}" aria-label="${esc(`${fmtShort(key)}${hs.length ? ", " + hs.map(hName).join(", ") : ""}`)}">
           <span class="g">${d}</span>
           <span class="lu ${lu.day === 1 || lu.day === 15 ? "first" : ""}">${lu.label}</span>
           <span class="hj">${hj.day === 1 ? hj.short : hj.day}</span>
-          ${hs.length ? `<span class="hn">${esc(holidayName(hs[0].name))}</span>` : ""}
+          ${hs.length ? `<span class="hn">${esc(hName(hs[0]))}</span>` : ""}
+          ${work ? `<span class="wk">${getLang() === "zh" ? "班" : "W"}</span>` : ""}
           ${st.events[key]?.length ? '<span class="ev"></span>' : ""}
         </button>`;
     }
@@ -187,20 +206,23 @@ function renderLong(y) {
   const c = $("l-controls");
   c.hidden = false;
   c.innerHTML = `
-    <div class="seg" role="group">
+    ${isMY() ? `<div class="seg" role="group">
       <button data-lw-scope="mine" aria-pressed="${st.lwScope === "mine"}">${esc(sName(st.region))}</button>
       <button data-lw-scope="all" aria-pressed="${st.lwScope === "all"}">${t("lw.allStates")}</button>
-    </div>
+    </div>` : ""}
     <div class="seg" role="group">
       ${[0, 1, 2].map((n) => `<button data-lw-leave="${n}" aria-pressed="${st.lwLeave === n}">${n === 0 ? t("lw.noLeave") : t("lw.plusLeave", { n })}</button>`).join("")}
     </div>
     <div class="lw-legend"><span class="chip weekend">${t("lw.weekend")}</span><span class="chip holiday">${t("lw.holiday")}</span><span class="chip leave">${t("lw.leave")}</span></div>`;
 
-  const all = st.lwScope === "all";
-  const list = longWeekends(y, all ? Object.keys(STATES) : [st.region], st.lwLeave);
+  const all = isMY() && st.lwScope === "all";
+  const list = isMY()
+    ? longWeekends(y, all ? Object.keys(STATES) : [st.region], st.lwLeave)
+    : longWeekends(y, [st.country], st.lwLeave, (cc) => ({ hol: providerFor(cc), weekend: [0, 6] }));
   const notes = all ? [`<div class="pill-note">${t("lw.showingAll")}</div>`] : [];
-  if (!isOfficial(y)) notes.push(`<div class="notice">${t("lw.estimated")}</div>`);
-  if (!all) notes.push(replNotice());
+  if (isMY() && !isOfficial(y)) notes.push(`<div class="notice">${t("lw.estimated")}</div>`);
+  if (!isMY() && !countryYears(st.country).includes(y)) notes.push(`<div class="notice">${t("noOfficial", { c: cName(st.country), y })}</div>`);
+  if (isMY() && !all) notes.push(replNotice());
   $("l-note").innerHTML = notes.join("");
 
   const rows = [];
@@ -208,7 +230,7 @@ function renderLong(y) {
   for (const w of list) {
     const m = parse(w.holidays[0].date).getMonth();
     if (m !== lastM) { rows.push(`<li class="mhead">${monthName(m)}</li>`); lastM = m; }
-    const title = [...new Set(w.holidays.map((h) => holidayName(h.name.replace(/ \((replacement|2nd day|3rd day)\)$/, ""))))].join(" / ");
+    const title = [...new Set(w.holidays.map((h) => (h.names ? hName(h).replace(/（补假）|（第二天）| \((substitute|observed|2nd day)\)/g, "") : holidayName(h.name.replace(/ \((replacement|2nd day|3rd day)\)$/, "")))))].join(" / ");
     const chips = w.days.map((d, i) => {
       const dt = parse(d.date);
       const extra = i > 0 && dt.getDate() === 1 ? ` ${MONTH_TILE.en[dt.getMonth()].slice(0, 3)}` : "";
@@ -219,7 +241,7 @@ function renderLong(y) {
       const dt = parse(h.date);
       return `<button class="hcard" data-date="${h.date}">
         <span class="dbox"><small>${wd(dt.getDay())}</small><b>${dt.getDate()}</b></span>
-        <span><span class="hname">${esc(holidayName(h.name))}</span>${all ? `<br><span class="hstates">${esc(statesSummary(h.states))}</span>` : ""}</span>
+        <span><span class="hname">${esc(hName(h))}</span>${all ? `<br><span class="hstates">${esc(statesSummary(h.states))}</span>` : ""}</span>
       </button>`;
     }).join("");
     const leaveTxt = w.leave ? t(w.leave > 1 ? "lw.leaveDaysPl" : "lw.leaveDays", { n: w.leave }) : t("lw.noLeaveNeeded");
@@ -238,12 +260,95 @@ function replNotice() {
   return `<div class="notice">${esc(FRI_SAT.includes(st.region) ? t("replFriSat") : t("replOther", { s: sName(st.region) }))}</div>`;
 }
 
+// ---------- compare (trip planning) ----------
+function compareTarget() {
+  const c = st.cmp && st.cmp !== st.country ? st.cmp : st.country === "TW" ? "MY" : "TW";
+  return c;
+}
+
+function renderCompare(y) {
+  const dest = compareTarget();
+  const destHol = providerFor(dest);
+  const c = $("l-controls");
+  c.hidden = false;
+  c.innerHTML = `
+    <label class="cmp-pick"><span>${t("cmp.with")}</span>
+      <select id="cmp-sel">${Object.keys(COUNTRIES).filter((k) => k !== st.country).map((k) => `<option value="${k}" ${k === dest ? "selected" : ""}>${esc(cLabel(k))}</option>`).join("")}</select>
+    </label>
+    <div class="seg" role="group">
+      ${[0, 1, 2].map((n) => `<button data-lw-leave="${n}" aria-pressed="${st.lwLeave === n}">${n === 0 ? t("lw.noLeave") : t("lw.plusLeave", { n })}</button>`).join("")}
+    </div>
+    <div class="lw-legend"><span class="chip weekend">${t("lw.weekend")}</span><span class="chip holiday">${t("lw.holiday")}</span><span class="chip leave">${t("lw.leave")}</span><span class="chip dest">${esc(cName(dest))}</span></div>`;
+
+  const notes = [`<div class="pill-note">${t("cmp.intro")}</div>`];
+  if (dest !== "MY" && !countryYears(dest).includes(y)) notes.push(`<div class="notice">${t("cmp.noData", { c: cName(dest), y })}</div>`);
+  if (!isMY() && !countryYears(st.country).includes(y)) notes.push(`<div class="notice">${t("cmp.noData", { c: cName(st.country), y })}</div>`);
+  $("l-note").innerHTML = notes.join("");
+
+  const home = isMY()
+    ? longWeekends(y, [st.region], st.lwLeave)
+    : longWeekends(y, [st.country], st.lwLeave, (cc) => ({ hol: providerFor(cc), weekend: [0, 6] }));
+  const rows = [`<li class="mhead">${esc(t("cmp.yourBreaks"))} · ${esc(cLabel(st.country))}${isMY() ? ` ${esc(sName(st.region))}` : ""}</li>`];
+  for (const w of home) {
+    const destDays = w.days.map((d) => ({ d, hs: destHol.get(d.date) || [] }));
+    const destOff = destDays.filter((x) => x.hs.some((h) => h.kind !== "workday"));
+    const destWork = destDays.filter((x) => x.hs.some((h) => h.kind === "workday"));
+    const chips = w.days.map((d) => {
+      const dt = parse(d.date);
+      const destMark = (destHol.get(d.date) || []).some((h) => h.kind !== "workday") ? " has-dest" : "";
+      return `<span class="chip ${d.type}${destMark}">${wd(dt.getDay())} ${dt.getDate()}</span>`;
+    }).join("");
+    const destNames = [...new Set(destOff.flatMap((x) => x.hs.filter((h) => h.kind !== "workday").map(hName)))];
+    const verdict = destOff.length
+      ? `<div class="cmp-verdict busy">${COUNTRIES[dest].flag} ${esc(destNames.join(" / "))}<br><small>${esc(t("cmp.busy", { c: cName(dest) }))}</small></div>`
+      : `<div class="cmp-verdict calm">${COUNTRIES[dest].flag} ${esc(t("cmp.normal", { c: cName(dest) }))}</div>`;
+    const workNote = destWork.length ? `<div class="cmp-verdict">${esc(t("cmp.workday", { c: cName(dest) }))} (${destWork.map((x) => fmtShort(x.d.date)).join(", ")})</div>` : "";
+    const homeNames = [...new Set(w.holidays.map((h) => hName(h)))].join(" / ");
+    const leaveTxt = w.leave ? t(w.leave > 1 ? "lw.leaveDaysPl" : "lw.leaveDays", { n: w.leave }) : t("lw.noLeaveNeeded");
+    rows.push(`<li class="lw">
+      <h3>${esc(homeNames)}</h3>
+      <div class="meta"><span class="days">${t("lw.daysOff", { n: w.days.length })}</span><span>${leaveTxt}</span><span>${fmtShort(w.days[0].date)} – ${fmtShort(w.days.at(-1).date)}</span></div>
+      <div class="chips">${chips}</div>
+      ${verdict}${workNote}
+    </li>`);
+  }
+  if (home.length === 0) rows.push(`<li class="empty">${t("lw.none")}</li>`);
+
+  // Both calendars, merged by date
+  rows.push(`<li class="mhead">${esc(t("cmp.both"))}</li>`);
+  const dates = new Set([...hol.year(y).keys(), ...destHol.year(y).keys()]);
+  let lastM = -1;
+  for (const k of [...dates].sort()) {
+    const m = parse(k).getMonth();
+    if (m !== lastM) { rows.push(`<li class="mhead sub">${monthName(m)}</li>`); lastM = m; }
+    const a = (hol.get(k) || []), b = (destHol.get(k) || []);
+    const off = (x) => x.some((h) => h.kind !== "workday");
+    const line = (cc, list) => list.map((h) => `<span class="cmp-line">${COUNTRIES[cc].flag} ${esc(hName(h))}${h.kind === "workday" ? ` <span class="tag repl">${t("tag.workday")}</span>` : ""}</span>`).join("");
+    rows.push(`<li class="item t-${off(a) && off(b) ? "both" : off(a) ? "public" : "dest"}" data-date="${k}">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="body"><span class="when">${fmtShort(k)}${off(a) && off(b) ? ` · <b>${t("cmp.bothOff")}</b>` : ""}</span>${line(st.country, a)}${line(dest, b)}</span>
+    </li>`);
+  }
+  $("l-list").innerHTML = rows.join("");
+}
+
 function renderList(cat, y) {
   $("l-controls").hidden = true;
   if (cat === "long") return renderLong(y);
+  if (cat === "compare") return renderCompare(y);
   const rows = [];
   let note = "";
-  if (cat === "public") {
+  if (cat === "public" && !isMY()) {
+    const has = countryYears(st.country).includes(y);
+    note = has ? srcRowList(COUNTRY_SOURCES[st.country]) : `<div class="notice">${t("noOfficial", { c: cName(st.country), y })}</div>`;
+    const yearMap = hol.year(y);
+    let lastM = -1;
+    for (const k of [...yearMap.keys()].sort()) {
+      const m = parse(k).getMonth();
+      if (m !== lastM) { rows.push(`<li class="mhead">${monthName(m)}</li>`); lastM = m; }
+      for (const h of yearMap.get(k)) rows.push(listItem(k, holItem(h)));
+    }
+  } else if (cat === "public") {
     if (isOfficial(y)) {
       const keys = [`hka${y}`];
       if (hol.list(y).some((h) => h.kind === "replacement")) keys.push("act369");
@@ -272,7 +377,7 @@ function renderList(cat, y) {
     }
   }
   $("l-note").innerHTML = note;
-  const notYet = `${t("noSchool", { y })} ${srcLink("moe")}.`;
+  const notYet = cat === "public" ? t("noOfficial", { c: cName(st.country), y }) : `${t("noSchool", { y })} ${srcLink("moe")}.`;
   $("l-list").innerHTML = rows.join("") || `<li class="empty">${notYet}</li>`;
 }
 
@@ -305,15 +410,19 @@ function route() {
   } else {
     renderYears();
     renderMonths();
-    $("bar-title").textContent = t("appTitle");
+    $("bar-title").textContent = isMY() ? t("appTitle") : t("calendarOf", { c: cName(st.country) });
   }
   for (const [k, el] of Object.entries(views)) el.hidden = k !== show;
+  document.querySelector('[data-cat="school"]').hidden = !isMY();
+  $("state-pick").hidden = !isMY();
+  $("country-chip").hidden = isMY();
+  $("country-chip").textContent = cLabel(st.country);
   $("back").hidden = show === "home";
   window.scrollTo(0, 0);
 }
 
 function rerender() {
-  hol = holidaysFor(st.region);
+  hol = providerFor(st.country);
   route();
   if ($("day").open && st.day) openDay(st.day);
 }
@@ -324,6 +433,18 @@ function renderStateOptions() {
   $("state").value = st.region;
 }
 
+function renderCountrySelect() {
+  $("country-sel").innerHTML = Object.keys(COUNTRIES).map((k) => `<option value="${k}">${esc(cLabel(k))}</option>`).join("");
+  $("country-sel").value = st.country;
+}
+$("country-sel").addEventListener("change", (e) => {
+  st.country = e.target.value;
+  store.set("country", st.country);
+  if (!isMY() && location.hash.startsWith("#/c/school")) location.hash = "#/";
+  rerender();
+});
+$("country-chip").addEventListener("click", () => $("menu-btn").click());
+
 function renderLangSeg() {
   $("lang-seg").innerHTML = Object.entries(LANGS).map(([k, label]) =>
     `<button data-lang="${k}" aria-pressed="${st.lang === k}">${label}</button>`).join("");
@@ -333,6 +454,7 @@ function applyLanguage() {
   setLang(st.lang);
   applyStatic();
   renderStateOptions();
+  renderCountrySelect();
   renderLangSeg();
   renderAppearance();
   renderExportYears();
@@ -421,6 +543,7 @@ function toast(msg) {
 }
 
 $("menu-btn").addEventListener("click", () => {
+  renderCountrySelect();
   renderLangSeg();
   renderAppearance();
   renderShare();
@@ -438,6 +561,7 @@ function renderExportYears() {
 }
 
 function feedUrl() {
+  if (!isMY()) return null;
   const online = /^https?:$/.test(location.protocol) && !/^(localhost|127\.|\[::1\])/.test(location.hostname);
   if (!online) return null;
   const base = location.pathname.replace(/[^/]*$/, "");
@@ -446,7 +570,7 @@ function feedUrl() {
 }
 
 $("cal-btn").addEventListener("click", () => {
-  $("x-state").textContent = t("x.what", { s: sName(st.region) });
+  $("x-state").textContent = isMY() ? t("x.what", { s: sName(st.region) }) : `${cLabel(st.country)} · ${t("x.public")}`;
   const feed = feedUrl();
   $("x-webcal").href = feed ? `webcal://${feed}` : "#";
   $("x-google").href = feed ? `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(`webcal://${feed}`)}` : "#";
@@ -459,12 +583,13 @@ $("x-download").addEventListener("click", () => {
   const years = [...$("x-years").querySelectorAll("input:checked")].map((i) => Number(i.value));
   if (!years.length) return;
   const ics = buildICS({
-    state: st.region, years,
+    state: isMY() ? st.region : st.country, years,
+    ...(isMY() ? {} : { provider: hol, placeName: cName(st.country) }),
     publicHolidays: $("x-public").checked, schoolHolidays: $("x-school").checked,
     events: $("x-mine").checked ? st.events : null,
   });
   const url = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
-  const a = Object.assign(document.createElement("a"), { href: url, download: `malaysia-holidays-${st.region}-${years.join("-")}.ics` });
+  const a = Object.assign(document.createElement("a"), { href: url, download: `holidays-${isMY() ? `MY-${st.region}` : st.country}-${years.join("-")}.ics` });
   document.body.append(a);
   a.click();
   a.remove();
@@ -499,6 +624,12 @@ $("m-next").addEventListener("click", () => stepMonth(1));
 $("m-grid").addEventListener("click", (e) => {
   const c = e.target.closest("[data-date]");
   if (c) openDay(c.dataset.date);
+});
+$("l-controls").addEventListener("change", (e) => {
+  if (e.target.id !== "cmp-sel") return;
+  st.cmp = e.target.value;
+  store.set("cmp", st.cmp);
+  route();
 });
 $("l-controls").addEventListener("click", (e) => {
   const scope = e.target.closest("[data-lw-scope]");

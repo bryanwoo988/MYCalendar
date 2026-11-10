@@ -66,7 +66,7 @@ svg { display: block; }
 @media (min-width: 640px) { .cat { flex-basis: calc((100% - 20px) / 3); } }
 .cat svg { width: 26px; height: 26px; }
 .cat:active { transform: scale(.98); }
-.cat-public { background: var(--public); } .cat-school { background: var(--school); } .cat-long { background: var(--long); }
+.cat-public { background: var(--public); } .cat-school { background: var(--school); } .cat-long { background: var(--long); } .cat-compare { background: #7c3aed; }
 
 /* Month tiles */
 .months { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 0 12px; }
@@ -237,3 +237,22 @@ svg { display: block; }
 .icon-btn:focus { outline: none; }
 .icon-btn:focus-visible { box-shadow: 0 0 0 2px rgba(255,255,255,.7); }
 .mini .row .wd { white-space: nowrap; overflow: hidden; }
+
+/* Country & compare */
+.statebar { display: flex; gap: 8px; }
+.statebar .state-pick { flex: 1; }
+.country-chip { flex: 1; height: 38px; padding: 0 12px; border: 0; border-radius: 10px; background: rgba(255,255,255,.12); color: #fff; font-size: 15px; font-weight: 600; text-align: left; }
+.field-select select { width: 100%; height: 44px; padding: 0 12px; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--bg); color: var(--fg); font-size: 15px; }
+.cmp-pick { display: flex; align-items: center; gap: 8px; width: 100%; font-size: 13px; color: var(--muted); }
+.cmp-pick select { flex: 1; height: 38px; padding: 0 10px; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--bg); color: var(--fg); font-size: 15px; font-weight: 600; }
+.chip.dest { background: #7c3aed; }
+.chip.has-dest { box-shadow: inset 0 -4px 0 #7c3aed; }
+.cmp-verdict { margin-top: 8px; padding: 9px 12px; border-radius: var(--r-sm); background: var(--bg); font-size: 13.5px; line-height: 1.45; }
+.cmp-verdict.busy { background: var(--evt-bg); color: var(--evt); font-weight: 600; }
+.cmp-verdict.busy small { font-weight: 400; }
+.cmp-verdict.calm { background: var(--salary-bg); color: var(--salary); font-weight: 600; }
+.cmp-line { display: block; font-size: 14.5px; font-weight: 600; line-height: 1.35; }
+.t-dest .mark { background: #7c3aed; } .t-both .mark { background: linear-gradient(var(--public) 50%, #7c3aed 50%); } .t-work .mark { background: var(--repl); }
+.list .mhead.sub { margin-top: 10px; font-size: 11px; }
+.cell.work { background: var(--repl-bg); }
+.cell .wk { position: absolute; top: 4px; right: 4px; padding: 0 4px; border-radius: 4px; background: var(--repl); color: #fff; font-size: 10px; font-weight: 700; line-height: 15px; }
