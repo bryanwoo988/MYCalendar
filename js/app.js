@@ -630,22 +630,48 @@ function renderShare() {
 $("sh-native").addEventListener("click", () => {
   navigator.share?.({ title: t("appTitle"), text: t("sh.text"), url: shareUrl() }).catch(() => {});
 });
-$("sh-copy").addEventListener("click", async () => {
-  try { await navigator.clipboard.writeText(shareUrl()); }
-  catch {
+$("sh-copy").addEventListener("click", async (e) => {
+  const btn = e.currentTarget;
+  let ok = false;
+  try { await navigator.clipboard.writeText(shareUrl()); ok = true; } catch { /* fall back below */ }
+  if (!ok) {
     const r = document.createRange(); r.selectNodeContents($("share-url"));
-    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); document.execCommand?.("copy");
+    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    try { ok = document.execCommand("copy"); } catch { ok = false; }
   }
-  toast(t("sh.copied"));
+  if (ok) flash(btn, t("sh.copied"));
+  else toast(t("fb.copyFail")); // the link stays selected so it can be copied by hand
 });
 
+// Toast: shown inside an open sheet when there is one (sheets sit in the top layer and
+// would otherwise hide it), else at the bottom of the page.
 let toastTimer;
 function toast(msg) {
   const el = $("toast");
+  (document.querySelector("dialog[open]") || document.body).append(el);
   el.textContent = msg;
   el.hidden = false;
+  el.classList.remove("show"); void el.offsetWidth; el.classList.add("show");
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => { el.hidden = true; }, 1800);
+  toastTimer = setTimeout(() => { el.hidden = true; }, 2000);
+}
+
+// Button feedback: briefly replace the label (e.g. "✓ Copied"), then restore it.
+const flashTimers = new WeakMap();
+function flash(btn, text, { ok = true, ms = 2000 } = {}) {
+  if (!btn.dataset.label) btn.dataset.label = btn.textContent;
+  text = text.replace(/[。.]$/, ""); // button labels don't end with a full stop
+  btn.textContent = ok ? `✓ ${text}` : text;
+  btn.classList.toggle("done", ok);
+  clearTimeout(flashTimers.get(btn));
+  flashTimers.set(btn, setTimeout(() => { btn.textContent = btn.dataset.label; delete btn.dataset.label; btn.classList.remove("done"); }, ms));
+}
+function busy(btn, text) {
+  btn.dataset.label = btn.dataset.label || btn.textContent;
+  btn.textContent = text;
+  btn.classList.add("busy");
+  btn.disabled = true;
+  return () => { btn.disabled = false; btn.classList.remove("busy"); };
 }
 
 $("menu-btn").addEventListener("click", () => {
@@ -699,9 +725,10 @@ $("cal-btn").addEventListener("click", () => {
   $("export").showModal();
 });
 
-$("x-download").addEventListener("click", () => {
+$("x-download").addEventListener("click", (e) => {
+  const btn = e.currentTarget;
   const years = [...$("x-years").querySelectorAll("input:checked")].map((i) => Number(i.value));
-  if (!years.length) return;
+  if (!years.length) { flash(btn, t("fb.pickYear"), { ok: false }); return; }
   const ics = buildICS({
     state: isMY() ? st.region : st.country, years,
     ...(isMY() ? {} : { provider: hol, placeName: cName(st.country) }),
@@ -714,6 +741,7 @@ $("x-download").addEventListener("click", () => {
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 10000);
+  flash(btn, t("fb.downloaded"));
 });
 
 // ---------- navigation & events ----------
@@ -783,6 +811,7 @@ $("evt-form").addEventListener("submit", (e) => {
   store.set("events", st.events);
   $("evt-text").value = "";
   rerender();
+  flash($("evt-form").querySelector("button"), t("fb.added"));
 });
 $("d-list").addEventListener("click", (e) => {
   e.stopPropagation();
@@ -812,17 +841,25 @@ function renderAbout() {
 $("open-history").addEventListener("click", () => { $("menu").close(); WN?.history(); });
 
 // Is the index.html on the server newer than the one running? (same check as WhatsNew.watch)
-async function checkForUpdate(byUser) {
-  if (!navigator.onLine) { if (byUser) toast(t("about.offline")); return; }
+async function checkForUpdate(btn) {
+  if (!navigator.onLine) { flash(btn, t("about.offline"), { ok: false, ms: 2500 }); return; }
+  const done = busy(btn, t("fb.checking"));
+  const started = Date.now();
+  let result;
   try {
     const r = await fetch("./", { method: "HEAD", cache: "no-store" });
     const live = Date.parse(r.ok ? r.headers.get("Last-Modified") : "");
     const running = Date.parse(document.lastModified);
-    if (isFinite(live) && isFinite(running) && live - running >= 1000) { $("menu").close(); WN?.offerUpdate(); }
-    else if (byUser) toast(t("about.latest"));
-  } catch { if (byUser) toast(t("about.offline")); }
+    result = isFinite(live) && isFinite(running) && live - running >= 1000 ? "new" : "latest";
+  } catch { result = "offline"; }
+  // keep "Checking…" on screen long enough to be seen
+  await new Promise((r) => setTimeout(r, Math.max(0, 600 - (Date.now() - started))));
+  done();
+  if (result === "new") { flash(btn, t("about.found"), { ms: 3000 }); setTimeout(() => { $("menu").close(); WN?.offerUpdate(); }, 900); }
+  else if (result === "latest") flash(btn, t("about.latest"), { ms: 2500 });
+  else flash(btn, t("about.offline"), { ok: false, ms: 2500 });
 }
-$("check-update").addEventListener("click", () => checkForUpdate(true));
+$("check-update").addEventListener("click", (e) => checkForUpdate(e.currentTarget));
 
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).catch(() => {});

@@ -5,6 +5,7 @@ export const LANGS = { zh: "中文", en: "English", ms: "BM" };
 
 const T = {
   en: {
+    "fb.checking": "Checking…", "fb.downloaded": "Downloaded", "fb.added": "Added", "fb.pickYear": "Pick a year first", "fb.copyFail": "Couldn't copy automatically — the link is selected, copy it by hand",
     "src.other": "Official lists for 2026 and 2027 only; later years appear once the government publishes them.", "src.calcTitle": "Calculated in the app", "src.calc": "Chinese lunar dates, Chinese festivals and the zodiac come from astronomy (new moons and the Sun's position, UTC+8). Hijri dates use the MABIMS crescent rule that Malaysia uses. Malaysian holidays after 2027 are estimated with the same rules as the official lists. All are checked against official calendars in the app's tests.",
     "set.display": "Calendar display", "disp.lunar": "Chinese lunar calendar (农历)", "disp.hijri": "Islamic calendar (Hijri)", "disp.fest": "Chinese festivals", "disp.zodiac": "Zodiac signs", "disp.note": "Public holidays always show, whatever is turned off here.", "lbl.lunar": "Lunar", "lbl.hijri": "Hijri",
     "z.toggle": "Zodiac",
@@ -64,6 +65,7 @@ const T = {
     "x.howto": "On iPhone, open the file and tap \"Add All\". On Android, open it with Google Calendar or Samsung Calendar. A downloaded file does not update; re-download after the official list changes.",
   },
   ms: {
+    "fb.checking": "Menyemak…", "fb.downloaded": "Dimuat turun", "fb.added": "Ditambah", "fb.pickYear": "Pilih tahun dahulu", "fb.copyFail": "Tidak dapat menyalin secara automatik — pautan telah dipilih, salin secara manual",
     "src.other": "Senarai rasmi bagi 2026 dan 2027 sahaja; tahun seterusnya dipaparkan selepas kerajaan menerbitkannya.", "src.calcTitle": "Dikira dalam aplikasi", "src.calc": "Tarikh lunar Cina, perayaan Cina dan shio dikira daripada astronomi (anak bulan dan kedudukan Matahari, UTC+8). Tarikh Hijrah menggunakan kriteria anak bulan MABIMS yang digunakan Malaysia. Cuti Malaysia selepas 2027 dianggarkan dengan peraturan yang sama seperti senarai rasmi. Semuanya disemak dengan kalendar rasmi dalam ujian aplikasi.",
     "set.display": "Paparan kalendar", "disp.lunar": "Kalendar lunar Cina (农历)", "disp.hijri": "Kalendar Islam (Hijrah)", "disp.fest": "Perayaan Cina", "disp.zodiac": "Shio", "disp.note": "Cuti umum sentiasa dipaparkan walaupun pilihan di sini dimatikan.", "lbl.lunar": "Lunar", "lbl.hijri": "Hijrah",
     "z.toggle": "Shio",
@@ -123,6 +125,7 @@ const T = {
     "x.howto": "Di iPhone, buka fail dan tekan \"Add All\". Di Android, buka dengan Google Calendar atau Samsung Calendar. Fail yang dimuat turun tidak dikemas kini; muat turun semula selepas senarai rasmi berubah.",
   },
   zh: {
+    "fb.checking": "检查中…", "fb.downloaded": "已下载", "fb.added": "已添加", "fb.pickYear": "请先选择年份", "fb.copyFail": "无法自动复制，链接已选取，请手动复制",
     "src.other": "只收录 2026 和 2027 年的官方清单；之后的年份等政府公布后才加入。", "src.calcTitle": "App 自行计算的部分", "src.calc": "农历日期、传统节日和生肖按天文计算（新月和太阳位置，UTC+8）。回历日期用马来西亚采用的 MABIMS 新月可见标准。2027 年之后的马来西亚假期按官方清单的同一套规则推算。以上都在 App 的测试里和官方日历核对过。",
     "set.display": "日历显示", "disp.lunar": "农历", "disp.hijri": "伊斯兰历（回历）", "disp.fest": "传统节日", "disp.zodiac": "生肖", "disp.note": "不管这里关掉什么，公共假期都会照常显示。", "lbl.lunar": "农历", "lbl.hijri": "回历",
     "z.toggle": "生肖",
@@ -168,7 +171,7 @@ const T = {
     "ap.lightTheme": "浅色主题", "ap.darkTheme": "深色主题",
     "th.classic": "经典", "th.paper": "纸张", "th.mint": "薄荷", "th.lavender": "薰衣草",
     "th.midnight": "午夜", "th.oled": "OLED 纯黑", "th.slate": "石板", "th.grape": "葡萄",
-    "sh.scan": "用另一部手机扫码打开", "sh.copy": "复制链接", "sh.copied": "链接已复制", "sh.native": "分享…", "sh.whatsapp": "WhatsApp",
+    "sh.scan": "用另一部手机扫码打开", "sh.copy": "复制链接", "sh.copied": "已复制链接", "sh.native": "分享…", "sh.whatsapp": "WhatsApp",
     "sh.text": "马来西亚日历：各州公共假期、学校假期、农历和长周末",
     "src.note": "2026 和 2027 年公共假期取自首相署内阁司（BKPP）官方清单。之后的年份按同样规则推算，并标注\"推算\"。补假按《1951 年假期法令》第 3 条自动计算；吉打、吉兰丹、登嘉楼、沙巴和砂拉越的补假由州政府另行宣布。学校假期取自教育部通令。",
     "x.title": "加入手机日历", "x.what": "{s} · 公共假期 + 学校假期",
