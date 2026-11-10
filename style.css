@@ -62,11 +62,11 @@ svg { display: block; }
 
 .cats { display: flex; gap: 10px; overflow-x: auto; padding: 0 12px 16px; scroll-snap-type: x mandatory; scroll-padding: 12px; scrollbar-width: none; }
 .cats::-webkit-scrollbar { display: none; }
-.cat { flex: 0 0 38%; min-width: 132px; scroll-snap-align: start; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 14px; min-height: 92px; padding: 12px 14px; border: 0; border-radius: var(--r-lg); color: #fff; text-align: left; font-size: 15px; font-weight: 700; line-height: 1.2; box-shadow: var(--shadow); }
-@media (min-width: 640px) { .cat { flex-basis: calc(25% - 8px); } }
+.cat { flex: 0 0 calc((100% - 20px) / 3); min-width: 104px; scroll-snap-align: start; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 14px; min-height: 92px; padding: 12px 14px; border: 0; border-radius: var(--r-lg); color: #fff; text-align: left; font-size: 15px; font-weight: 700; line-height: 1.2; box-shadow: var(--shadow); }
+@media (min-width: 640px) { .cat { flex-basis: calc((100% - 20px) / 3); } }
 .cat svg { width: 26px; height: 26px; }
 .cat:active { transform: scale(.98); }
-.cat-public { background: var(--public); } .cat-school { background: var(--school); } .cat-salary { background: var(--salary); } .cat-long { background: var(--long); }
+.cat-public { background: var(--public); } .cat-school { background: var(--school); } .cat-long { background: var(--long); }
 
 /* Month tiles */
 .months { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 0 12px; }
@@ -113,9 +113,7 @@ svg { display: block; }
 .cell.hol { background: var(--red-bg); }
 .cell.school::after { content: ""; position: absolute; left: 5px; right: 5px; bottom: 3px; height: 3px; border-radius: 3px; background: var(--school); }
 .cell.today { box-shadow: inset 0 0 0 2.5px var(--now); }
-.cell .pay { position: absolute; top: 4px; right: 4px; display: grid; place-items: center; width: 15px; height: 15px; border-radius: 50%; background: var(--salary); color: #fff; font-size: 9.5px; font-weight: 800; }
 .cell .ev { position: absolute; top: 6px; right: 6px; width: 7px; height: 7px; border-radius: 50%; background: var(--evt); }
-.cell .pay + .ev { right: 22px; }
 @media (max-width: 420px) { .cell .hn { display: none; } .cell .g { font-size: 20px; } .trow { grid-template-columns: 38px repeat(var(--weeks), minmax(0, 1fr)); } .wdl span { font-size: 9px; } }
 
 .legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 12px 2px 0; font-size: 12px; color: var(--muted); }
@@ -123,7 +121,6 @@ svg { display: block; }
 .sw { display: inline-grid; place-items: center; width: 14px; height: 14px; border-radius: 4px; font-size: 9px; color: #fff; }
 .sw-hol { background: var(--red-bg); box-shadow: inset 0 0 0 1.5px var(--red); }
 .sw-school { background: var(--card); box-shadow: inset 0 -3px 0 var(--school), inset 0 0 0 1px var(--line); }
-.sw-pay { background: var(--salary); border-radius: 50%; }
 .sw-evt { width: 8px; height: 8px; background: var(--evt); border-radius: 50%; }
 
 /* ===== Cards & lists ===== */
@@ -134,7 +131,7 @@ svg { display: block; }
 .item:last-child { border-bottom: 0; }
 .item[data-date] { cursor: pointer; }
 .item .mark { flex: 0 0 auto; align-self: stretch; width: 4px; border-radius: 4px; background: var(--public); }
-.t-school .mark { background: var(--school); } .t-salary .mark { background: var(--salary); } .t-evt .mark { background: var(--evt); }
+.t-school .mark { background: var(--school); } .t-evt .mark { background: var(--evt); }
 .item .body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
 .item .what { font-size: 15px; font-weight: 600; line-height: 1.3; }
 .item .when { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }

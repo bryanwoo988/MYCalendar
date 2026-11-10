@@ -4,7 +4,7 @@ A Malaysia lunar calendar web app. No build step, no dependencies, installable a
 
 ## Screens
 - **State filter** (top bar, every screen): all 13 states and 3 Federal Territories. Public holidays, replacement days, school-holiday group (A/B) and KPM festive days follow the state.
-- **Home**: year tabs, Public Holiday / School Holiday / Salary Schedule cards, 3×4 month tiles.
+- **Home**: year tabs, Public Holiday / School Holiday cards, 3×4 month tiles.
 - **Month page**: traditional layout with Chinese lunar and Hijri dates under each day.
 - **Long Weekend**: every break of 3+ days around a public holiday, for your state or all states, with optional annual-leave days (0–2) to bridge gaps. Chips show weekend / public holiday / annual leave. Uses each state's own weekend (Fri–Sat in Kedah, Kelantan, Terengganu).
 - **Phone calendar**: subscribe (auto-updating feed per state) or download an `.ics` file.
@@ -25,7 +25,6 @@ Subscription links (`webcal://…/ics/<STATE>.ics`) only work once the site is h
 | Public holidays | 2028+ | **Estimated**: same rules as the official lists + astronomy (see below). Labelled "estimated" |
 | School holidays incl. KPM festive days | 2026 | [KPM Surat Siaran Bil. 3/2025](https://www.kabinet.gov.my/storage/2025/10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf), [2025/2026 (pindaan)](https://www.kabinet.gov.my/storage/2025/04/tp25-pindaan.pdf) |
 | School holidays | 2027 | Not included: the official KPM document could not be retrieved (moe.gov.my blocks automated access) |
-| Civil servant pay dates | 2026, 2027 | Secondary summaries of JANM circulars (not verified against the circular) |
 
 Estimation rules (`js/astro.js`, `js/calendars.js`): precise new moons (Meeus ch. 49) for the Chinese calendar; MABIMS crescent visibility for Hijri dates; Tamil-calendar rules for Thaipusam and Deepavali. `tests/holidays.test.mjs` checks that the rules reproduce the official 2026 and 2027 lists for every state (one known exception: the Sultan of Pahang's birthday moved from 31 to 30 July) and 94 past festival dates.
 

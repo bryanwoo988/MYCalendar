@@ -1,5 +1,5 @@
 import { STATES, holidaysFor, isOfficial, OFFICIAL_YEARS, replacementNote, SOURCES, SCHOOL_YEARS,
-  schoolHolidaysFor, schoolGroup, SALARY_DATES, FRI_SAT } from "./data.js";
+  schoolHolidaysFor, schoolGroup, FRI_SAT } from "./data.js";
 import { lunar, hijri } from "./calendars.js";
 import { buildICS } from "./ics.js";
 import { longWeekends } from "./longweekend.js";
@@ -8,7 +8,7 @@ import { t, setLang, getLang, applyStatic, LANGS, MONTHS, MONTH_TILE, WEEKDAYS, 
 
 // Holidays are calculated for any year; offer last year through ten years ahead.
 const YEARS = Array.from({ length: 12 }, (_, i) => new Date().getFullYear() - 1 + i);
-const CATS = ["public", "school", "salary", "long"];
+const CATS = ["public", "school", "long"];
 const WD_ZH = ["日", "一", "二", "三", "四", "五", "六"];
 const WD_MS = ["Ahad", "Isnin", "Selasa", "Rabu", "Khamis", "Jumaat", "Sabtu"];
 const LIGHT_THEMES = ["classic", "paper", "mint", "lavender"];
@@ -53,7 +53,6 @@ function guessLang() {
 
 // ---------- lookups ----------
 const schoolOn = (dateIso) => schoolHolidaysFor(st.region).find((s) => dateIso >= s.start && dateIso <= s.end);
-const isPay = (dateIso) => SALARY_DATES.includes(dateIso);
 const srcLink = (key, full = false) => `<a href="${SOURCES[key].url}" target="_blank" rel="noopener">${esc(full ? SOURCES[key].label : SOURCES[key].short)}</a>`;
 const SRC_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v4h4M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
 const srcRow = (keys) => `<div class="src">${SRC_ICON}<span>${t("source")}: ${keys.map((k) => srcLink(k)).join(" · ")}</span></div>`;
@@ -103,7 +102,6 @@ function itemsForDay(key) {
   const out = (hol.get(key) || []).map(holItem);
   const s = schoolOn(key);
   if (s) out.push({ type: "school", text: schoolName(s.name), raw: s.name });
-  if (isPay(key)) out.push({ type: "salary", text: t("payDay") });
   (st.events[key] || []).forEach((e, i) => out.push({ type: "evt", text: e, idx: i }));
   return out;
 }
@@ -156,7 +154,6 @@ function renderMonthPage(y, m) {
           <span class="lu ${lu.day === 1 || lu.day === 15 ? "first" : ""}">${lu.label}</span>
           <span class="hj">${hj.day === 1 ? hj.short : hj.day}</span>
           ${hs.length ? `<span class="hn">${esc(holidayName(hs[0].name))}</span>` : ""}
-          ${isPay(key) ? '<span class="pay">$</span>' : ""}
           ${st.events[key]?.length ? '<span class="ev"></span>' : ""}
         </button>`;
     }
@@ -273,14 +270,9 @@ function renderList(cat, y) {
       const when = s.start === s.end ? fmtShort(s.start) : `${fmtShort(s.start)} – ${fmtShort(s.end)}`;
       rows.push(listItem(s.start, { type: "school", text: schoolName(s.name) }, `${when}${n > 1 ? ` · ${t("days", { n })}` : ""}`));
     }
-  } else {
-    note = `<div class="notice">${t("payNote")}</div>`;
-    for (const d of SALARY_DATES.filter((d) => d.startsWith(`${y}-`))) {
-      rows.push(listItem(d, { type: "salary", text: t("salaryOf", { m: monthName(parse(d).getMonth()) }) }));
-    }
   }
   $("l-note").innerHTML = note;
-  const notYet = cat === "school" ? `${t("noSchool", { y })} ${srcLink("moe")}.` : t("noPay", { y, p: y - 1 });
+  const notYet = `${t("noSchool", { y })} ${srcLink("moe")}.`;
   $("l-list").innerHTML = rows.join("") || `<li class="empty">${notYet}</li>`;
 }
 

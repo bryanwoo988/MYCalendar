@@ -358,13 +358,3 @@ export function schoolHolidaysFor(state) {
   const g = schoolGroup(state);
   return SCHOOL_HOLIDAYS.filter((s) => s.group === g && (!s.states || appliesTo({ states: parseStates(s.states) }, state)));
 }
-
-// ---------- Civil servant pay dates (JANM) ----------
-// Source: secondary summaries of JANM circulars SPANM Bil. 5/2025 and Bil. 5/2026
-// (the JANM site was not reachable to verify).
-export const SALARY_DATES = [
-  "2026-01-22", "2026-02-12", "2026-03-13", "2026-04-16", "2026-05-21", "2026-06-25",
-  "2026-07-23", "2026-08-24", "2026-09-24", "2026-10-22", "2026-11-25", "2026-12-21",
-  "2027-01-25", "2027-02-25", "2027-03-25", "2027-04-22", "2027-05-12", "2027-06-17",
-  "2027-07-21", "2027-08-25", "2027-09-23", "2027-10-21", "2027-11-25", "2027-12-20",
-];
