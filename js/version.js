@@ -3,6 +3,15 @@
 // the middle one), date and time in Malaysia time (YYYY-MM-DD HH:MM), notes in zh / en / ms.
 export const RELEASES = [
   {
+    v: "1.14.1",
+    date: "2026-11-10 18:29",
+    notes: {
+      zh: ["设置 → 资料来源：现在列出所有 10 个国家的官方来源，按国家分组，并说明哪些是 App 自行计算的"],
+      en: ["Settings → Data sources now lists the official sources for all 10 countries, grouped by country, and explains what the app calculates itself"],
+      ms: ["Tetapan → Sumber data kini menyenaraikan sumber rasmi bagi kesemua 10 negara, mengikut negara, dan menerangkan apa yang dikira oleh aplikasi sendiri"]
+    }
+  },
+  {
     v: "1.14.0",
     date: "2026-11-10 18:21",
     notes: {

@@ -5,6 +5,7 @@ export const LANGS = { zh: "中文", en: "English", ms: "BM" };
 
 const T = {
   en: {
+    "src.other": "Official lists for 2026 and 2027 only; later years appear once the government publishes them.", "src.calcTitle": "Calculated in the app", "src.calc": "Chinese lunar dates, Chinese festivals and the zodiac come from astronomy (new moons and the Sun's position, UTC+8). Hijri dates use the MABIMS crescent rule that Malaysia uses. Malaysian holidays after 2027 are estimated with the same rules as the official lists. All are checked against official calendars in the app's tests.",
     "set.display": "Calendar display", "disp.lunar": "Chinese lunar calendar (农历)", "disp.hijri": "Islamic calendar (Hijri)", "disp.fest": "Chinese festivals", "disp.zodiac": "Zodiac signs", "disp.note": "Public holidays always show, whatever is turned off here.", "lbl.lunar": "Lunar", "lbl.hijri": "Hijri",
     "z.toggle": "Zodiac",
     "z.note": "A sign starts on Chinese New Year, not 1 January. If you were born in January or early February, check the dates below.", "z.age": "turns {n} this year",
@@ -63,6 +64,7 @@ const T = {
     "x.howto": "On iPhone, open the file and tap \"Add All\". On Android, open it with Google Calendar or Samsung Calendar. A downloaded file does not update; re-download after the official list changes.",
   },
   ms: {
+    "src.other": "Senarai rasmi bagi 2026 dan 2027 sahaja; tahun seterusnya dipaparkan selepas kerajaan menerbitkannya.", "src.calcTitle": "Dikira dalam aplikasi", "src.calc": "Tarikh lunar Cina, perayaan Cina dan shio dikira daripada astronomi (anak bulan dan kedudukan Matahari, UTC+8). Tarikh Hijrah menggunakan kriteria anak bulan MABIMS yang digunakan Malaysia. Cuti Malaysia selepas 2027 dianggarkan dengan peraturan yang sama seperti senarai rasmi. Semuanya disemak dengan kalendar rasmi dalam ujian aplikasi.",
     "set.display": "Paparan kalendar", "disp.lunar": "Kalendar lunar Cina (农历)", "disp.hijri": "Kalendar Islam (Hijrah)", "disp.fest": "Perayaan Cina", "disp.zodiac": "Shio", "disp.note": "Cuti umum sentiasa dipaparkan walaupun pilihan di sini dimatikan.", "lbl.lunar": "Lunar", "lbl.hijri": "Hijrah",
     "z.toggle": "Shio",
     "z.note": "Shio bermula pada Tahun Baharu Cina, bukan 1 Januari. Jika lahir pada Januari atau awal Februari, semak tarikh di bawah.", "z.age": "{n} tahun tahun ini",
@@ -121,6 +123,7 @@ const T = {
     "x.howto": "Di iPhone, buka fail dan tekan \"Add All\". Di Android, buka dengan Google Calendar atau Samsung Calendar. Fail yang dimuat turun tidak dikemas kini; muat turun semula selepas senarai rasmi berubah.",
   },
   zh: {
+    "src.other": "只收录 2026 和 2027 年的官方清单；之后的年份等政府公布后才加入。", "src.calcTitle": "App 自行计算的部分", "src.calc": "农历日期、传统节日和生肖按天文计算（新月和太阳位置，UTC+8）。回历日期用马来西亚采用的 MABIMS 新月可见标准。2027 年之后的马来西亚假期按官方清单的同一套规则推算。以上都在 App 的测试里和官方日历核对过。",
     "set.display": "日历显示", "disp.lunar": "农历", "disp.hijri": "伊斯兰历（回历）", "disp.fest": "传统节日", "disp.zodiac": "生肖", "disp.note": "不管这里关掉什么，公共假期都会照常显示。", "lbl.lunar": "农历", "lbl.hijri": "回历",
     "z.toggle": "生肖",
     "z.note": "生肖从农历新年开始算，不是 1 月 1 日。1 月或 2 月初出生的人，请看下面的起止日期。", "z.age": "今年满 {n} 岁",

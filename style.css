@@ -356,3 +356,12 @@ svg { display: block; }
 .switch-row .knob::after { content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25); transition: transform .2s; }
 .switch-row[aria-checked="true"] .knob { background: var(--sel); }
 .switch-row[aria-checked="true"] .knob::after { transform: translateX(16px); }
+
+/* Data sources grouped by country */
+.sources { list-style: none; padding-left: 0; }
+.sources .src-group { margin: 12px 0 0; padding-top: 10px; border-top: 1px solid var(--line); }
+.sources .src-group:first-child { border-top: 0; padding-top: 0; }
+.sources .src-group > b { display: block; margin-bottom: 4px; font-size: 14px; }
+.sources .src-group ul { margin: 0; padding-left: 18px; }
+.sources .src-group li { margin: 4px 0; }
+.sources .src-group .note { margin: 6px 0 0; }

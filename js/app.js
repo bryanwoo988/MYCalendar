@@ -650,6 +650,7 @@ function toast(msg) {
 
 $("menu-btn").addEventListener("click", () => {
   renderAbout();
+  renderSources();
   renderDisplaySwitches();
   renderCountrySelect();
   renderLangSeg();
@@ -657,7 +658,17 @@ $("menu-btn").addEventListener("click", () => {
   renderShare();
   $("menu").showModal();
 });
-$("sources").innerHTML = Object.keys(SOURCES).filter((k) => k !== "moe").map((k) => `<li>${srcLink(k, true)}</li>`).join("");
+// Settings → Data sources: every country's official sources, grouped by country.
+function renderSources() {
+  const link = (x) => `<li><a href="${x.url}" target="_blank" rel="noopener">${esc(x.label)}</a></li>`;
+  const group = (cc, items, note) => `<li class="src-group"><b>${esc(cLabel(cc))}</b><ul>${items}</ul>${note ? `<p class="note">${esc(note)}</p>` : ""}</li>`;
+  const my = Object.keys(SOURCES).filter((k) => k !== "moe").map((k) => link(SOURCES[k])).join("");
+  const others = Object.keys(COUNTRY_SOURCES).sort((a, b) => cName(a).localeCompare(cName(b)))
+    .map((cc) => group(cc, COUNTRY_SOURCES[cc].map(link).join(""), t("src.other"))).join("");
+  $("sources").innerHTML = group("MY", my, t("src.note")) + others
+    + `<li class="src-group"><b>${esc(t("src.calcTitle"))}</b><p class="note">${esc(t("src.calc"))}</p></li>`;
+}
+renderSources();
 
 // ---------- phone calendar ----------
 const EXPORT_YEARS = [...new Set([...OFFICIAL_YEARS, today.getFullYear(), today.getFullYear() + 1, today.getFullYear() + 2])].sort();
