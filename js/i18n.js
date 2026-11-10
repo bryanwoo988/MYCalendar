@@ -5,6 +5,7 @@ export const LANGS = { zh: "中文", en: "English", ms: "BM" };
 
 const T = {
   en: {
+    "set.display": "Calendar display", "disp.lunar": "Chinese lunar calendar (农历)", "disp.hijri": "Islamic calendar (Hijri)", "disp.fest": "Chinese festivals", "disp.zodiac": "Zodiac signs", "disp.note": "Public holidays always show, whatever is turned off here.", "lbl.lunar": "Lunar", "lbl.hijri": "Hijri",
     "z.toggle": "Zodiac",
     "z.note": "A sign starts on Chinese New Year, not 1 January. If you were born in January or early February, check the dates below.", "z.age": "turns {n} this year",
     "upd.available": "A new version is available.", "upd.btn": "Update", "about.title": "About", "about.version": "Version", "about.updated": "Last updated", "about.check": "Check for updates", "about.history": "Update history", "about.latest": "You have the latest version.", "about.found": "New version found — tap Update.", "about.offline": "Can't check while offline.",
@@ -62,6 +63,7 @@ const T = {
     "x.howto": "On iPhone, open the file and tap \"Add All\". On Android, open it with Google Calendar or Samsung Calendar. A downloaded file does not update; re-download after the official list changes.",
   },
   ms: {
+    "set.display": "Paparan kalendar", "disp.lunar": "Kalendar lunar Cina (农历)", "disp.hijri": "Kalendar Islam (Hijrah)", "disp.fest": "Perayaan Cina", "disp.zodiac": "Shio", "disp.note": "Cuti umum sentiasa dipaparkan walaupun pilihan di sini dimatikan.", "lbl.lunar": "Lunar", "lbl.hijri": "Hijrah",
     "z.toggle": "Shio",
     "z.note": "Shio bermula pada Tahun Baharu Cina, bukan 1 Januari. Jika lahir pada Januari atau awal Februari, semak tarikh di bawah.", "z.age": "{n} tahun tahun ini",
     "upd.available": "Versi baharu tersedia.", "upd.btn": "Kemas kini", "about.title": "Perihal", "about.version": "Versi", "about.updated": "Kemas kini terakhir", "about.check": "Semak kemas kini", "about.history": "Sejarah kemas kini", "about.latest": "Anda menggunakan versi terkini.", "about.found": "Versi baharu ditemui — ketik Kemas kini.", "about.offline": "Tidak dapat menyemak semasa di luar talian.",
@@ -119,6 +121,7 @@ const T = {
     "x.howto": "Di iPhone, buka fail dan tekan \"Add All\". Di Android, buka dengan Google Calendar atau Samsung Calendar. Fail yang dimuat turun tidak dikemas kini; muat turun semula selepas senarai rasmi berubah.",
   },
   zh: {
+    "set.display": "日历显示", "disp.lunar": "农历", "disp.hijri": "伊斯兰历（回历）", "disp.fest": "传统节日", "disp.zodiac": "生肖", "disp.note": "不管这里关掉什么，公共假期都会照常显示。", "lbl.lunar": "农历", "lbl.hijri": "回历",
     "z.toggle": "生肖",
     "z.note": "生肖从农历新年开始算，不是 1 月 1 日。1 月或 2 月初出生的人，请看下面的起止日期。", "z.age": "今年满 {n} 岁",
     "upd.available": "有新版本。", "upd.btn": "更新", "about.title": "关于", "about.version": "版本", "about.updated": "最后更新", "about.check": "检查更新", "about.history": "更新记录", "about.latest": "已经是最新版本。", "about.found": "发现新版本，请点\"更新\"。", "about.offline": "离线时无法检查更新。",

@@ -341,3 +341,18 @@ svg { display: block; }
 .lf-options button:active, .lf-options button:focus-visible { border-color: var(--sel); background: var(--school-bg); }
 .lf-options b { font-size: 17px; }
 .lf-options span { font-size: 13px; color: var(--muted); }
+
+/* Month title: never split the month name; one labelled line per calendar */
+.m-title .nw { white-space: nowrap; }
+.m-title small { display: inline-block; white-space: nowrap; }
+.m-sub .cal-line { display: flex; gap: 8px; margin-top: 2px; }
+.m-sub .cal-line b { flex: 0 0 auto; min-width: 34px; font-weight: 600; color: var(--fg); opacity: .7; }
+
+/* Settings switches */
+.switches { display: grid; gap: 0; padding: 4px 12px; }
+.switch-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 11px 0; border: 0; border-bottom: 1px solid var(--line); background: none; color: var(--fg); font-size: 15px; text-align: left; }
+.switch-row:last-child { border-bottom: 0; }
+.switch-row .knob { position: relative; flex: 0 0 auto; width: 42px; height: 26px; border-radius: 999px; background: var(--line); transition: background .2s; }
+.switch-row .knob::after { content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25); transition: transform .2s; }
+.switch-row[aria-checked="true"] .knob { background: var(--sel); }
+.switch-row[aria-checked="true"] .knob::after { transform: translateX(16px); }
