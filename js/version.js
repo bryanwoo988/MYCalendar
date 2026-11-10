@@ -3,6 +3,15 @@
 // the middle one), date and time in Malaysia time (YYYY-MM-DD HH:MM), notes in zh / en / ms.
 export const RELEASES = [
   {
+    v: "1.14.4",
+    date: "2026-11-11 07:13",
+    notes: {
+      zh: ["修好：App 从后台回来时\"今天\"没有更新（例如还停在昨天的日期）。现在每次回到 App 和每天午夜都会按手机时间更新"],
+      en: ["Fixed: \"today\" didn't move on when the app was resumed from the background (it could still show yesterday). It now follows the phone's date whenever you return to the app and at midnight"],
+      ms: ["Dibaiki: \"hari ini\" tidak dikemas kini apabila aplikasi disambung semula dari latar belakang (boleh masih menunjukkan semalam). Kini ia mengikut tarikh telefon setiap kali kembali ke aplikasi dan pada tengah malam"]
+    }
+  },
+  {
     v: "1.14.3",
     date: "2026-11-10 22:43",
     notes: {
