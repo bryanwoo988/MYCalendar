@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-Hans">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -98,9 +98,14 @@
           <div id="m-title" class="m-title"></div>
           <div id="m-sub" class="m-sub"></div>
         </div>
-        <div class="m-nav">
-          <button id="m-prev" class="round" data-i18n-aria="prevMonth">‹</button>
-          <button id="m-next" class="round" data-i18n-aria="nextMonth">›</button>
+        <div class="m-side">
+          <div class="m-nav">
+            <button id="m-prev" class="round" data-i18n-aria="prevMonth">‹</button>
+            <button id="m-next" class="round" data-i18n-aria="nextMonth">›</button>
+          </div>
+          <button id="z-toggle" class="z-toggle" role="switch" aria-checked="true">
+            <span id="z-toggle-emoji" aria-hidden="true">🐎</span><span data-i18n="z.toggle"></span><span class="knob" aria-hidden="true"></span>
+          </button>
         </div>
       </div>
       <div id="m-zodiac" class="zstrip" role="list"></div>
@@ -138,6 +143,18 @@
       <input id="evt-text" type="text" data-i18n-ph="evtPlaceholder" maxlength="120" required>
       <button type="submit" data-i18n="evtAdd"></button>
     </form>
+  </dialog>
+
+  <!-- First launch: choose a language -->
+  <dialog id="lang-first" class="sheet lang-first" aria-labelledby="lf-title">
+    <div class="lf-icon"><img src="icon.svg" alt="" width="56" height="56"></div>
+    <h3 id="lf-title">Choose your language<br><small>选择语言 · Pilih bahasa</small></h3>
+    <div class="lf-options">
+      <button data-first-lang="en"><b>English</b><span>Malaysia calendar</span></button>
+      <button data-first-lang="zh"><b>中文</b><span>马来西亚日历</span></button>
+      <button data-first-lang="ms"><b>Bahasa Melayu</b><span>Kalendar Malaysia</span></button>
+    </div>
+    <p class="note center">You can change this later in ⋮ Settings · 之后可在 ⋮ 设置更改 · Boleh ditukar kemudian dalam ⋮ Tetapan</p>
   </dialog>
 
   <!-- Zodiac sign: birth years -->

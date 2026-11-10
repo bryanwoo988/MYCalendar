@@ -41,7 +41,8 @@ const st = {
   events: store.get("events", {}),
   lwScope: store.get("lwScope", "mine"),
   lwLeave: store.get("lwLeave", 1),
-  lang: store.get("lang", guessLang()),
+  lang: store.get("lang", "en"),
+  showZodiac: store.get("showZodiac", true),
   apMode: store.get("apMode", "system"),
   apLight: store.get("apLight", "classic"),
   apDark: store.get("apDark", "midnight"),
@@ -60,10 +61,6 @@ const cLabel = (cc) => `${COUNTRIES[cc].flag} ${cName(cc)}`;
 const hName = (h) => (h.names ? h.names[getLang()] || h.names.en : holidayName(h.name));
 const placeLabel = () => (isMY() ? sName(st.region) : cName(st.country));
 
-function guessLang() {
-  const l = (navigator.language || "").toLowerCase();
-  return l.startsWith("zh") ? "zh" : l.startsWith("ms") || l.startsWith("id") ? "ms" : "en";
-}
 
 // ---------- lookups ----------
 const festOn = (key) => festivalsFor(Number(key.slice(0, 4))).get(key) || [];
@@ -212,11 +209,24 @@ function renderMonthPage(y, m) {
 
 // ---------- zodiac ----------
 const zName = (i) => SIGNS[i][getLang()] || SIGNS[i].en;
+function applyZodiacToggle(signIndex) {
+  $("m-zodiac").hidden = !st.showZodiac;
+  $("z-toggle").setAttribute("aria-checked", String(st.showZodiac));
+  if (signIndex != null) $("z-toggle-emoji").textContent = SIGNS[signIndex].emoji;
+}
+$("z-toggle").addEventListener("click", () => {
+  st.showZodiac = !st.showZodiac;
+  store.set("showZodiac", st.showZodiac);
+  applyZodiacToggle();
+  if (st.showZodiac) centerZodiac();
+});
+
 function renderZodiacStrip(y, m) {
   // the sign of the lunar year that covers the middle of this month
   const mid = Date.UTC(y, m, 15);
   const ly = mid >= chineseNewYear(y) ? y : y - 1;
   const cur = signOfYear(ly);
+  applyZodiacToggle(cur);
   $("m-zodiac").innerHTML = SIGNS.map((sgn, i) => {
     const years = [];
     for (let yy = ly - ((cur - i + 12) % 12); years.length < 4; yy -= 12) years.push(yy);
@@ -777,6 +787,21 @@ $("check-update").addEventListener("click", () => checkForUpdate(true));
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).catch(() => {});
 }
+// First launch: ask for a language (English until chosen).
+function chooseFirstLanguage(lang) {
+  st.lang = lang;
+  store.set("lang", lang);
+  applyLanguage();
+  rerender();
+  if ($("lang-first").open) $("lang-first").close();
+}
+$("lang-first").addEventListener("click", (e) => {
+  const b = e.target.closest("[data-first-lang]");
+  if (b) chooseFirstLanguage(b.dataset.firstLang);
+});
+$("lang-first").addEventListener("cancel", () => chooseFirstLanguage(st.lang)); // Esc keeps English
+const needsLanguage = store.get("lang", null) === null;
+
 // First-ever launch: nothing to catch up on, so no "what's new" sheet.
 const firstLaunch = store.get("mycalendar.installed", null) === null
   && ["region", "lang", "events", "apMode", "country"].every((k) => store.get(k, null) === null);
@@ -790,6 +815,7 @@ applyLanguage();
 route();
 const SPLASH_MIN = 600;
 setTimeout(() => {
+  if (needsLanguage) $("lang-first").showModal();
   $("splash").classList.add("hide");
   setTimeout(() => $("splash").remove(), 400);
 }, Math.max(0, SPLASH_MIN - performance.now()));

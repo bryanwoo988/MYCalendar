@@ -3,6 +3,15 @@
 // the middle one), date and time in Malaysia time (YYYY-MM-DD HH:MM), notes in zh / en / ms.
 export const RELEASES = [
   {
+    v: "1.13.0",
+    date: "2026-11-10 18:12",
+    notes: {
+      zh: ["新增：月历页右上角的\"生肖\"开关，可以显示或隐藏生肖", "第一次打开时可以选择语言（默认英文）"],
+      en: ["New: a \"Zodiac\" switch at the top right of the month page to show or hide the zodiac signs", "Choose your language the first time you open the app (English by default)"],
+      ms: ["Baharu: suis \"Shio\" di kanan atas halaman bulan untuk tunjuk atau sembunyi shio", "Pilih bahasa semasa kali pertama membuka aplikasi (Bahasa Inggeris secara lalai)"]
+    }
+  },
+  {
     v: "1.12.0",
     date: "2026-11-10 18:00",
     notes: {
