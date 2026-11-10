@@ -7,7 +7,7 @@ A Malaysia lunar calendar web app. No build step, no dependencies, installable a
 - **Home**: year tabs, Public Holiday / School Holiday cards, 3×4 month tiles.
 - **Month page**: traditional layout with Chinese lunar and Hijri dates under each day.
 - **Long Weekend**: every break of 3+ days around a public holiday, for your state or all states, with optional annual-leave days (0–2) to bridge gaps. Chips show weekend / public holiday / annual leave. Uses each state's own weekend (Fri–Sat in Kedah, Kelantan, Terengganu).
-- **Country** (⋮ settings): Malaysia, Singapore, Taiwan, Hong Kong, China, Indonesia, South Korea, Thailand, Vietnam. Other countries show official public holidays for years that have been published (2026, 2027); no estimates.
+- **Country** (⋮ settings): Malaysia, Singapore, Taiwan, Hong Kong, China, Indonesia, South Korea, Thailand, Vietnam, Japan. Other countries show official public holidays for years that have been published (2026, 2027); no estimates.
 - **Compare**: trip planning. Your long weekends (with optional leave) next to the destination's public holidays: busy (they are on holiday too) or quiet (normal working days), plus both calendars merged by date.
 - **Phone calendar**: subscribe (auto-updating feed per state) or download an `.ics` file.
 
@@ -42,4 +42,5 @@ Royal birthdays and one-off holidays can change; always confirm future dates wit
 | Indonesia | SKB 3 Menteri (libur nasional + cuti bersama), Kemenko PMK |
 | South Korea | KASI 월력요항 calendar data; MOIS notice for Constitution Day 2026. Labour Day 2026 marked unconfirmed |
 | Thailand | Bank of Thailand financial-institution holidays |
+| Japan | Cabinet Office (内閣府) syukujitsu.csv |
 | Vietnam | Government Office 9859/VPCP-KGVX and 10065/VPCP-KGVX with Ministry of Home Affairs notices |

@@ -122,7 +122,7 @@ for (const cc of Object.keys(COUNTRIES).filter((c) => c !== "MY")) {
 }
 // Spot checks against the weekday printed in the official documents
 const SPOT = [["CN", "2027-02-05", 5], ["CN", "2027-01-31", 0], ["CN", "2026-02-14", 6], ["SG", "2026-06-01", 1], ["ID", "2027-03-15", 1],
-  ["ID", "2026-03-24", 2], ["KR", "2027-07-19", 1], ["TH", "2027-12-06", 1], ["TW", "2027-12-31", 5], ["HK", "2027-12-27", 1], ["VN", "2026-04-27", 1]];
+  ["ID", "2026-03-24", 2], ["KR", "2027-07-19", 1], ["TH", "2027-12-06", 1], ["TW", "2027-12-31", 5], ["HK", "2027-12-27", 1], ["VN", "2026-04-27", 1], ["JP", "2026-05-06", 3], ["JP", "2027-03-22", 1]];
 for (const [cc, d, dow] of SPOT) {
   if (!countryHolidays(cc).get(d)) fail(`${cc} ${d} missing`);
   else if (dowOf(d) !== dow) fail(`${cc} ${d} weekday ${dowOf(d)} ≠ ${dow}`);
