@@ -320,3 +320,24 @@ svg { display: block; }
 .z-list { max-height: 55vh; overflow-y: auto; }
 .z-list .item .mark { display: none; }
 .z-list .t-public { background: var(--school-bg); border-radius: var(--r-sm); padding-left: 8px; padding-right: 8px; }
+
+/* Month header: arrows with the zodiac switch underneath */
+.m-side { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.z-toggle { display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 6px 0 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--muted); font-size: 13px; font-weight: 600; }
+.z-toggle .knob { position: relative; width: 30px; height: 18px; border-radius: 999px; background: var(--line); transition: background .2s; }
+.z-toggle .knob::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.25); transition: transform .2s; }
+.z-toggle[aria-checked="true"] { color: var(--fg); border-color: var(--sel); }
+.z-toggle[aria-checked="true"] .knob { background: var(--sel); }
+.z-toggle[aria-checked="true"] .knob::after { transform: translateX(12px); }
+.z-toggle[aria-checked="false"] #z-toggle-emoji { filter: grayscale(1); opacity: .6; }
+
+/* First-launch language chooser */
+.lang-first { text-align: center; }
+.lang-first h3 { margin: 6px 0 14px; font-size: 20px; line-height: 1.3; }
+.lang-first h3 small { font-size: 14px; font-weight: 500; color: var(--muted); }
+.lf-icon img { width: 56px; height: 56px; border-radius: 14px; }
+.lf-options { display: grid; gap: 10px; margin-bottom: 12px; }
+.lf-options button { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 14px; border: 1.5px solid var(--line); border-radius: var(--r); background: var(--card); color: var(--fg); }
+.lf-options button:active, .lf-options button:focus-visible { border-color: var(--sel); background: var(--school-bg); }
+.lf-options b { font-size: 17px; }
+.lf-options span { font-size: 13px; color: var(--muted); }
