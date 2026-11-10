@@ -180,7 +180,7 @@ svg { display: block; }
 .lw .hstates { display: inline-block; margin-top: 4px; padding: 2px 8px; border-radius: 6px; background: var(--evt-bg); color: var(--evt); font-size: 12px; }
 
 /* ===== Sheets ===== */
-.sheet { width: min(520px, 100%); max-height: 88vh; margin: auto auto 0; padding: 20px 18px calc(env(safe-area-inset-bottom) + 20px); border: 0; border-radius: 20px 20px 0 0; background: var(--card); color: var(--fg); }
+.sheet { width: min(520px, 100%); max-height: 88vh; max-height: 88dvh; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; margin: auto auto 0; padding: 20px 18px calc(env(safe-area-inset-bottom) + 20px); border: 0; border-radius: 20px 20px 0 0; background: var(--card); color: var(--fg); }
 @media (min-width: 640px) { .sheet { margin: auto; border-radius: 20px; } }
 .sheet::backdrop { background: rgba(10, 14, 30, .45); }
 .sheet h3 { margin: 0 36px 4px 0; font-size: 18px; }
@@ -381,3 +381,8 @@ svg { display: block; }
 .share-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .share-actions .x-btn { padding: 0 8px; white-space: nowrap; }
 .share-actions:has(#sh-native[hidden]) { grid-template-columns: repeat(2, 1fr); }
+
+/* While a sheet is open the page behind it must not scroll (iOS otherwise moves the page
+   instead of the sheet, and the top of the sheet can end up out of reach). */
+html:has(dialog[open]) { overflow: hidden; }
+html:has(dialog[open]) body { overflow: hidden; }
