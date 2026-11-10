@@ -29,13 +29,13 @@ export const FRI_SAT = ["KDH", "KTN", "TRG"];
 const AUTO_REPLACE = ["JHR", "MLK", "NSN", "PHG", "PRK", "PLS", "PNG", "SGR", "KUL", "LBN", "PJY"];
 
 export const SOURCES = {
-  hka2026: { label: "JPM (BKPP): Hari Kelepasan Am Persekutuan dan Negeri 2026", url: "https://www.kabinet.gov.my/storage/2025/08/HKA-2026.pdf" },
-  hka2027: { label: "JPM (BKPP): Hari Kelepasan Am Persekutuan dan Negeri 2027", url: "https://www.kabinet.gov.my/storage/2026/08/HKA_2027.pdf" },
-  swk202: { label: "Sarawak Government Gazette, Swk. L.N. 202 (2026)", url: "https://lawnet.sarawak.gov.my/lawnet_file/Subsidiary/SUB_Issue%20No.%2044_L.N.%20202%20PUBLICHOLIDAY.pdf" },
-  act369: { label: "Holidays Act 1951 (Act 369), section 3", url: "https://www.kabinet.gov.my/hari-kelepasan-am/" },
-  kpm2026: { label: "KPM Surat Siaran Bil. 3 Tahun 2025: Kalendar Akademik 2026", url: "https://www.kabinet.gov.my/storage/2025/10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf" },
-  kpm2025: { label: "KPM: Kalendar Akademik Sesi 2025/2026 (Pindaan)", url: "https://www.kabinet.gov.my/storage/2025/04/tp25-pindaan.pdf" },
-  moe: { label: "Kementerian Pendidikan Malaysia", url: "https://www.moe.gov.my/" },
+  hka2026: { short: "JPM · Hari Kelepasan Am 2026", label: "JPM (BKPP): Hari Kelepasan Am Persekutuan dan Negeri 2026", url: "https://www.kabinet.gov.my/storage/2025/08/HKA-2026.pdf" },
+  hka2027: { short: "JPM · Hari Kelepasan Am 2027", label: "JPM (BKPP): Hari Kelepasan Am Persekutuan dan Negeri 2027", url: "https://www.kabinet.gov.my/storage/2026/08/HKA_2027.pdf" },
+  swk202: { short: "Sarawak Gazette L.N. 202/2026", label: "Sarawak Government Gazette, Swk. L.N. 202 (2026)", url: "https://lawnet.sarawak.gov.my/lawnet_file/Subsidiary/SUB_Issue%20No.%2044_L.N.%20202%20PUBLICHOLIDAY.pdf" },
+  act369: { short: "Holidays Act 1951, s.3", label: "Holidays Act 1951 (Act 369), section 3", url: "https://www.kabinet.gov.my/hari-kelepasan-am/" },
+  kpm2026: { short: "KPM · Kalendar Akademik 2026", label: "KPM Surat Siaran Bil. 3 Tahun 2025: Kalendar Akademik 2026", url: "https://www.kabinet.gov.my/storage/2025/10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf" },
+  kpm2025: { short: "KPM · Kalendar 2025/2026", label: "KPM: Kalendar Akademik Sesi 2025/2026 (Pindaan)", url: "https://www.kabinet.gov.my/storage/2025/04/tp25-pindaan.pdf" },
+  moe: { short: "KPM website", label: "Kementerian Pendidikan Malaysia", url: "https://www.moe.gov.my/" },
 };
 
 const ISLAMIC_STAR = true; // marks dates the official list says are "tertakluk kepada perubahan"

@@ -47,7 +47,9 @@ let hol = holidaysFor(st.region);
 function schoolOn(dateIso) {
   return schoolHolidaysFor(st.region).find((s) => dateIso >= s.start && dateIso <= s.end);
 }
-const srcLink = (key) => `<a href="${SOURCES[key].url}" target="_blank" rel="noopener">${esc(SOURCES[key].label)}</a>`;
+const srcLink = (key, full = false) => `<a href="${SOURCES[key].url}" target="_blank" rel="noopener">${esc(full ? SOURCES[key].label : SOURCES[key].short)}</a>`;
+const SRC_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v4h4M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+const srcRow = (keys) => `<div class="src">${SRC_ICON}<span>Source: ${keys.map((k) => srcLink(k)).join(" · ")}</span></div>`;
 const isPay = (dateIso) => SALARY_DATES.includes(dateIso);
 
 function monthInfo(y, m) {
@@ -139,7 +141,7 @@ function renderMonthPage(y, m) {
         </button>`;
     }
     return `<div class="trow ${dow === 0 ? "sun" : ""}" style="--weeks:${weeks}">
-      <div class="wdl"><b>${wd}</b><span>${WD_ZH[dow]}</span><span>${WD_MS[dow]}</span></div>${cells.join("")}</div>`;
+      <div class="wdl"><b>${WD_SHORT[dow]}</b><span>${WD_ZH[dow].slice(-1)} · ${WD_MS[dow]}</span></div>${cells.join("")}</div>`;
   });
   $("m-grid").innerHTML = rows.join("");
 
@@ -157,17 +159,19 @@ function renderMonthPage(y, m) {
 const holItem = (h) => ({ type: "public", text: h.name, kind: h.kind, unc: h.uncertain, star: h.subjectToChange });
 
 function tagFor(it) {
-  if (it.type === "evt") return '<span class="tag evt">mine</span>';
-  if (it.type === "school") return '<span class="tag school">school</span>';
-  if (it.type === "salary") return '<span class="tag salary">pay</span>';
-  if (it.kind === "estimated") return `<span class="tag prov">${it.unc ? "estimated ±1 day" : "estimated"}</span>`;
+  if (it.type !== "public") return "";
+  if (it.kind === "estimated") return `<span class="tag est">${it.unc ? "estimated ±1d" : "estimated"}</span>`;
   if (it.kind === "replacement") return '<span class="tag repl">replacement</span>';
-  return `<span class="tag public">${it.star ? "official*" : "official"}</span>`;
+  if (it.star) return '<span class="tag est">may change</span>';
+  return "";
 }
 
 function listItem(key, it, when = fmtShort(key)) {
-  const tag = tagFor(it);
-  return `<li data-date="${key}"><span class="when">${when}</span><span class="what">${esc(it.text)}</span>${tag}</li>`;
+  return `<li class="item t-${it.type}" data-date="${key}">
+    <span class="mark" aria-hidden="true"></span>
+    <span class="body"><span class="what">${esc(it.text)}</span>${when ? `<span class="when">${when}</span>` : ""}</span>
+    ${tagFor(it)}${it.type === "evt" && it.idx != null && !when ? `<button class="x" data-del="${it.idx}" aria-label="Delete">✕</button>` : ""}
+  </li>`;
 }
 
 // ---------- category list ----------
@@ -186,19 +190,17 @@ function renderLong(y) {
 
   const all = st.lwScope === "all";
   const list = longWeekends(y, all ? Object.keys(STATES) : [st.region], st.lwLeave);
-  const notes = [all
-    ? "Showing every state's long weekends. Pick your state to see only yours."
-    : `Long weekends for ${esc(STATES[st.region])}.`];
-  if (!isOfficial(y)) notes.push('<span class="notice">Based on estimated holidays — not yet gazetted.</span>');
+  const notes = all ? ['<div class="pill-note">Showing every state. Pick your state to see only yours.</div>'] : [];
+  if (!isOfficial(y)) notes.push('<div class="notice">Based on estimated holidays — not yet gazetted.</div>');
   const rn = all ? "" : replacementNote(st.region);
-  if (rn) notes.push(`<span class="notice">${esc(rn)}</span>`);
-  $("l-note").innerHTML = notes.join(" ");
+  if (rn) notes.push(`<div class="notice">${esc(rn)}</div>`);
+  $("l-note").innerHTML = notes.join("");
 
   const rows = [];
   let lastM = -1;
   for (const w of list) {
     const m = parse(w.holidays[0].date).getMonth();
-    if (m !== lastM) { rows.push(`<li class="lw-month">${MONTH_LABEL[m]}</li>`); lastM = m; }
+    if (m !== lastM) { rows.push(`<li class="mhead">${MONTH_FULL[m]}</li>`); lastM = m; }
     const title = [...new Set(w.holidays.map((h) => h.name.replace(/ \((replacement|2nd day|3rd day)\)$/, "")))].join(" / ");
     const chips = w.days.map((d, i) => {
       const dt = parse(d.date);
@@ -214,8 +216,7 @@ function renderLong(y) {
     }).join("");
     rows.push(`<li class="lw">
       <h3>${esc(title)}</h3>
-      <div class="meta"><b>${w.days.length} days off</b>${w.leave ? `<span>· ${w.leave} annual leave day${w.leave > 1 ? "s" : ""}</span>` : "<span>· no leave needed</span>"}
-        ${all ? `<span>· ${esc(statesSummary(w.states))}</span>` : ""}${w.estimated ? '<span class="tag prov">estimated</span>' : ""}</div>
+      <div class="meta"><span class="days">${w.days.length} days off</span><span>${w.leave ? `${w.leave} day${w.leave > 1 ? "s" : ""} leave` : "No leave needed"}</span>${w.estimated ? '<span class="tag est">estimated</span>' : ""}</div>
       <div class="chips">${chips}</div>
       ${cards}
     </li>`);
@@ -231,15 +232,16 @@ function renderList(cat, y) {
   if (cat === "public") {
     const parts = [];
     if (isOfficial(y)) {
-      parts.push(`Official list · Source: ${srcLink(`hka${y}`)}.`);
-      if (hol.list(y).some((h) => h.subjectToChange)) parts.push("* Subject to change (moon sighting).");
+      const keys = [`hka${y}`];
+      if (hol.list(y).some((h) => h.kind === "replacement")) keys.push("act369");
+      if (y === 2026 && st.region === "SWK") keys.push("swk202");
+      parts.push(srcRow(keys));
     } else {
-      parts.push(`<span class="notice">Not yet gazetted. These dates are estimated from the rules used in the official ${OFFICIAL_YEARS.join("/")} lists. Use them for planning only.</span>`);
+      parts.push(`<div class="notice">Not yet gazetted. Estimated from the rules in the official ${OFFICIAL_YEARS.join(" & ")} lists — for planning only.</div>`);
     }
-    if (hol.list(y).some((h) => h.kind === "replacement")) parts.push(`Replacement days: ${srcLink("act369")}${y === 2026 && st.region === "SWK" ? `, ${srcLink("swk202")}` : ""}.`);
     const rn = replacementNote(st.region);
-    if (rn) parts.push(`<span class="notice">${esc(rn)}</span>`);
-    note = parts.join(" ");
+    if (rn) parts.push(`<div class="notice">${esc(rn)}</div>`);
+    note = parts.join("");
     const yearMap = hol.year(y);
     const keys = [...yearMap.keys()].sort();
     let lastM = -1;
@@ -251,15 +253,15 @@ function renderList(cat, y) {
   } else if (cat === "school") {
     const g = schoolGroup(st.region);
     const items = schoolHolidaysFor(st.region).filter((s) => s.start.startsWith(`${y}-`));
-    note = `Group ${g} (${g === "A" ? "Kedah, Kelantan, Terengganu" : "all other states and Federal Territories"}).`;
-    if (SCHOOL_YEARS[y]) note += ` Source: ${srcLink(SCHOOL_YEARS[y])}${items.some((s) => s.source === "kpm2025") ? `, ${srcLink("kpm2025")}` : ""}.`;
+    note = `<div class="pill-note">Group ${g} · ${g === "A" ? "Kedah, Kelantan, Terengganu" : "all other states & Federal Territories"}</div>`;
+    if (SCHOOL_YEARS[y]) note += srcRow([SCHOOL_YEARS[y], ...(items.some((s) => s.source === "kpm2025") ? ["kpm2025"] : [])]);
     for (const s of items) {
       const days = Math.round((parse(s.end) - parse(s.start)) / 864e5) + 1;
       const when = s.start === s.end ? fmtShort(s.start) : `${fmtShort(s.start)} – ${fmtShort(s.end)}`;
-      rows.push(listItem(s.start, { type: "school", text: `${s.name}${days > 1 ? ` · ${days} days` : ""}` }, when));
+      rows.push(listItem(s.start, { type: "school", text: s.name }, `${when}${days > 1 ? ` · ${days} days` : ""}`));
     }
   } else {
-    note = "Federal civil servants (JANM). Taken from secondary summaries of JANM circulars, not the circular itself. Private-sector pay dates depend on your employer.";
+    note = '<div class="notice">Federal civil servants (JANM). From secondary summaries of JANM circulars, not the circular itself. Private-sector pay dates depend on your employer.</div>';
     for (const d of SALARY_DATES.filter((d) => d.startsWith(`${y}-`))) {
       rows.push(listItem(d, { type: "salary", text: `${MONTH_FULL[parse(d).getMonth()]} salary` }));
     }
@@ -278,9 +280,7 @@ function openDay(key) {
   const lu = lunar(date), hj = hijri(date);
   $("d-title").textContent = date.toLocaleDateString("en-MY", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
   $("d-sub").textContent = `农历 ${lu.month}${lu.day === 1 ? "初一" : lu.label} · ${hj.day} ${hj.monthName} ${hj.year}H`;
-  const items = itemsForDay(key).map((it) => it.type === "evt"
-    ? `<li><span class="what">${esc(it.text)}</span><span class="tag evt">mine</span><button class="x" data-del="${it.idx}" aria-label="Delete">✕</button></li>`
-    : listItem(key, it, "").replace('<span class="when"></span>', ""));
+  const items = itemsForDay(key).map((it) => listItem(key, it, ""));
   $("d-list").innerHTML = items.join("") || '<li class="empty">Nothing on this day.</li>';
   if (!$("day").open) $("day").showModal();
 }
@@ -330,14 +330,6 @@ $("cats").addEventListener("click", (e) => {
   const b = e.target.closest("[data-cat]");
   if (b) location.hash = `#/c/${b.dataset.cat}/${st.year}`;
 });
-$("cats").addEventListener("scroll", () => {
-  const el = $("cats");
-  const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
-  const dots = $("dots").children;
-  dots[0].classList.toggle("on", !atEnd);
-  dots[1].classList.toggle("on", atEnd);
-}, { passive: true });
-$("dots").children[0].classList.add("on");
 
 function stepMonth(delta) {
   const [, , a] = location.hash.split("/");
@@ -370,7 +362,7 @@ $("back").addEventListener("click", () => {
 });
 
 $("menu-btn").addEventListener("click", () => $("menu").showModal());
-$("sources").innerHTML = Object.keys(SOURCES).filter((k) => k !== "moe").map((k) => `<li>${srcLink(k)}</li>`).join("");
+$("sources").innerHTML = Object.keys(SOURCES).filter((k) => k !== "moe").map((k) => `<li>${srcLink(k, true)}</li>`).join("");
 
 // ---------- phone calendar ----------
 const EXPORT_YEARS = [...new Set([...OFFICIAL_YEARS, today.getFullYear(), today.getFullYear() + 1, today.getFullYear() + 2])].sort();
@@ -432,6 +424,7 @@ $("evt-form").addEventListener("submit", (e) => {
   rerender();
 });
 $("d-list").addEventListener("click", (e) => {
+  e.stopPropagation();
   const b = e.target.closest("[data-del]");
   if (!b) return;
   const list = st.events[st.day] || [];
