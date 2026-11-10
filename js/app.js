@@ -34,7 +34,10 @@ const store = {
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* storage unavailable */ } },
 };
 
-const today = new Date();
+// "Today" is re-read whenever the app comes back to the screen and at midnight (see refreshToday):
+// a home-screen app on a phone is usually resumed, not restarted, so a value read once at
+// start-up would stay on the day it was first opened.
+let today = new Date();
 const st = {
   region: store.get("region", "KUL"),
   year: YEARS.includes(today.getFullYear()) ? today.getFullYear() : 2026,
@@ -902,6 +905,26 @@ store.set("mycalendar.installed", true);
 WN?.init({ version: VERSION, releases: RELEASES, key: "mycalendar.seenVersion", lang: () => getLang(), isNewUser: () => firstLaunch });
 // On open, on return to the screen and every 15 minutes: offer a newer build if there is one.
 WN?.watch();
+
+function refreshToday() {
+  const now = new Date();
+  if (iso(now) === iso(today)) return;
+  if (now.getFullYear() !== today.getFullYear() && st.year === today.getFullYear() && YEARS.includes(now.getFullYear())) st.year = now.getFullYear();
+  today = now;
+  rerender();
+  scheduleMidnight();
+}
+let midnightTimer;
+function scheduleMidnight() {
+  clearTimeout(midnightTimer);
+  const n = new Date();
+  const next = new Date(n.getFullYear(), n.getMonth(), n.getDate() + 1, 0, 0, 5);
+  midnightTimer = setTimeout(refreshToday, next - n);
+}
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") refreshToday(); });
+window.addEventListener("focus", refreshToday);
+window.addEventListener("pageshow", refreshToday);
+scheduleMidnight();
 
 applyTheme();
 applyLanguage();
