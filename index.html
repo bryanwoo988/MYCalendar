@@ -1,69 +1,75 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>MY Calendar</title>
-  <meta name="description" content="Malaysia lunar calendar with public holidays, school holidays and civil servant pay dates.">
-  <meta name="theme-color" content="#0a0f6b">
+  <meta name="description" content="Malaysia lunar calendar with public holidays, school holidays and long weekends.">
+  <meta name="theme-color" content="#0d1660">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <!-- Apply the saved theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      var get = function (k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } };
+      var mode = get("apMode", "system"), light = get("apLight", "classic"), dark = get("apDark", "midnight");
+      var isDark = mode === "dark" || (mode === "system" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
+      var el = document.documentElement;
+      el.dataset.theme = isDark ? dark : light;
+      el.dataset.scheme = isDark ? "dark" : "light";
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="top">
-  <header class="bar">
-    <button id="back" class="icon-btn" aria-label="Back" hidden>
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-    <h1 id="bar-title">MY Calendar · 马来西亚</h1>
-    <button id="cal-btn" class="icon-btn" aria-label="Add to phone calendar" title="Add to phone calendar">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h17M8 3v4M16 3v4M12 12.5v5M9.5 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-    </button>
-    <button id="menu-btn" class="icon-btn" aria-label="Settings and sources" title="Settings and sources">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="19" r="1.8" fill="currentColor"/></svg>
-    </button>
-  </header>
-
-  <!-- State filter + phone calendar, visible on every screen -->
-  <div class="statebar">
-    <label class="state-pick">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg>
-      <select id="state" aria-label="State / Negeri"></select>
-    </label>
+    <header class="bar">
+      <button id="back" class="icon-btn" data-i18n-aria="back" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <h1 id="bar-title"></h1>
+      <button id="cal-btn" class="icon-btn" data-i18n-aria="addToCalendar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h17M8 3v4M16 3v4M12 12.5v5M9.5 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <button id="menu-btn" class="icon-btn" data-i18n-aria="settings">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="19" r="1.8" fill="currentColor"/></svg>
+      </button>
+    </header>
+    <div class="statebar">
+      <button id="country-chip" class="country-chip" hidden></button>
+      <label class="state-pick" id="state-pick">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg>
+        <select id="state" data-i18n-aria="statePick"></select>
+      </label>
+    </div>
   </div>
 
-  </div>
-
-  <!-- Home: year tabs, category cards, month grid -->
+  <!-- Home -->
   <main id="home" class="view">
     <nav id="years" class="years" aria-label="Year"></nav>
-
-    <section class="cats-wrap">
-      <div id="cats" class="cats">
-        <button class="cat cat-public" data-cat="public">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/><path d="M7 13h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2H7zm4 0h2v2h-2z" fill="currentColor"/></svg>
-          <span>Public Holiday</span>
-        </button>
-        <button class="cat cat-school" data-cat="school">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 1 9l11 5 9-4.1V16h2V9z" fill="currentColor"/><path d="M5 12.2V16c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.2z" fill="currentColor" opacity=".85"/></svg>
-          <span>School Holiday</span>
-        </button>
-        <button class="cat cat-salary" data-cat="salary">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 8.5c-.6-.9-1.7-1.5-3-1.5-1.7 0-3 .9-3 2.3 0 3.2 6 1.7 6 4.9 0 1.4-1.3 2.3-3 2.3-1.4 0-2.5-.6-3.1-1.6M12 5v2m0 10v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <span>Pay Dates</span>
-        </button>
-        <button class="cat cat-long" data-cat="long">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <span>Long Weekend</span>
-        </button>
-      </div>
-    </section>
-
+    <div id="cats" class="cats">
+      <button class="cat cat-public" data-cat="public">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/><path d="M7 13h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2H7zm4 0h2v2h-2z" fill="currentColor"/></svg>
+        <span data-i18n="cat.public"></span>
+      </button>
+      <button class="cat cat-school" data-cat="school">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 1 9l11 5 9-4.1V16h2V9z" fill="currentColor"/><path d="M5 12.2V16c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.2z" fill="currentColor" opacity=".85"/></svg>
+        <span data-i18n="cat.school"></span>
+      </button>
+      <button class="cat cat-long" data-cat="long">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span data-i18n="cat.long"></span>
+      </button>
+      <button class="cat cat-compare" data-cat="compare">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11M3 6l3-3M3 6l3 3M21 18H10m11 0-3-3m3 3-3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="6" r="2.5" fill="currentColor"/><circle cx="6" cy="18" r="2.5" fill="currentColor"/></svg>
+        <span data-i18n="cat.compare"></span>
+      </button>
+    </div>
     <section id="months" class="months" aria-label="Months"></section>
   </main>
 
-  <!-- Month: traditional calendar page -->
+  <!-- Month page -->
   <main id="month" class="view" hidden>
     <div class="page">
       <div class="page-head">
@@ -72,20 +78,20 @@
           <div id="m-sub" class="m-sub"></div>
         </div>
         <div class="m-nav">
-          <button id="m-prev" class="round" aria-label="Previous month">‹</button>
-          <button id="m-next" class="round" aria-label="Next month">›</button>
+          <button id="m-prev" class="round" data-i18n-aria="prevMonth">‹</button>
+          <button id="m-next" class="round" data-i18n-aria="nextMonth">›</button>
         </div>
       </div>
       <div id="m-grid" class="tgrid"></div>
       <p class="legend">
-        <span><b class="sw sw-hol"></b>Public holiday</span>
-        <span><b class="sw sw-school"></b>School holiday</span>
-        <span><b class="sw sw-pay">$</b>Pay day</span>
-        <span><b class="sw sw-evt"></b>My event</span>
+        <span><b class="sw sw-hol"></b><span data-i18n="legend.hol"></span></span>
+        <span id="legend-part" hidden><b class="sw sw-part"></b><span data-i18n="legend.part"></span></span>
+        <span><b class="sw sw-school"></b><span data-i18n="legend.school"></span></span>
+        <span><b class="sw sw-evt"></b><span data-i18n="legend.evt"></span></span>
       </p>
     </div>
     <section class="memo">
-      <h2>Memorandum</h2>
+      <h2 data-i18n="memo"></h2>
       <ul id="m-list" class="list"></ul>
     </section>
   </main>
@@ -94,66 +100,93 @@
   <main id="list" class="view" hidden>
     <section class="memo">
       <div id="l-controls" class="l-controls" hidden></div>
-      <p id="l-note" class="note"></p>
+      <div id="l-note" class="note"></div>
       <ul id="l-list" class="list"></ul>
     </section>
   </main>
 
   <!-- Day sheet -->
   <dialog id="day" class="sheet">
-    <form method="dialog" class="sheet-close"><button aria-label="Close">✕</button></form>
+    <form method="dialog" class="sheet-close"><button data-i18n-aria="close">✕</button></form>
     <h3 id="d-title"></h3>
     <p id="d-sub" class="m-sub"></p>
     <ul id="d-list" class="list"></ul>
     <form id="evt-form" class="evt-form">
-      <input id="evt-text" type="text" placeholder="Add my event" maxlength="120" required>
-      <button type="submit">Add</button>
+      <input id="evt-text" type="text" data-i18n-ph="evtPlaceholder" maxlength="120" required>
+      <button type="submit" data-i18n="evtAdd"></button>
     </form>
   </dialog>
 
-  <!-- Settings sheet -->
+  <!-- Settings (⋮) -->
   <dialog id="menu" class="sheet">
-    <form method="dialog" class="sheet-close"><button aria-label="Close">✕</button></form>
-    <h3>Settings</h3>
-    <h4>Data sources</h4>
-    <ul id="sources" class="sources"></ul>
-    <p class="note">
-      Public holidays for 2026 and 2027 are copied from the Prime Minister's Department (BKPP) lists.
-      Later years are estimates calculated from the same rules (lunar, Hijri and Tamil calendars) and are
-      labelled "estimated". Replacement days follow section 3 of the Holidays Act 1951 where it applies
-      automatically; Kedah, Kelantan, Terengganu, Sabah and Sarawak announce theirs separately.
-      School holidays are from the KPM circulars. Pay dates are from secondary summaries of JANM circulars.
-    </p>
+    <form method="dialog" class="sheet-close"><button data-i18n-aria="close">✕</button></form>
+    <h3 data-i18n="settings"></h3>
+
+    <h4 data-i18n="set.country"></h4>
+    <label class="field-select"><select id="country-sel"></select></label>
+
+    <h4 data-i18n="set.language"></h4>
+    <div id="lang-seg" class="seg wide" role="group"></div>
+
+    <h4 data-i18n="set.appearance"></h4>
+    <div class="panel">
+      <div id="ap-mode" class="seg wide" role="group"></div>
+      <p class="note" data-i18n="ap.note"></p>
+      <hr>
+      <div class="panel-title" data-i18n="ap.lightTheme"></div>
+      <div id="ap-light" class="swatches"></div>
+      <hr>
+      <div class="panel-title" data-i18n="ap.darkTheme"></div>
+      <div id="ap-dark" class="swatches"></div>
+    </div>
+
+    <h4 data-i18n="set.share"></h4>
+    <div class="panel share">
+      <div id="qr" class="qr" aria-hidden="true"></div>
+      <p class="note center" data-i18n="sh.scan"></p>
+      <div class="url-row"><code id="share-url"></code></div>
+      <div class="x-actions center">
+        <button id="sh-native" class="x-btn primary" data-i18n="sh.native"></button>
+        <a id="sh-wa" class="x-btn" target="_blank" rel="noopener" data-i18n="sh.whatsapp"></a>
+        <button id="sh-copy" class="x-btn" data-i18n="sh.copy"></button>
+      </div>
+    </div>
+
+    <details class="sources-box">
+      <summary data-i18n="set.sources"></summary>
+      <ul id="sources" class="sources"></ul>
+      <p class="note" data-i18n="src.note"></p>
+    </details>
   </dialog>
 
-  <!-- Phone calendar sheet -->
+  <!-- Phone calendar -->
   <dialog id="export" class="sheet">
-    <form method="dialog" class="sheet-close"><button aria-label="Close">✕</button></form>
-    <h3>Add to phone calendar</h3>
+    <form method="dialog" class="sheet-close"><button data-i18n-aria="close">✕</button></form>
+    <h3 data-i18n="x.title"></h3>
     <p id="x-state" class="m-sub"></p>
-
-    <h4>Subscribe (updates automatically)</h4>
-    <p class="note">Works with iPhone Calendar, Google Calendar and Outlook. New official lists are picked up without doing anything.</p>
+    <h4 data-i18n="x.subscribe"></h4>
+    <p class="note" data-i18n="x.subNote"></p>
     <div class="x-actions">
-      <a id="x-webcal" class="x-btn primary" href="#">iPhone / Mac: Subscribe</a>
-      <a id="x-google" class="x-btn" href="#" target="_blank" rel="noopener">Android: Google Calendar</a>
+      <a id="x-webcal" class="x-btn primary" href="#" data-i18n="x.iphone"></a>
+      <a id="x-google" class="x-btn" href="#" target="_blank" rel="noopener" data-i18n="x.android"></a>
     </div>
     <p id="x-feed-note" class="note"></p>
-
-    <h4>Or download a file</h4>
+    <h4 data-i18n="x.download"></h4>
     <div class="x-opts">
-      <label><input type="checkbox" id="x-public" checked> Public holidays</label>
-      <label><input type="checkbox" id="x-school" checked> School holidays</label>
-      <label><input type="checkbox" id="x-mine"> My events</label>
+      <label><input type="checkbox" id="x-public" checked> <span data-i18n="x.public"></span></label>
+      <label><input type="checkbox" id="x-school" checked> <span data-i18n="x.school"></span></label>
+      <label><input type="checkbox" id="x-mine"> <span data-i18n="x.mine"></span></label>
     </div>
     <div id="x-years" class="x-opts"></div>
     <div class="x-actions">
-      <button id="x-download" class="x-btn primary">Download .ics</button>
+      <button id="x-download" class="x-btn primary" data-i18n="x.btn"></button>
     </div>
-    <p class="note">On iPhone, open the file and tap "Add All". On Android, open it with Google Calendar or Samsung Calendar.
-      A downloaded file does not update; re-download after the official list changes.</p>
+    <p class="note" data-i18n="x.howto"></p>
   </dialog>
 
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script src="js/vendor/qrcode.js"></script>
   <script type="module" src="js/app.js"></script>
 </body>
 </html>

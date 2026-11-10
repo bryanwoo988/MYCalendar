@@ -1,0 +1,1198 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MY Calendar//Malaysia Holidays//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cuti Malaysia · Selangor
+X-WR-TIMEZONE:Asia/Kuala_Lumpur
+REFRESH-INTERVAL;VALUE=DURATION:P7D
+X-PUBLISHED-TTL:P7D
+BEGIN:VEVENT
+UID:ph-SGR-2026-01-01-new-year-s-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260102
+SUMMARY:🇲🇾 Tahun Baharu
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-02-01-thaipusam@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260201
+DTEND;VALUE=DATE:20260202
+SUMMARY:🇲🇾 Hari Thaipusam
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-02-02-thaipusam-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260202
+DTEND;VALUE=DATE:20260203
+SUMMARY:🇲🇾 Hari Thaipusam (Cuti Ganti)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: Holidays Act 1951 (Act 369)\, sec
+ tion 3 https://www.kabinet.gov.my/hari-kelepasan-am/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-02-17-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260217
+DTEND;VALUE=DATE:20260218
+SUMMARY:🇲🇾 Tahun Baharu Cina
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-02-18-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260218
+DTEND;VALUE=DATE:20260219
+SUMMARY:🇲🇾 Tahun Baharu Cina (Hari Kedua)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-03-07-nuzul-al-quran@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260307
+DTEND;VALUE=DATE:20260308
+SUMMARY:🇲🇾 Hari Nuzul Al-Quran
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-03-21-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260321
+DTEND;VALUE=DATE:20260322
+SUMMARY:🇲🇾 Hari Raya Puasa
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-03-22-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260322
+DTEND;VALUE=DATE:20260323
+SUMMARY:🇲🇾 Hari Raya Puasa (Hari Kedua)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-03-23-hari-raya-aidilfitri-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260323
+DTEND;VALUE=DATE:20260324
+SUMMARY:🇲🇾 Hari Raya Puasa (Cuti Ganti)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: Holidays Act 1951 (Act 369)\, sec
+ tion 3 https://www.kabinet.gov.my/hari-kelepasan-am/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+SUMMARY:🇲🇾 Hari Pekerja
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-05-27-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260527
+DTEND;VALUE=DATE:20260528
+SUMMARY:🇲🇾 Hari Raya Qurban
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-05-31-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260531
+DTEND;VALUE=DATE:20260601
+SUMMARY:🇲🇾 Hari Wesak
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-06-01-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+SUMMARY:🇲🇾 Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan 
+ Agong
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-06-02-wesak-day-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260602
+DTEND;VALUE=DATE:20260603
+SUMMARY:🇲🇾 Hari Wesak (Cuti Ganti)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: Holidays Act 1951 (Act 369)\, sec
+ tion 3 https://www.kabinet.gov.my/hari-kelepasan-am/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-06-17-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260617
+DTEND;VALUE=DATE:20260618
+SUMMARY:🇲🇾 Awal Muharam (Maal Hijrah)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-08-25-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260825
+DTEND;VALUE=DATE:20260826
+SUMMARY:🇲🇾 Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:🇲🇾 Hari Kebangsaan
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260916
+DTEND;VALUE=DATE:20260917
+SUMMARY:🇲🇾 Hari Malaysia
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-11-08-deepavali@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261108
+DTEND;VALUE=DATE:20261109
+SUMMARY:🇲🇾 Hari Deepavali
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-11-09-deepavali-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+SUMMARY:🇲🇾 Hari Deepavali (Cuti Ganti)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: Holidays Act 1951 (Act 369)\, sec
+ tion 3 https://www.kabinet.gov.my/hari-kelepasan-am/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-12-11-birthday-of-sultan-of-selangor@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:🇲🇾 Hari Keputeraan Sultan Selangor
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2026-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261225
+DTEND;VALUE=DATE:20261226
+SUMMARY:🇲🇾 Hari Krismas
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-20
+ 26.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SGR-2026-01-01-2026-01-11-year-end-holiday-2025-2026-ends-@mycalenda
+ r
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260112
+SUMMARY:🏫 Cuti Akhir Persekolahan 2025/2026 (tamat)
+DESCRIPTION:Cuti sekolah (KPM)\, Selangor. Sumber: KPM: Kalendar Akademik S
+ esi 2025/2026 (Pindaan) https://www.kabinet.gov.my/storage/2025/04/tp25-pi
+ ndaan.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SGR-2026-02-16-2026-02-16-kpm-festive-holiday-chinese-new-year-@myca
+ lendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260216
+DTEND;VALUE=DATE:20260217
+SUMMARY:🏫 Cuti Perayaan Tambahan KPM (Tahun Baharu Cina)
+DESCRIPTION:Cuti sekolah (KPM)\, Selangor. Sumber: KPM Surat Siaran Bil. 3 
+ Tahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025
+ /10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SGR-2026-02-19-2026-02-20-kpm-festive-holiday-chinese-new-year-@myca
+ lendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260219
+DTEND;VALUE=DATE:20260221
+SUMMARY:🏫 Cuti Perayaan Tambahan KPM (Tahun Baharu Cina)
+DESCRIPTION:Cuti sekolah (KPM)\, Selangor. Sumber: KPM Surat Siaran Bil. 3 
+ Tahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025
+ /10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SGR-2026-03-19-2026-03-20-kpm-festive-holiday-hari-raya-aidilfitri-@
+ mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260321
+SUMMARY:🏫 Cuti Perayaan Tambahan KPM (Hari Raya Aidilfitri)
+DESCRIPTION:Cuti sekolah (KPM)\, Selangor. Sumber: KPM Surat Siaran Bil. 3 
+ Tahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025
+ /10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SGR-2026-03-21-2026-03-29-term-1-break@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260321
+DTEND;VALUE=DATE:20260330
+SUMMARY:🏫 Cuti Penggal 1
+DESCRIPTION:Cuti sekolah (KPM)\, Selangor. Sumber: KPM Surat Siaran Bil. 3 
+ Tahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025
+ /10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SGR-2026-05-23-2026-06-07-mid-year-holiday@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260523
+DTEND;VALUE=DATE:20260608
+SUMMARY:🏫 Cuti Pertengahan Tahun
+DESCRIPTION:Cuti sekolah (KPM)\, Selangor. Sumber: KPM Surat Siaran Bil. 3 
+ Tahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025
+ /10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SGR-2026-08-29-2026-09-06-term-2-break@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260829
+DTEND;VALUE=DATE:20260907
+SUMMARY:🏫 Cuti Penggal 2
+DESCRIPTION:Cuti sekolah (KPM)\, Selangor. Sumber: KPM Surat Siaran Bil. 3 
+ Tahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025
+ /10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SGR-2026-11-10-2026-11-10-kpm-festive-holiday-deepavali-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:🏫 Cuti Perayaan Tambahan KPM (Deepavali)
+DESCRIPTION:Cuti sekolah (KPM)\, Selangor. Sumber: KPM Surat Siaran Bil. 3 
+ Tahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025
+ /10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-SGR-2026-12-05-2026-12-31-year-end-holiday@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20270101
+SUMMARY:🏫 Cuti Akhir Persekolahan
+DESCRIPTION:Cuti sekolah (KPM)\, Selangor. Sumber: KPM Surat Siaran Bil. 3 
+ Tahun 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025
+ /10/SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-01-01-new-year-s-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+SUMMARY:🇲🇾 Tahun Baharu
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-01-22-thaipusam@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270122
+DTEND;VALUE=DATE:20270123
+SUMMARY:🇲🇾 Hari Thaipusam
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-02-06-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270206
+DTEND;VALUE=DATE:20270207
+SUMMARY:🇲🇾 Tahun Baharu Cina
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-02-07-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270207
+DTEND;VALUE=DATE:20270208
+SUMMARY:🇲🇾 Tahun Baharu Cina (Hari Kedua)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-02-08-chinese-new-year-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270208
+DTEND;VALUE=DATE:20270209
+SUMMARY:🇲🇾 Tahun Baharu Cina (Cuti Ganti)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: Holidays Act 1951 (Act 369)\, sec
+ tion 3 https://www.kabinet.gov.my/hari-kelepasan-am/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-02-24-nuzul-al-quran@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270224
+DTEND;VALUE=DATE:20270225
+SUMMARY:🇲🇾 Hari Nuzul Al-Quran
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-03-10-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270310
+DTEND;VALUE=DATE:20270311
+SUMMARY:🇲🇾 Hari Raya Puasa (tertakluk perubahan)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-03-11-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270311
+DTEND;VALUE=DATE:20270312
+SUMMARY:🇲🇾 Hari Raya Puasa (Hari Kedua) (tertakluk perubahan)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270501
+DTEND;VALUE=DATE:20270502
+SUMMARY:🇲🇾 Hari Pekerja
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-05-17-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270517
+DTEND;VALUE=DATE:20270518
+SUMMARY:🇲🇾 Hari Raya Qurban (tertakluk perubahan)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-05-20-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270520
+DTEND;VALUE=DATE:20270521
+SUMMARY:🇲🇾 Hari Wesak
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-06-06-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270606
+DTEND;VALUE=DATE:20270607
+SUMMARY:🇲🇾 Awal Muharam (Maal Hijrah)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-06-07-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270607
+DTEND;VALUE=DATE:20270608
+SUMMARY:🇲🇾 Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan 
+ Agong
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-06-08-awal-muharram-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270608
+DTEND;VALUE=DATE:20270609
+SUMMARY:🇲🇾 Awal Muharam (Maal Hijrah) (Cuti Ganti)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: Holidays Act 1951 (Act 369)\, sec
+ tion 3 https://www.kabinet.gov.my/hari-kelepasan-am/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-08-15-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270815
+DTEND;VALUE=DATE:20270816
+SUMMARY:🇲🇾 Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-08-16-maulidur-rasul-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270816
+DTEND;VALUE=DATE:20270817
+SUMMARY:🇲🇾 Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul) (Cut
+ i Ganti)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: Holidays Act 1951 (Act 369)\, sec
+ tion 3 https://www.kabinet.gov.my/hari-kelepasan-am/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270831
+DTEND;VALUE=DATE:20270901
+SUMMARY:🇲🇾 Hari Kebangsaan
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270916
+DTEND;VALUE=DATE:20270917
+SUMMARY:🇲🇾 Hari Malaysia
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-10-28-deepavali@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20271028
+DTEND;VALUE=DATE:20271029
+SUMMARY:🇲🇾 Hari Deepavali (tertakluk perubahan)
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-12-11-birthday-of-sultan-of-selangor@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20271211
+DTEND;VALUE=DATE:20271212
+SUMMARY:🇲🇾 Hari Keputeraan Sultan Selangor
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2027-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20271225
+DTEND;VALUE=DATE:20271226
+SUMMARY:🇲🇾 Hari Krismas
+DESCRIPTION:Cuti umum\, Selangor. Sumber: JPM (BKPP): Hari Kelepasan Am Per
+ sekutuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_20
+ 27.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-01-01-new-year-s-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280101
+DTEND;VALUE=DATE:20280102
+SUMMARY:🇲🇾 Tahun Baharu (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-01-26-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280126
+DTEND;VALUE=DATE:20280127
+SUMMARY:🇲🇾 Tahun Baharu Cina (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-01-27-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280127
+DTEND;VALUE=DATE:20280128
+SUMMARY:🇲🇾 Tahun Baharu Cina (Hari Kedua) (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-02-09-thaipusam@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280209
+DTEND;VALUE=DATE:20280210
+SUMMARY:🇲🇾 Hari Thaipusam (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-02-13-nuzul-al-quran@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280213
+DTEND;VALUE=DATE:20280214
+SUMMARY:🇲🇾 Hari Nuzul Al-Quran (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-02-14-nuzul-al-quran-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280214
+DTEND;VALUE=DATE:20280215
+SUMMARY:🇲🇾 Hari Nuzul Al-Quran (Cuti Ganti)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-02-27-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280227
+DTEND;VALUE=DATE:20280228
+SUMMARY:🇲🇾 Hari Raya Puasa (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-02-28-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280228
+DTEND;VALUE=DATE:20280229
+SUMMARY:🇲🇾 Hari Raya Puasa (Hari Kedua) (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-02-29-hari-raya-aidilfitri-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280229
+DTEND;VALUE=DATE:20280301
+SUMMARY:🇲🇾 Hari Raya Puasa (Cuti Ganti)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280501
+DTEND;VALUE=DATE:20280502
+SUMMARY:🇲🇾 Hari Pekerja (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-05-05-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280505
+DTEND;VALUE=DATE:20280506
+SUMMARY:🇲🇾 Hari Raya Qurban (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-05-09-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280509
+DTEND;VALUE=DATE:20280510
+SUMMARY:🇲🇾 Hari Wesak (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-05-26-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280526
+DTEND;VALUE=DATE:20280527
+SUMMARY:🇲🇾 Awal Muharam (Maal Hijrah) (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-06-05-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280605
+DTEND;VALUE=DATE:20280606
+SUMMARY:🇲🇾 Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan 
+ Agong (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-08-04-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280804
+DTEND;VALUE=DATE:20280805
+SUMMARY:🇲🇾 Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul) (ang
+ garan)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280831
+DTEND;VALUE=DATE:20280901
+SUMMARY:🇲🇾 Hari Kebangsaan (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280916
+DTEND;VALUE=DATE:20280917
+SUMMARY:🇲🇾 Hari Malaysia (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-10-17-deepavali@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20281017
+DTEND;VALUE=DATE:20281018
+SUMMARY:🇲🇾 Hari Deepavali (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-12-11-birthday-of-sultan-of-selangor@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20281211
+DTEND;VALUE=DATE:20281212
+SUMMARY:🇲🇾 Hari Keputeraan Sultan Selangor (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2028-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20281225
+DTEND;VALUE=DATE:20281226
+SUMMARY:🇲🇾 Hari Krismas (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-01-01-new-year-s-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290101
+DTEND;VALUE=DATE:20290102
+SUMMARY:🇲🇾 Tahun Baharu (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-01-30-thaipusam@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290130
+DTEND;VALUE=DATE:20290131
+SUMMARY:🇲🇾 Hari Thaipusam (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-02-01-nuzul-al-quran@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290201
+DTEND;VALUE=DATE:20290202
+SUMMARY:🇲🇾 Hari Nuzul Al-Quran (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-02-13-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290213
+DTEND;VALUE=DATE:20290214
+SUMMARY:🇲🇾 Tahun Baharu Cina (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-02-14-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290214
+DTEND;VALUE=DATE:20290215
+SUMMARY:🇲🇾 Tahun Baharu Cina (Hari Kedua) (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-02-15-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290215
+DTEND;VALUE=DATE:20290216
+SUMMARY:🇲🇾 Hari Raya Puasa (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-02-16-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290216
+DTEND;VALUE=DATE:20290217
+SUMMARY:🇲🇾 Hari Raya Puasa (Hari Kedua) (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-04-25-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290425
+DTEND;VALUE=DATE:20290426
+SUMMARY:🇲🇾 Hari Raya Qurban (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290501
+DTEND;VALUE=DATE:20290502
+SUMMARY:🇲🇾 Hari Pekerja (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-05-15-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290515
+DTEND;VALUE=DATE:20290516
+SUMMARY:🇲🇾 Awal Muharam (Maal Hijrah) (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-05-27-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290527
+DTEND;VALUE=DATE:20290528
+SUMMARY:🇲🇾 Hari Wesak (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-05-28-wesak-day-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290528
+DTEND;VALUE=DATE:20290529
+SUMMARY:🇲🇾 Hari Wesak (Cuti Ganti)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-06-04-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290604
+DTEND;VALUE=DATE:20290605
+SUMMARY:🇲🇾 Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan 
+ Agong (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-07-24-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290724
+DTEND;VALUE=DATE:20290725
+SUMMARY:🇲🇾 Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul) (ang
+ garan)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290831
+DTEND;VALUE=DATE:20290901
+SUMMARY:🇲🇾 Hari Kebangsaan (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290916
+DTEND;VALUE=DATE:20290917
+SUMMARY:🇲🇾 Hari Malaysia (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-09-17-malaysia-day-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290917
+DTEND;VALUE=DATE:20290918
+SUMMARY:🇲🇾 Hari Malaysia (Cuti Ganti)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-11-05-deepavali@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20291105
+DTEND;VALUE=DATE:20291106
+SUMMARY:🇲🇾 Hari Deepavali (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-12-11-birthday-of-sultan-of-selangor@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20291211
+DTEND;VALUE=DATE:20291212
+SUMMARY:🇲🇾 Hari Keputeraan Sultan Selangor (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2029-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20291225
+DTEND;VALUE=DATE:20291226
+SUMMARY:🇲🇾 Hari Krismas (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-01-01-new-year-s-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300101
+DTEND;VALUE=DATE:20300102
+SUMMARY:🇲🇾 Tahun Baharu (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-01-20-thaipusam@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300120
+DTEND;VALUE=DATE:20300121
+SUMMARY:🇲🇾 Hari Thaipusam (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-01-21-thaipusam-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300121
+DTEND;VALUE=DATE:20300122
+SUMMARY:🇲🇾 Hari Thaipusam (Cuti Ganti)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-01-22-nuzul-al-quran@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300122
+DTEND;VALUE=DATE:20300123
+SUMMARY:🇲🇾 Hari Nuzul Al-Quran (anggaran\, ±1 hari)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-02-03-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300203
+DTEND;VALUE=DATE:20300204
+SUMMARY:🇲🇾 Tahun Baharu Cina (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-02-04-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300204
+DTEND;VALUE=DATE:20300205
+SUMMARY:🇲🇾 Tahun Baharu Cina (Hari Kedua) (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-02-04-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300204
+DTEND;VALUE=DATE:20300205
+SUMMARY:🇲🇾 Hari Raya Puasa (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-02-05-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300205
+DTEND;VALUE=DATE:20300206
+SUMMARY:🇲🇾 Hari Raya Puasa (Hari Kedua) (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-02-06-chinese-new-year-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300206
+DTEND;VALUE=DATE:20300207
+SUMMARY:🇲🇾 Tahun Baharu Cina (Cuti Ganti)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-04-14-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300414
+DTEND;VALUE=DATE:20300415
+SUMMARY:🇲🇾 Hari Raya Qurban (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-04-15-hari-raya-haji-replacement-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300415
+DTEND;VALUE=DATE:20300416
+SUMMARY:🇲🇾 Hari Raya Qurban (Cuti Ganti)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300501
+DTEND;VALUE=DATE:20300502
+SUMMARY:🇲🇾 Hari Pekerja (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-05-04-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300504
+DTEND;VALUE=DATE:20300505
+SUMMARY:🇲🇾 Awal Muharam (Maal Hijrah) (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-05-16-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300516
+DTEND;VALUE=DATE:20300517
+SUMMARY:🇲🇾 Hari Wesak (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-06-03-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300603
+DTEND;VALUE=DATE:20300604
+SUMMARY:🇲🇾 Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan 
+ Agong (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-07-13-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300713
+DTEND;VALUE=DATE:20300714
+SUMMARY:🇲🇾 Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul) (ang
+ garan)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300831
+DTEND;VALUE=DATE:20300901
+SUMMARY:🇲🇾 Hari Kebangsaan (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300916
+DTEND;VALUE=DATE:20300917
+SUMMARY:🇲🇾 Hari Malaysia (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-10-26-deepavali@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20301026
+DTEND;VALUE=DATE:20301027
+SUMMARY:🇲🇾 Hari Deepavali (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-12-11-birthday-of-sultan-of-selangor@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20301211
+DTEND;VALUE=DATE:20301212
+SUMMARY:🇲🇾 Hari Keputeraan Sultan Selangor (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-SGR-2030-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20301225
+DTEND;VALUE=DATE:20301226
+SUMMARY:🇲🇾 Hari Krismas (anggaran)
+DESCRIPTION:Selangor: Cuti umum anggaran — belum diwartakan. Sahkan denga
+ n senarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

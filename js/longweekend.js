@@ -1,20 +1,25 @@
 // Long weekends: runs of days off around public holidays, optionally bridged with annual leave.
-import { STATES, FRI_SAT, holidaysFor } from "./data.js";
+// Works for any "calendar": a holiday provider (get(date) → entries) plus its weekend days.
+import { FRI_SAT, holidaysFor } from "./data.js";
 
 const DAY = 864e5;
 const isoUTC = (t) => new Date(t).toISOString().slice(0, 10);
 const MIN_DAYS = 3;   // a "long weekend" is at least 3 consecutive days off
 const REACH = 9;      // how far (days) to look either side of a holiday
 
-function dayTable(state, y) {
-  const hol = holidaysFor(state);
-  const weekend = FRI_SAT.includes(state) ? [5, 6] : [0, 6];
+// Malaysian state → calendar
+export const stateCalendar = (state) => ({ hol: holidaysFor(state), weekend: FRI_SAT.includes(state) ? [5, 6] : [0, 6] });
+
+function dayTable({ hol, weekend }, y) {
   const days = [];
   for (let t = Date.UTC(y - 1, 11, 1); t <= Date.UTC(y + 1, 0, 31); t += DAY) {
     const date = isoUTC(t);
-    const hs = hol.get(date) || [];
+    const entries = hol.get(date) || [];
+    const hs = entries.filter((h) => h.kind !== "workday" && h.kind !== "unconfirmed" && h.kind !== "regional");
+    const forcedWork = entries.some((h) => h.kind === "workday"); // e.g. China's make-up working Saturday
     const isWeekend = weekend.includes(new Date(t).getUTCDay());
-    days.push({ date, hs, type: hs.length ? "holiday" : isWeekend ? "weekend" : "work", isWeekend });
+    const type = hs.length ? "holiday" : forcedWork ? "work" : isWeekend ? "weekend" : "work";
+    days.push({ date, hs, type, isWeekend: isWeekend && !forcedWork });
   }
   return days;
 }
@@ -36,8 +41,8 @@ function bestWindow(days, h, maxLeave) {
   return best;
 }
 
-function windowsForState(state, y, maxLeave) {
-  const days = dayTable(state, y);
+function windowsFor(cal, y, maxLeave) {
+  const days = dayTable(cal, y);
   const seen = new Map();
   days.forEach((d, h) => {
     // Only holidays that take a working day off create a longer break.
@@ -55,23 +60,24 @@ function windowsForState(state, y, maxLeave) {
 
 /**
  * @param {number} y
- * @param {string[]} states  state codes (one for "my state", all for "all states")
- * @param {number} maxLeave  annual-leave days allowed to bridge gaps (0–2)
- * @returns grouped long weekends; identical windows across states are merged
+ * @param {string[]} keys      calendar keys (e.g. Malaysian state codes)
+ * @param {number} maxLeave    annual-leave days allowed to bridge gaps (0–2)
+ * @param {(key: string) => {hol, weekend}} [calendarOf]  defaults to Malaysian states
+ * @returns grouped long weekends; identical windows across keys are merged
  */
-export function longWeekends(y, states, maxLeave = 1) {
+export function longWeekends(y, keys, maxLeave = 1, calendarOf = stateCalendar) {
   const groups = new Map();
-  for (const state of states) {
-    for (const w of windowsForState(state, y, maxLeave)) {
-      const key = w.days.map((d) => `${d.date}:${d.type}`).join("|");
-      if (!groups.has(key)) groups.set(key, { ...w, states: [], holidays: new Map() });
-      const g = groups.get(key);
-      g.states.push(state);
+  for (const key of keys) {
+    for (const w of windowsFor(calendarOf(key), y, maxLeave)) {
+      const id = w.days.map((d) => `${d.date}:${d.type}`).join("|");
+      if (!groups.has(id)) groups.set(id, { ...w, states: [], holidays: new Map() });
+      const g = groups.get(id);
+      g.states.push(key);
       for (const d of w.days) {
         for (const h of d.hs) {
           const hk = `${d.date}|${h.name}`;
-          if (!g.holidays.has(hk)) g.holidays.set(hk, { date: d.date, name: h.name, kind: h.kind, states: [] });
-          g.holidays.get(hk).states.push(state);
+          if (!g.holidays.has(hk)) g.holidays.set(hk, { ...h, date: d.date, states: [] });
+          g.holidays.get(hk).states.push(key);
         }
       }
     }
@@ -83,11 +89,4 @@ export function longWeekends(y, states, maxLeave = 1) {
       holidays: [...g.holidays.values()].sort((a, b) => a.date.localeCompare(b.date)),
     }))
     .sort((a, b) => a.days[0].date.localeCompare(b.days[0].date) || b.days.length - a.days.length);
-}
-
-// "Kuala Lumpur, Labuan, Melaka +8 only" style summary.
-export function statesSummary(codes, total = Object.keys(STATES).length) {
-  if (codes.length === total) return "All states";
-  const names = codes.map((c) => STATES[c].replace(/^W\.P\. /, ""));
-  return names.length > 3 ? `${names.slice(0, 3).join(", ")} +${names.length - 3} only` : `${names.join(", ")} only`;
 }

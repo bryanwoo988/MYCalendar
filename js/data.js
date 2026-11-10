@@ -355,16 +355,39 @@ export function schoolGroup(state) {
 }
 
 export function schoolHolidaysFor(state) {
+  if (state === "ALL") return SCHOOL_HOLIDAYS;
   const g = schoolGroup(state);
   return SCHOOL_HOLIDAYS.filter((s) => s.group === g && (!s.states || appliesTo({ states: parseStates(s.states) }, state)));
 }
 
-// ---------- Civil servant pay dates (JANM) ----------
-// Source: secondary summaries of JANM circulars SPANM Bil. 5/2025 and Bil. 5/2026
-// (the JANM site was not reachable to verify).
-export const SALARY_DATES = [
-  "2026-01-22", "2026-02-12", "2026-03-13", "2026-04-16", "2026-05-21", "2026-06-25",
-  "2026-07-23", "2026-08-24", "2026-09-24", "2026-10-22", "2026-11-25", "2026-12-21",
-  "2027-01-25", "2027-02-25", "2027-03-25", "2027-04-22", "2027-05-12", "2027-06-17",
-  "2027-07-21", "2027-08-25", "2027-09-23", "2027-10-21", "2027-11-25", "2027-12-20",
-];
+// ---------- All states ----------
+// Every state's holidays merged by date and name; each entry lists the states that observe it.
+const allCache = new Map();
+function allStatesYear(y) {
+  if (allCache.has(y)) return allCache.get(y);
+  const byKey = new Map();
+  for (const state of Object.keys(STATES)) {
+    for (const h of holidaysFor(state).list(y)) {
+      const k = `${h.date}|${h.name}`;
+      if (!byKey.has(k)) byKey.set(k, { ...h, states: [] });
+      byKey.get(k).states.push(state);
+    }
+  }
+  const map = new Map();
+  for (const h of [...byKey.values()].sort((a, b) => a.date.localeCompare(b.date) || b.states.length - a.states.length)) {
+    map.set(h.date, [...(map.get(h.date) || []), h]);
+  }
+  allCache.set(y, map);
+  return map;
+}
+export const ALL_STATES = "ALL";
+export const isNational = (h) => !h.states || h.states.length === Object.keys(STATES).length;
+export function allStatesHolidays() {
+  const yearOf = (key) => Number(key.slice(0, 4));
+  return {
+    get: (key) => allStatesYear(yearOf(key)).get(key),
+    has: (key) => allStatesYear(yearOf(key)).has(key),
+    year: allStatesYear,
+    list: (y) => [...allStatesYear(y).values()].flat(),
+  };
+}

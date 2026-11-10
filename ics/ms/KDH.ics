@@ -1,0 +1,1078 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MY Calendar//Malaysia Holidays//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Cuti Malaysia · Kedah
+X-WR-TIMEZONE:Asia/Kuala_Lumpur
+REFRESH-INTERVAL;VALUE=DURATION:P7D
+X-PUBLISHED-TTL:P7D
+BEGIN:VEVENT
+UID:ph-KDH-2026-01-17-israk-and-mikraj@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260117
+DTEND;VALUE=DATE:20260118
+SUMMARY:🇲🇾 Israk dan Mikraj
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-02-17-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260217
+DTEND;VALUE=DATE:20260218
+SUMMARY:🇲🇾 Tahun Baharu Cina
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-02-18-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260218
+DTEND;VALUE=DATE:20260219
+SUMMARY:🇲🇾 Tahun Baharu Cina (Hari Kedua)
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-02-19-awal-ramadan@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260219
+DTEND;VALUE=DATE:20260220
+SUMMARY:🇲🇾 Awal Ramadan
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-03-21-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260321
+DTEND;VALUE=DATE:20260322
+SUMMARY:🇲🇾 Hari Raya Puasa
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-03-22-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260322
+DTEND;VALUE=DATE:20260323
+SUMMARY:🇲🇾 Hari Raya Puasa (Hari Kedua)
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260501
+DTEND;VALUE=DATE:20260502
+SUMMARY:🇲🇾 Hari Pekerja
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-05-27-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260527
+DTEND;VALUE=DATE:20260528
+SUMMARY:🇲🇾 Hari Raya Qurban
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-05-28-hari-raya-haji-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260528
+DTEND;VALUE=DATE:20260529
+SUMMARY:🇲🇾 Hari Raya Qurban (Hari Kedua)
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-05-31-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260531
+DTEND;VALUE=DATE:20260601
+SUMMARY:🇲🇾 Hari Wesak
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-06-01-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+SUMMARY:🇲🇾 Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan 
+ Agong
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-06-17-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260617
+DTEND;VALUE=DATE:20260618
+SUMMARY:🇲🇾 Awal Muharam (Maal Hijrah)
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-06-21-birthday-of-sultan-of-kedah@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260621
+DTEND;VALUE=DATE:20260622
+SUMMARY:🇲🇾 Hari Keputeraan Sultan Kedah
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-08-25-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260825
+DTEND;VALUE=DATE:20260826
+SUMMARY:🇲🇾 Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:🇲🇾 Hari Kebangsaan
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260916
+DTEND;VALUE=DATE:20260917
+SUMMARY:🇲🇾 Hari Malaysia
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-11-08-deepavali@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261108
+DTEND;VALUE=DATE:20261109
+SUMMARY:🇲🇾 Hari Deepavali
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2026-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261225
+DTEND;VALUE=DATE:20261226
+SUMMARY:🇲🇾 Hari Krismas
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2026 https://www.kabinet.gov.my/storage/2025/08/HKA-2026.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-KDH-2026-01-01-2026-01-10-year-end-holiday-2025-2026-ends-@mycalenda
+ r
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260101
+DTEND;VALUE=DATE:20260111
+SUMMARY:🏫 Cuti Akhir Persekolahan 2025/2026 (tamat)
+DESCRIPTION:Cuti sekolah (KPM)\, Kedah. Sumber: KPM: Kalendar Akademik Sesi
+  2025/2026 (Pindaan) https://www.kabinet.gov.my/storage/2025/04/tp25-pinda
+ an.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-KDH-2026-02-15-2026-02-16-kpm-festive-holiday-chinese-new-year-@myca
+ lendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260215
+DTEND;VALUE=DATE:20260217
+SUMMARY:🏫 Cuti Perayaan Tambahan KPM (Tahun Baharu Cina)
+DESCRIPTION:Cuti sekolah (KPM)\, Kedah. Sumber: KPM Surat Siaran Bil. 3 Tah
+ un 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025/10
+ /SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-KDH-2026-02-19-2026-02-19-kpm-festive-holiday-chinese-new-year-@myca
+ lendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260219
+DTEND;VALUE=DATE:20260220
+SUMMARY:🏫 Cuti Perayaan Tambahan KPM (Tahun Baharu Cina)
+DESCRIPTION:Cuti sekolah (KPM)\, Kedah. Sumber: KPM Surat Siaran Bil. 3 Tah
+ un 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025/10
+ /SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-KDH-2026-03-19-2026-03-19-kpm-festive-holiday-hari-raya-aidilfitri-@
+ mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+SUMMARY:🏫 Cuti Perayaan Tambahan KPM (Hari Raya Aidilfitri)
+DESCRIPTION:Cuti sekolah (KPM)\, Kedah. Sumber: KPM Surat Siaran Bil. 3 Tah
+ un 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025/10
+ /SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-KDH-2026-03-20-2026-03-28-term-1-break@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260320
+DTEND;VALUE=DATE:20260329
+SUMMARY:🏫 Cuti Penggal 1
+DESCRIPTION:Cuti sekolah (KPM)\, Kedah. Sumber: KPM Surat Siaran Bil. 3 Tah
+ un 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025/10
+ /SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-KDH-2026-05-22-2026-06-06-mid-year-holiday@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260522
+DTEND;VALUE=DATE:20260607
+SUMMARY:🏫 Cuti Pertengahan Tahun
+DESCRIPTION:Cuti sekolah (KPM)\, Kedah. Sumber: KPM Surat Siaran Bil. 3 Tah
+ un 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025/10
+ /SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-KDH-2026-08-28-2026-09-05-term-2-break@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20260828
+DTEND;VALUE=DATE:20260906
+SUMMARY:🏫 Cuti Penggal 2
+DESCRIPTION:Cuti sekolah (KPM)\, Kedah. Sumber: KPM Surat Siaran Bil. 3 Tah
+ un 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025/10
+ /SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-KDH-2026-11-09-2026-11-09-kpm-festive-holiday-deepavali-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+SUMMARY:🏫 Cuti Perayaan Tambahan KPM (Deepavali)
+DESCRIPTION:Cuti sekolah (KPM)\, Kedah. Sumber: KPM Surat Siaran Bil. 3 Tah
+ un 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025/10
+ /SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:sh-KDH-2026-12-04-2026-12-31-year-end-holiday@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20270101
+SUMMARY:🏫 Cuti Akhir Persekolahan
+DESCRIPTION:Cuti sekolah (KPM)\, Kedah. Sumber: KPM Surat Siaran Bil. 3 Tah
+ un 2025: Kalendar Akademik 2026 https://www.kabinet.gov.my/storage/2025/10
+ /SS-KPM-Bil.-3-2025-Kalendar-Akademik-2026-1.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-01-06-israk-and-mikraj@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270106
+DTEND;VALUE=DATE:20270107
+SUMMARY:🇲🇾 Israk dan Mikraj
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-02-06-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270206
+DTEND;VALUE=DATE:20270207
+SUMMARY:🇲🇾 Tahun Baharu Cina
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-02-07-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270207
+DTEND;VALUE=DATE:20270208
+SUMMARY:🇲🇾 Tahun Baharu Cina (Hari Kedua)
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-02-08-awal-ramadan@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270208
+DTEND;VALUE=DATE:20270209
+SUMMARY:🇲🇾 Awal Ramadan (tertakluk perubahan)
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-03-10-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270310
+DTEND;VALUE=DATE:20270311
+SUMMARY:🇲🇾 Hari Raya Puasa (tertakluk perubahan)
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-03-11-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270311
+DTEND;VALUE=DATE:20270312
+SUMMARY:🇲🇾 Hari Raya Puasa (Hari Kedua) (tertakluk perubahan)
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270501
+DTEND;VALUE=DATE:20270502
+SUMMARY:🇲🇾 Hari Pekerja
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-05-17-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270517
+DTEND;VALUE=DATE:20270518
+SUMMARY:🇲🇾 Hari Raya Qurban (tertakluk perubahan)
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-05-18-hari-raya-haji-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270518
+DTEND;VALUE=DATE:20270519
+SUMMARY:🇲🇾 Hari Raya Qurban (Hari Kedua) (tertakluk perubahan)
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-05-20-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270520
+DTEND;VALUE=DATE:20270521
+SUMMARY:🇲🇾 Hari Wesak
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-06-06-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270606
+DTEND;VALUE=DATE:20270607
+SUMMARY:🇲🇾 Awal Muharam (Maal Hijrah)
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-06-07-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270607
+DTEND;VALUE=DATE:20270608
+SUMMARY:🇲🇾 Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan 
+ Agong
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-06-20-birthday-of-sultan-of-kedah@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270620
+DTEND;VALUE=DATE:20270621
+SUMMARY:🇲🇾 Hari Keputeraan Sultan Kedah
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-08-15-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270815
+DTEND;VALUE=DATE:20270816
+SUMMARY:🇲🇾 Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270831
+DTEND;VALUE=DATE:20270901
+SUMMARY:🇲🇾 Hari Kebangsaan
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270916
+DTEND;VALUE=DATE:20270917
+SUMMARY:🇲🇾 Hari Malaysia
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-10-28-deepavali@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20271028
+DTEND;VALUE=DATE:20271029
+SUMMARY:🇲🇾 Hari Deepavali (tertakluk perubahan)
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20271225
+DTEND;VALUE=DATE:20271226
+SUMMARY:🇲🇾 Hari Krismas
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2027-12-26-israk-and-mikraj@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20271226
+DTEND;VALUE=DATE:20271227
+SUMMARY:🇲🇾 Israk dan Mikraj
+DESCRIPTION:Cuti umum\, Kedah. Sumber: JPM (BKPP): Hari Kelepasan Am Persek
+ utuan dan Negeri 2027 https://www.kabinet.gov.my/storage/2026/08/HKA_2027.
+ pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-01-26-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280126
+DTEND;VALUE=DATE:20280127
+SUMMARY:🇲🇾 Tahun Baharu Cina (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-01-27-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280127
+DTEND;VALUE=DATE:20280128
+SUMMARY:🇲🇾 Tahun Baharu Cina (Hari Kedua) (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-01-28-awal-ramadan@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280128
+DTEND;VALUE=DATE:20280129
+SUMMARY:🇲🇾 Awal Ramadan (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-02-27-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280227
+DTEND;VALUE=DATE:20280228
+SUMMARY:🇲🇾 Hari Raya Puasa (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-02-28-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280228
+DTEND;VALUE=DATE:20280229
+SUMMARY:🇲🇾 Hari Raya Puasa (Hari Kedua) (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280501
+DTEND;VALUE=DATE:20280502
+SUMMARY:🇲🇾 Hari Pekerja (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-05-05-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280505
+DTEND;VALUE=DATE:20280506
+SUMMARY:🇲🇾 Hari Raya Qurban (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-05-06-hari-raya-haji-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280506
+DTEND;VALUE=DATE:20280507
+SUMMARY:🇲🇾 Hari Raya Qurban (Hari Kedua) (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-05-09-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280509
+DTEND;VALUE=DATE:20280510
+SUMMARY:🇲🇾 Hari Wesak (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-05-26-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280526
+DTEND;VALUE=DATE:20280527
+SUMMARY:🇲🇾 Awal Muharam (Maal Hijrah) (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-06-05-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280605
+DTEND;VALUE=DATE:20280606
+SUMMARY:🇲🇾 Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan 
+ Agong (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-06-18-birthday-of-sultan-of-kedah@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280618
+DTEND;VALUE=DATE:20280619
+SUMMARY:🇲🇾 Hari Keputeraan Sultan Kedah (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-08-04-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280804
+DTEND;VALUE=DATE:20280805
+SUMMARY:🇲🇾 Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul) (ang
+ garan)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280831
+DTEND;VALUE=DATE:20280901
+SUMMARY:🇲🇾 Hari Kebangsaan (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20280916
+DTEND;VALUE=DATE:20280917
+SUMMARY:🇲🇾 Hari Malaysia (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-10-17-deepavali@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20281017
+DTEND;VALUE=DATE:20281018
+SUMMARY:🇲🇾 Hari Deepavali (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-12-14-israk-and-mikraj@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20281214
+DTEND;VALUE=DATE:20281215
+SUMMARY:🇲🇾 Israk dan Mikraj (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2028-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20281225
+DTEND;VALUE=DATE:20281226
+SUMMARY:🇲🇾 Hari Krismas (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-01-16-awal-ramadan@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290116
+DTEND;VALUE=DATE:20290117
+SUMMARY:🇲🇾 Awal Ramadan (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-02-13-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290213
+DTEND;VALUE=DATE:20290214
+SUMMARY:🇲🇾 Tahun Baharu Cina (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-02-14-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290214
+DTEND;VALUE=DATE:20290215
+SUMMARY:🇲🇾 Tahun Baharu Cina (Hari Kedua) (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-02-15-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290215
+DTEND;VALUE=DATE:20290216
+SUMMARY:🇲🇾 Hari Raya Puasa (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-02-16-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290216
+DTEND;VALUE=DATE:20290217
+SUMMARY:🇲🇾 Hari Raya Puasa (Hari Kedua) (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-04-25-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290425
+DTEND;VALUE=DATE:20290426
+SUMMARY:🇲🇾 Hari Raya Qurban (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-04-26-hari-raya-haji-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290426
+DTEND;VALUE=DATE:20290427
+SUMMARY:🇲🇾 Hari Raya Qurban (Hari Kedua) (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290501
+DTEND;VALUE=DATE:20290502
+SUMMARY:🇲🇾 Hari Pekerja (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-05-15-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290515
+DTEND;VALUE=DATE:20290516
+SUMMARY:🇲🇾 Awal Muharam (Maal Hijrah) (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-05-27-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290527
+DTEND;VALUE=DATE:20290528
+SUMMARY:🇲🇾 Hari Wesak (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-06-04-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290604
+DTEND;VALUE=DATE:20290605
+SUMMARY:🇲🇾 Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan 
+ Agong (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-06-17-birthday-of-sultan-of-kedah@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290617
+DTEND;VALUE=DATE:20290618
+SUMMARY:🇲🇾 Hari Keputeraan Sultan Kedah (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-07-24-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290724
+DTEND;VALUE=DATE:20290725
+SUMMARY:🇲🇾 Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul) (ang
+ garan)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290831
+DTEND;VALUE=DATE:20290901
+SUMMARY:🇲🇾 Hari Kebangsaan (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20290916
+DTEND;VALUE=DATE:20290917
+SUMMARY:🇲🇾 Hari Malaysia (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-11-05-deepavali@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20291105
+DTEND;VALUE=DATE:20291106
+SUMMARY:🇲🇾 Hari Deepavali (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-12-04-israk-and-mikraj@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20291204
+DTEND;VALUE=DATE:20291205
+SUMMARY:🇲🇾 Israk dan Mikraj (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2029-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20291225
+DTEND;VALUE=DATE:20291226
+SUMMARY:🇲🇾 Hari Krismas (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-01-06-awal-ramadan@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300106
+DTEND;VALUE=DATE:20300107
+SUMMARY:🇲🇾 Awal Ramadan (anggaran\, ±1 hari)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-02-03-chinese-new-year@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300203
+DTEND;VALUE=DATE:20300204
+SUMMARY:🇲🇾 Tahun Baharu Cina (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-02-04-chinese-new-year-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300204
+DTEND;VALUE=DATE:20300205
+SUMMARY:🇲🇾 Tahun Baharu Cina (Hari Kedua) (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-02-04-hari-raya-aidilfitri@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300204
+DTEND;VALUE=DATE:20300205
+SUMMARY:🇲🇾 Hari Raya Puasa (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-02-05-hari-raya-aidilfitri-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300205
+DTEND;VALUE=DATE:20300206
+SUMMARY:🇲🇾 Hari Raya Puasa (Hari Kedua) (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-04-14-hari-raya-haji@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300414
+DTEND;VALUE=DATE:20300415
+SUMMARY:🇲🇾 Hari Raya Qurban (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-04-15-hari-raya-haji-2nd-day-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300415
+DTEND;VALUE=DATE:20300416
+SUMMARY:🇲🇾 Hari Raya Qurban (Hari Kedua) (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-05-01-labour-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300501
+DTEND;VALUE=DATE:20300502
+SUMMARY:🇲🇾 Hari Pekerja (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-05-04-awal-muharram@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300504
+DTEND;VALUE=DATE:20300505
+SUMMARY:🇲🇾 Awal Muharam (Maal Hijrah) (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-05-16-wesak-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300516
+DTEND;VALUE=DATE:20300517
+SUMMARY:🇲🇾 Hari Wesak (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-06-03-birthday-of-yang-di-pertuan-agong@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300603
+DTEND;VALUE=DATE:20300604
+SUMMARY:🇲🇾 Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan 
+ Agong (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-06-16-birthday-of-sultan-of-kedah@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300616
+DTEND;VALUE=DATE:20300617
+SUMMARY:🇲🇾 Hari Keputeraan Sultan Kedah (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-07-13-maulidur-rasul@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300713
+DTEND;VALUE=DATE:20300714
+SUMMARY:🇲🇾 Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul) (ang
+ garan)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-08-31-national-day-hari-kebangsaan-@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300831
+DTEND;VALUE=DATE:20300901
+SUMMARY:🇲🇾 Hari Kebangsaan (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-09-16-malaysia-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20300916
+DTEND;VALUE=DATE:20300917
+SUMMARY:🇲🇾 Hari Malaysia (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-10-26-deepavali@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20301026
+DTEND;VALUE=DATE:20301027
+SUMMARY:🇲🇾 Hari Deepavali (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-11-23-israk-and-mikraj@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20301123
+DTEND;VALUE=DATE:20301124
+SUMMARY:🇲🇾 Israk dan Mikraj (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-12-25-christmas-day@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20301225
+DTEND;VALUE=DATE:20301226
+SUMMARY:🇲🇾 Hari Krismas (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ph-KDH-2030-12-26-awal-ramadan@mycalendar
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20301226
+DTEND;VALUE=DATE:20301227
+SUMMARY:🇲🇾 Awal Ramadan (anggaran)
+DESCRIPTION:Kedah: Cuti umum anggaran — belum diwartakan. Sahkan dengan s
+ enarai rasmi apabila diterbitkan.
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
