@@ -1,5 +1,5 @@
 import { STATES, holidaysFor, isOfficial, OFFICIAL_YEARS, replacementNote, SOURCES, SCHOOL_YEARS,
-  schoolHolidaysFor, schoolGroup, FRI_SAT } from "./data.js";
+  schoolHolidaysFor, schoolGroup, FRI_SAT, allStatesHolidays, isNational } from "./data.js";
 import { lunar, hijri } from "./calendars.js";
 import { buildICS } from "./ics.js";
 import { longWeekends } from "./longweekend.js";
@@ -24,7 +24,7 @@ const loc = () => LOCALE[getLang()];
 const fmtShort = (s) => parse(s).toLocaleDateString(loc(), { day: "numeric", month: "short", weekday: "short" });
 const monthName = (m) => MONTHS[getLang()][m];
 const wd = (d) => WEEKDAYS[getLang()][d];
-const sName = (code) => stateName(code, STATES[code]);
+const sName = (code) => (code === "ALL" ? t("lw.allStates") : stateName(code, STATES[code]));
 
 const store = {
   get(k, f) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : f; } catch { return f; } },
@@ -48,7 +48,8 @@ const st = {
 };
 setLang(st.lang);
 const isMY = () => st.country === "MY";
-const providerFor = (cc, state = st.region) => (cc === "MY" ? holidaysFor(state) : countryHolidays(cc));
+const isAll = () => isMY() && st.region === "ALL";
+const providerFor = (cc, state = st.region) => (cc === "MY" ? (state === "ALL" ? allStatesHolidays() : holidaysFor(state)) : countryHolidays(cc));
 let hol = providerFor(st.country);
 const cName = (cc) => COUNTRIES[cc][getLang()] || COUNTRIES[cc].en;
 const cLabel = (cc) => `${COUNTRIES[cc].flag} ${cName(cc)}`;
@@ -90,7 +91,8 @@ function miniCalendar(y, m) {
     for (let d = 1; d <= days; d++) {
       if ((offset + d - 1) % 7 !== dow) continue;
       const key = `${y}-${pad(m + 1)}-${pad(d)}`;
-      cols[Math.floor((offset + d - 1) / 7)] = `<span class="${dow === 0 || hol.has(key) ? "r" : ""}">${d}</span>`;
+      const red = dow === 0 || (hol.get(key) || []).some((h) => h.kind !== "workday" && isNational(h));
+      cols[Math.floor((offset + d - 1) / 7)] = `<span class="${red ? "r" : ""}">${d}</span>`;
     }
     return `<div class="row"><span class="wd">${wd(dow)}</span>${cols.join("")}</div>`;
   });
@@ -107,7 +109,8 @@ function renderMonths() {
 }
 
 // ---------- items ----------
-const holItem = (h) => ({ type: h.kind === "workday" ? "work" : "public", text: hName(h), kind: h.kind, unc: h.uncertain, star: h.subjectToChange });
+const holItem = (h) => ({ type: h.kind === "workday" ? "work" : "public", text: hName(h), kind: h.kind, unc: h.uncertain, star: h.subjectToChange,
+  scope: h.states && !isNational(h) ? statesSummary(h.states) : null });
 
 function itemsForDay(key) {
   const out = (hol.get(key) || []).map(holItem);
@@ -132,7 +135,7 @@ function tagFor(it) {
 function listItem(key, it, when = fmtShort(key)) {
   return `<li class="item t-${it.type}" data-date="${key}">
     <span class="mark" aria-hidden="true"></span>
-    <span class="body"><span class="what">${esc(it.text)}</span>${when ? `<span class="when">${when}</span>` : ""}</span>
+    <span class="body"><span class="what">${esc(it.text)}</span>${when ? `<span class="when">${when}</span>` : ""}${it.scope ? `<span class="scope">${esc(it.scope)}</span>` : ""}</span>
     ${tagFor(it)}${it.type === "evt" && it.idx != null && !when ? `<button class="x" data-del="${it.idx}" aria-label="${t("delete")}">✕</button>` : ""}
   </li>`;
 }
@@ -161,8 +164,10 @@ function renderMonthPage(y, m) {
       const hs = all.filter((h) => h.kind !== "workday");
       const work = all.length > hs.length;
       const cls = ["cell"];
-      if ((dow === 0 && !work) || hs.length) cls.push("red");
-      if (hs.length) cls.push("hol");
+      const national = hs.some((h) => isNational(h));
+      if ((dow === 0 && !work) || national) cls.push("red");
+      if (national) cls.push("hol");
+      else if (hs.length) cls.push("hol-part");
       if (work) cls.push("work");
       if (schoolOn(key)) cls.push("school");
       if (key === todayKey) cls.push("today");
@@ -181,6 +186,7 @@ function renderMonthPage(y, m) {
       <div class="wdl"><b>${getLang() === "zh" ? WEEKDAYS.en[dow] : wd(dow)}</b><span>${sub}</span></div>${cells.join("")}</div>`;
   });
   $("m-grid").innerHTML = rows.join("");
+  $("legend-part").hidden = !isAll();
 
   const memo = [];
   for (let d = 1; d <= days; d++) {
@@ -195,10 +201,14 @@ function renderMonthPage(y, m) {
 
 // ---------- category lists ----------
 function statesSummary(codes) {
-  if (codes.length === Object.keys(STATES).length) return t("lw.allStatesShort");
-  const names = codes.map((c) => sName(c).replace(/^W\.P\. /, ""));
+  const allCodes = Object.keys(STATES);
+  if (codes.length === allCodes.length) return t("lw.allStatesShort");
   const sep = getLang() === "zh" ? "、" : ", ";
-  const list = names.length > 3 ? `${names.slice(0, 3).join(sep)} ${t("lw.more", { n: names.length - 3 })}` : names.join(sep);
+  const names = (list) => list.map((c) => sName(c).replace(/^W\.P\. /, ""));
+  const missing = allCodes.filter((c) => !codes.includes(c));
+  if (codes.length > allCodes.length / 2) return t("lw.except", { list: names(missing).join(sep) });
+  const n = names(codes);
+  const list = n.length > 4 ? `${n.slice(0, 3).join(sep)} ${t("lw.more", { n: n.length - 3 })}` : n.join(sep);
   return t("lw.only", { list });
 }
 
@@ -206,7 +216,7 @@ function renderLong(y) {
   const c = $("l-controls");
   c.hidden = false;
   c.innerHTML = `
-    ${isMY() ? `<div class="seg" role="group">
+    ${isMY() && !isAll() ? `<div class="seg" role="group">
       <button data-lw-scope="mine" aria-pressed="${st.lwScope === "mine"}">${esc(sName(st.region))}</button>
       <button data-lw-scope="all" aria-pressed="${st.lwScope === "all"}">${t("lw.allStates")}</button>
     </div>` : ""}
@@ -215,7 +225,7 @@ function renderLong(y) {
     </div>
     <div class="lw-legend"><span class="chip weekend">${t("lw.weekend")}</span><span class="chip holiday">${t("lw.holiday")}</span><span class="chip leave">${t("lw.leave")}</span></div>`;
 
-  const all = isMY() && st.lwScope === "all";
+  const all = isMY() && (isAll() || st.lwScope === "all");
   const list = isMY()
     ? longWeekends(y, all ? Object.keys(STATES) : [st.region], st.lwLeave)
     : longWeekends(y, [st.country], st.lwLeave, (cc) => ({ hol: providerFor(cc), weekend: [0, 6] }));
@@ -256,7 +266,7 @@ function renderLong(y) {
 }
 
 function replNotice() {
-  if (!replacementNote(st.region)) return "";
+  if (isAll() || !replacementNote(st.region)) return "";
   return `<div class="notice">${esc(FRI_SAT.includes(st.region) ? t("replFriSat") : t("replOther", { s: sName(st.region) }))}</div>`;
 }
 
@@ -286,7 +296,7 @@ function renderCompare(y) {
   $("l-note").innerHTML = notes.join("");
 
   const home = isMY()
-    ? longWeekends(y, [st.region], st.lwLeave)
+    ? longWeekends(y, isAll() ? Object.keys(STATES) : [st.region], st.lwLeave)
     : longWeekends(y, [st.country], st.lwLeave, (cc) => ({ hol: providerFor(cc), weekend: [0, 6] }));
   const rows = [`<li class="mhead">${esc(t("cmp.yourBreaks"))} · ${esc(cLabel(st.country))}${isMY() ? ` ${esc(sName(st.region))}` : ""}</li>`];
   for (const w of home) {
@@ -307,7 +317,7 @@ function renderCompare(y) {
     const leaveTxt = w.leave ? t(w.leave > 1 ? "lw.leaveDaysPl" : "lw.leaveDays", { n: w.leave }) : t("lw.noLeaveNeeded");
     rows.push(`<li class="lw">
       <h3>${esc(homeNames)}</h3>
-      <div class="meta"><span class="days">${t("lw.daysOff", { n: w.days.length })}</span><span>${leaveTxt}</span><span>${fmtShort(w.days[0].date)} – ${fmtShort(w.days.at(-1).date)}</span></div>
+      <div class="meta"><span class="days">${t("lw.daysOff", { n: w.days.length })}</span><span>${leaveTxt}</span><span>${fmtShort(w.days[0].date)} – ${fmtShort(w.days.at(-1).date)}</span>${isAll() ? `<span>· ${esc(statesSummary(w.states))}</span>` : ""}</div>
       <div class="chips">${chips}</div>
       ${verdict}${workNote}
     </li>`);
@@ -352,7 +362,7 @@ function renderList(cat, y) {
     if (isOfficial(y)) {
       const keys = [`hka${y}`];
       if (hol.list(y).some((h) => h.kind === "replacement")) keys.push("act369");
-      if (y === 2026 && st.region === "SWK") keys.push("swk202");
+      if (y === 2026 && (st.region === "SWK" || isAll())) keys.push("swk202");
       note += srcRow(keys);
     } else {
       note += `<div class="notice">${t("notGazetted", { years: OFFICIAL_YEARS.join(" & ") })}</div>`;
@@ -366,14 +376,14 @@ function renderList(cat, y) {
       for (const h of yearMap.get(k)) rows.push(listItem(k, holItem(h)));
     }
   } else if (cat === "school") {
-    const g = schoolGroup(st.region);
-    const items = schoolHolidaysFor(st.region).filter((s) => s.start.startsWith(`${y}-`));
-    note = `<div class="pill-note">${t(g === "A" ? "groupA" : "groupB")}</div>`;
+    const g = isAll() ? null : schoolGroup(st.region);
+    const items = schoolHolidaysFor(st.region).filter((s) => s.start.startsWith(`${y}-`)).sort((a, b) => a.start.localeCompare(b.start) || a.group.localeCompare(b.group));
+    note = `<div class="pill-note">${t(g === null ? "groupBoth" : g === "A" ? "groupA" : "groupB")}</div>`;
     if (SCHOOL_YEARS[y]) note += srcRow([SCHOOL_YEARS[y], ...(items.some((s) => s.source === "kpm2025") ? ["kpm2025"] : [])]);
     for (const s of items) {
       const n = Math.round((parse(s.end) - parse(s.start)) / 864e5) + 1;
       const when = s.start === s.end ? fmtShort(s.start) : `${fmtShort(s.start)} – ${fmtShort(s.end)}`;
-      rows.push(listItem(s.start, { type: "school", text: schoolName(s.name) }, `${when}${n > 1 ? ` · ${t("days", { n })}` : ""}`));
+      rows.push(listItem(s.start, { type: "school", text: schoolName(s.name), scope: isAll() ? t(s.group === "A" ? "groupTagA" : "groupTagB") : null }, `${when}${n > 1 ? ` · ${t("days", { n })}` : ""}`));
     }
   }
   $("l-note").innerHTML = note;
@@ -429,7 +439,7 @@ function rerender() {
 
 // ---------- settings: language ----------
 function renderStateOptions() {
-  $("state").innerHTML = Object.keys(STATES).map((c) => `<option value="${c}">${esc(sName(c))}</option>`).join("");
+  $("state").innerHTML = ["ALL", ...Object.keys(STATES)].map((c) => `<option value="${c}">${esc(sName(c))}</option>`).join("");
   $("state").value = st.region;
 }
 
@@ -561,7 +571,7 @@ function renderExportYears() {
 }
 
 function feedUrl() {
-  if (!isMY()) return null;
+  if (!isMY() || isAll()) return null;
   const online = /^https?:$/.test(location.protocol) && !/^(localhost|127\.|\[::1\])/.test(location.hostname);
   if (!online) return null;
   const base = location.pathname.replace(/[^/]*$/, "");
@@ -570,12 +580,13 @@ function feedUrl() {
 }
 
 $("cal-btn").addEventListener("click", () => {
-  $("x-state").textContent = isMY() ? t("x.what", { s: sName(st.region) }) : `${cLabel(st.country)} · ${t("x.public")}`;
+  $("x-state").textContent = isAll() ? t("x.pickState") : isMY() ? t("x.what", { s: sName(st.region) }) : `${cLabel(st.country)} · ${t("x.public")}`;
+  $("x-download").disabled = isAll();
   const feed = feedUrl();
   $("x-webcal").href = feed ? `webcal://${feed}` : "#";
   $("x-google").href = feed ? `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(`webcal://${feed}`)}` : "#";
   for (const id of ["x-webcal", "x-google"]) $(id).setAttribute("aria-disabled", String(!feed));
-  $("x-feed-note").textContent = t(feed ? "x.feedOk" : "x.feedOff");
+  $("x-feed-note").textContent = isAll() ? t("x.pickState") : t(feed ? "x.feedOk" : "x.feedOff");
   $("export").showModal();
 });
 

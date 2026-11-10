@@ -355,6 +355,39 @@ export function schoolGroup(state) {
 }
 
 export function schoolHolidaysFor(state) {
+  if (state === "ALL") return SCHOOL_HOLIDAYS;
   const g = schoolGroup(state);
   return SCHOOL_HOLIDAYS.filter((s) => s.group === g && (!s.states || appliesTo({ states: parseStates(s.states) }, state)));
+}
+
+// ---------- All states ----------
+// Every state's holidays merged by date and name; each entry lists the states that observe it.
+const allCache = new Map();
+function allStatesYear(y) {
+  if (allCache.has(y)) return allCache.get(y);
+  const byKey = new Map();
+  for (const state of Object.keys(STATES)) {
+    for (const h of holidaysFor(state).list(y)) {
+      const k = `${h.date}|${h.name}`;
+      if (!byKey.has(k)) byKey.set(k, { ...h, states: [] });
+      byKey.get(k).states.push(state);
+    }
+  }
+  const map = new Map();
+  for (const h of [...byKey.values()].sort((a, b) => a.date.localeCompare(b.date) || b.states.length - a.states.length)) {
+    map.set(h.date, [...(map.get(h.date) || []), h]);
+  }
+  allCache.set(y, map);
+  return map;
+}
+export const ALL_STATES = "ALL";
+export const isNational = (h) => !h.states || h.states.length === Object.keys(STATES).length;
+export function allStatesHolidays() {
+  const yearOf = (key) => Number(key.slice(0, 4));
+  return {
+    get: (key) => allStatesYear(yearOf(key)).get(key),
+    has: (key) => allStatesYear(yearOf(key)).has(key),
+    year: allStatesYear,
+    list: (y) => [...allStatesYear(y).values()].flat(),
+  };
 }

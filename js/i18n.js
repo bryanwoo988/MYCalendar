@@ -5,6 +5,9 @@ export const LANGS = { zh: "中文", en: "English", ms: "BM" };
 
 const T = {
   en: {
+    "lw.except": "All except {list}",
+    "legend.part": "Some states only",
+    "x.pickState": "Choose a state first: each state has its own holidays.", groupTagA: "Group A", groupTagB: "Group B", groupBoth: "Group A: Kedah, Kelantan, Terengganu · Group B: all other states & Federal Territories", nationalOnly: "National",
     "set.country": "Country", "cat.compare": "Compare", calendarOf: "{c} Calendar",
     "tag.workday": "make-up workday", "tag.bridge": "collective leave", "tag.regional": "regional", "tag.unconfirmed": "unconfirmed",
     noOfficial: "No official {c} holiday list for {y} yet. Only officially published years are shown.",
@@ -55,6 +58,9 @@ const T = {
     "x.howto": "On iPhone, open the file and tap \"Add All\". On Android, open it with Google Calendar or Samsung Calendar. A downloaded file does not update; re-download after the official list changes.",
   },
   ms: {
+    "lw.except": "Semua kecuali {list}",
+    "legend.part": "Sesetengah negeri sahaja",
+    "x.pickState": "Pilih negeri dahulu: setiap negeri ada cuti tersendiri.", groupTagA: "Kumpulan A", groupTagB: "Kumpulan B", groupBoth: "Kumpulan A: Kedah, Kelantan, Terengganu · Kumpulan B: negeri lain & Wilayah Persekutuan", nationalOnly: "Kebangsaan",
     "set.country": "Negara", "cat.compare": "Bandingkan", calendarOf: "Kalendar {c}",
     "tag.workday": "hari kerja ganti", "tag.bridge": "cuti bersama", "tag.regional": "wilayah", "tag.unconfirmed": "belum disahkan",
     noOfficial: "Senarai cuti rasmi {c} bagi {y} belum ada. Hanya tahun yang telah diumumkan secara rasmi dipaparkan.",
@@ -105,6 +111,9 @@ const T = {
     "x.howto": "Di iPhone, buka fail dan tekan \"Add All\". Di Android, buka dengan Google Calendar atau Samsung Calendar. Fail yang dimuat turun tidak dikemas kini; muat turun semula selepas senarai rasmi berubah.",
   },
   zh: {
+    "lw.except": "除{list}外全部州属",
+    "legend.part": "部分州属假期",
+    "x.pickState": "请先选择州属：每个州的假期不同。", groupTagA: "A 组", groupTagB: "B 组", groupBoth: "A 组：吉打、吉兰丹、登嘉楼 · B 组：其他州属及联邦直辖区", nationalOnly: "全国",
     "set.country": "国家", "cat.compare": "对照", calendarOf: "{c}日历",
     "tag.workday": "调休上班", "tag.bridge": "集体休假", "tag.regional": "地区性", "tag.unconfirmed": "待确认",
     noOfficial: "{c} {y} 年官方假期清单尚未公布。只显示已正式公布的年份。",
@@ -134,7 +143,7 @@ const T = {
     "lw.showingAll": "正在显示全部州属。选择你的州属可只看你的。",
     "lw.estimated": "根据推算的假期计算，尚未刊宪。",
     "lw.daysOff": "连休 {n} 天", "lw.leaveDays": "请 {n} 天年假", "lw.leaveDaysPl": "请 {n} 天年假", "lw.noLeaveNeeded": "不用请假",
-    "lw.none": "没有找到长周末。", "lw.allStatesShort": "全部州属", "lw.only": "仅{list}", "lw.more": "等 {n} 州",
+    "lw.none": "没有找到长周末。", "lw.allStatesShort": "全部州属", "lw.only": "仅{list}", "lw.more": "及另外 {n} 州",
     "set.language": "语言", "set.appearance": "外观", "set.share": "分享这个 App", "set.sources": "资料来源",
     "ap.system": "跟随系统", "ap.light": "浅色", "ap.dark": "深色",
     "ap.note": "跟随系统时，App 会跟着手机设置：手机是浅色就用你的浅色主题，深色就用你的深色主题。",

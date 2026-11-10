@@ -256,3 +256,12 @@ svg { display: block; }
 .list .mhead.sub { margin-top: 10px; font-size: 11px; }
 .cell.work { background: var(--repl-bg); }
 .cell .wk { position: absolute; top: 4px; right: 4px; padding: 0 4px; border-radius: 4px; background: var(--repl); color: #fff; font-size: 10px; font-weight: 700; line-height: 15px; }
+
+/* All-states mode */
+.item .scope { display: inline-block; align-self: flex-start; margin-top: 3px; padding: 2px 8px; border-radius: 6px; background: var(--evt-bg); color: var(--evt); font-size: 12px; }
+.cell.hol-part { background: var(--card); box-shadow: inset 0 0 0 1.5px var(--red-bg); }
+.cell.hol-part .hn { color: var(--muted); }
+.cell.hol-part::before { content: ""; position: absolute; top: 6px; right: 6px; width: 6px; height: 6px; border-radius: 50%; background: var(--red); opacity: .7; }
+.x-btn:disabled { opacity: .4; pointer-events: none; }
+.sw-part { background: var(--card); box-shadow: inset 0 0 0 1.5px var(--red-bg); position: relative; }
+.sw-part::after { content: ""; position: absolute; top: 2px; right: 2px; width: 4px; height: 4px; border-radius: 50%; background: var(--red); }
